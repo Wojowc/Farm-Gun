@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController characterController;
-    Vector3 localDirection;
-    Vector3 globalDirection;
+    Vector3 inputDirection;
+    Vector3 correctedInputDirection;
     float cameraRotationY;
     [SerializeField]
     float speed = 8f;
@@ -20,19 +20,39 @@ public class PlayerMovement : MonoBehaviour
     {
         //get characterComponent
         characterController = GetComponent<CharacterController>();
+
         //get the Y value of camera rotation in degrees
-        cameraRotationY = FindAnyObjectByType<Camera>().transform.rotation.eulerAngles.y;    
+        cameraRotationY = Camera.main.transform.rotation.eulerAngles.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        HandleRotation();
+
+        //determine if falling
         velocityY = characterController.isGrounded ? normalVelovityYValue : gravityValue;
+
         //get input from player
-        localDirection = new Vector3 (Input.GetAxisRaw("Horizontal"), -velocityY, Input.GetAxisRaw("Vertical"));
+        inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), -velocityY, Input.GetAxisRaw("Vertical"));
+
         //multiply it by the rotation of camera
-        globalDirection = (Quaternion.Euler(0, cameraRotationY, 0) * localDirection).normalized;
+        correctedInputDirection = (Quaternion.Euler(0, cameraRotationY, 0) * inputDirection).normalized;
+
         //move player
-        characterController.Move(globalDirection * speed * Time.deltaTime);
+        characterController.Move(correctedInputDirection * speed * Time.deltaTime);
+    }
+
+    void HandleRotation()
+    {
+        //get mouse and player position 2d
+        Vector3 playerPos2d = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 mousePos2d = Input.mousePosition;
+
+        //cast player and mouse position to direction
+        Vector3 mouseDirection3d = new Vector3(mousePos2d.x - playerPos2d.x, transform.position.y, mousePos2d.y - playerPos2d.y);
+        Vector3 correctedMouseDirection3d = Quaternion.Euler(0, cameraRotationY, 0) * mouseDirection3d;
+
+        //rotate player
+        transform.LookAt(transform.position + correctedMouseDirection3d);
     }
 }
