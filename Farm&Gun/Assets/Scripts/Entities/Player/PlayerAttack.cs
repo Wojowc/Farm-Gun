@@ -7,11 +7,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     GameObject bullet, wideSweep, longSweep;
     [SerializeField]
-    float shotTime = 0.5f, wideAttackTime = 0.5f, longAttackTime = 0.5f, ammo = 20, multishot = 5, multishotSpread = 0.5f;
+    float shotTime = 0.5f, multishotTime = 0.8f, wideAttackTime = 0.5f, longAttackTime = 0.5f, ammo = 20, multishot = 5, multishotSpread = 0.5f;
     [SerializeField]
     bool usingGun = true;
     PlayerMovement playerMovement;
-    Vector2 defaultShift = Vector2.zero;
 
     private void Awake()
     {
@@ -53,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
                 for (int i = 0; i < multishot; i++)
                 {
                     Vector2 shift = new Vector2(Random.Range(-multishotSpread, multishotSpread), Random.Range(-multishotSpread, multishotSpread));
-                    FireProjectile(bullet, false, shotTime, shift);
+                    FireProjectile(bullet, false, multishotTime, shift);
                 }
             }
         }

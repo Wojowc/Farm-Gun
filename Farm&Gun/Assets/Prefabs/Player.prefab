@@ -229,8 +229,9 @@ MonoBehaviour:
   wideSweep: {fileID: 867829230851777902, guid: 1b9250613793b4643aeab255e409eb0c, type: 3}
   longSweep: {fileID: 867829230851777902, guid: e0bb087247568fc449185965b057a463, type: 3}
   shotTime: 0.5
-  wideAttackTime: 0.2
-  longAttackTime: 0.2
+  multishotTime: 0.8
+  wideAttackTime: 0.3
+  longAttackTime: 0.25
   ammo: 20
   multishot: 5
   multishotSpread: 0.6

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.3
-  speed: 300
+  speed: 200
   damage: 1
   destroyOnInteract: 0
 --- !u!54 &8382901055539208558

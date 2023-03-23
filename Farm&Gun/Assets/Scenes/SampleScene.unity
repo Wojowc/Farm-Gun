@@ -503,10 +503,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1736198799772313212, guid: 4ad22451b4878294396cd09ce962023d, type: 3}
-      propertyPath: multishotSpread
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 1736198800819830932, guid: 4ad22451b4878294396cd09ce962023d, type: 3}
       propertyPath: m_Name
       value: Player
