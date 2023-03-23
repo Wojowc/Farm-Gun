@@ -10,8 +10,10 @@ public static class SceneLoader
     public enum Scene
     {
         MainMenu,
+        PauseScreen,
         SampleScene,
-        LoadingScene
+        LoadingScene,
+        GameOver
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;
