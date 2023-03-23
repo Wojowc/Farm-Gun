@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController characterController;
+    bool canMove = true;
     Vector3 inputDirection;
     Vector3 correctedInputDirection;
     float cameraRotationY;
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //movement guard
+        if (!canMove) return;
+
         HandleRotation();
 
         //determine if falling
@@ -54,5 +58,21 @@ public class PlayerMovement : MonoBehaviour
 
         //rotate player
         transform.LookAt(transform.position + correctedMouseDirection3d);
+    }
+
+    public void DisableMovement(float time)
+    {
+        Invoke("EnableMovement", time);
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    public bool IsEnabled()
+    {
+        return canMove;
     }
 }

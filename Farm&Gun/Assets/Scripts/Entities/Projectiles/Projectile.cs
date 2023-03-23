@@ -11,7 +11,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (destroyOnInteract)
+        //destroy self on collission
+        if (destroyOnInteract && other.tag != "Projectile" && other.tag != "Player")
         {
             Destroy(gameObject);
         }
@@ -19,6 +20,7 @@ public class Projectile : MonoBehaviour
 
     public void Shoot(Vector3 direction)
     {
+        //add force to the object
         GetComponent<Rigidbody>().AddForce(direction * speed);
         Destroy(gameObject, lifetime);
     }

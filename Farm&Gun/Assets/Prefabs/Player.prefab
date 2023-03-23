@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 317014476}
   m_Layer: 0
   m_Name: Direction Indicator
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 462025899}
   m_Layer: 0
   m_Name: Face
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,6 +228,12 @@ MonoBehaviour:
   bullet: {fileID: 5972924633316556883, guid: c9a451c454c9b1141bf951582a02609b, type: 3}
   wideSweep: {fileID: 867829230851777902, guid: 1b9250613793b4643aeab255e409eb0c, type: 3}
   longSweep: {fileID: 867829230851777902, guid: e0bb087247568fc449185965b057a463, type: 3}
+  shotTime: 0.5
+  wideAttackTime: 0.2
+  longAttackTime: 0.2
+  ammo: 20
+  multishot: 5
+  multishotSpread: 0.6
   usingGun: 0
 --- !u!1 &1736198800819830932
 GameObject:
