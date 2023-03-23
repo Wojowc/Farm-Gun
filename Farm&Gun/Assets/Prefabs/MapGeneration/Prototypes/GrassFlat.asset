@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0debfe52287adab4dbdde9af29871f08, type: 3}
+  m_Name: GrassFlat
+  m_EditorClassIdentifier: 
+  meshRotation: 0
+  prefab: {fileID: 138836365270009319, guid: f8230be85c5115643831e1fbc729aacf, type: 3}
+  posX: 0
+  negX: 0
+  posZ: 0
+  negZ: 0
+  attributes: 
+  validNeighbours:
+    posX:
+    - {fileID: 0}
+    - {fileID: 11400000, guid: 5217c5a4a4bb6d544b6d7a8403672d1e, type: 2}
+    - {fileID: 11400000, guid: 99eee8a3e4c84e24e82be5c06de19b9e, type: 2}
+    - {fileID: 11400000, guid: 2a3bae1b7f5032d409541f168c6453c5, type: 2}
+    posZ: []
+    negX: []
+    negZ: []
