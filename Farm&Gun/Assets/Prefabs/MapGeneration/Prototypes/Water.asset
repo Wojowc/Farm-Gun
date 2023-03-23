@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0debfe52287adab4dbdde9af29871f08, type: 3}
-  m_Name: GrassBouncy
+  m_Name: Water
   m_EditorClassIdentifier: 
   meshRotation: 0
-  prefab: {fileID: 2357419356555822539, guid: 0a69d41d4a2d48a469708680977ed0c8, type: 3}
-  posX: 3
-  negX: 3
-  posZ: 2
-  negZ: 2
-  attributes: 0000000001000000
+  prefab: {fileID: 268118961561806861, guid: 3a82e5ee536b643468b2c4ec0163477c, type: 3}
+  posX: 1
+  negX: 2
+  posZ: 3
+  negZ: 4
+  attributes: 
   validNeighbours:
     posX: []
     posZ: []

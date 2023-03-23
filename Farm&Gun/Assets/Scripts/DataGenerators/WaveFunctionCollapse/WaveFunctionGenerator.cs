@@ -23,7 +23,8 @@ public class WaveFunctionGenerator : MonoBehaviour
 
     void Awake()
     {
-       // InitializeWaveFunction();
+        Debug.Log($"I have awoken. {typeof(WaveFunctionGenerator)}");
+        InitializeWaveFunction();
         StartCoroutine(CollapseOverTime());
     }
     private void LoadData() // delete if possible
@@ -123,6 +124,7 @@ public class WaveFunctionGenerator : MonoBehaviour
 
     public void StartCollapse()
     {
+        Debug.Log("Started collapsing.");
         collapsed = 0;
         while (!isCollapsed())
             Iterate();
@@ -130,6 +132,7 @@ public class WaveFunctionGenerator : MonoBehaviour
 
     public IEnumerator CollapseOverTime()
     {
+        Debug.Log("Collapsing over time.");
         while (!isCollapsed())
         {
             Iterate();
@@ -139,10 +142,14 @@ public class WaveFunctionGenerator : MonoBehaviour
 
     private bool isCollapsed()
     {
+        Debug.Log("Is collapsed checking.");
         //check if any cells contain more than one entry
         foreach (Cell c in cells)
+        {
+            Debug.Log(c.possiblePrototypes.Count);
             if (c.possiblePrototypes.Count > 1)
                 return false;
+        }
 
         return true;
     }
@@ -189,6 +196,7 @@ public class WaveFunctionGenerator : MonoBehaviour
         finalPrefab.transform.Rotate(new Vector3(0f, finalPrototype.meshRotation * 90, 0f), Space.Self);
         finalPrefab.transform.localPosition = Vector3.zero;
         cell.name = cell.coordinates.ToString() + "_" + collapsed.ToString();
+        Debug.Log($"Cells name: {cell.name}");
         collapsed++;
         cell.isCollapsed = true;
     }
@@ -211,6 +219,7 @@ public class WaveFunctionGenerator : MonoBehaviour
             {
                 if (total <= prototypeWeights[i])
                 {
+                    Debug.Log($"Selected prototype: {i}");
                     return i;
                 }
                 else
