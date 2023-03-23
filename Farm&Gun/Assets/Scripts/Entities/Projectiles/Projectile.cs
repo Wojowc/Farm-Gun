@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    float projectileSpeed = 3000.0f;
-    Vector3 bulletDirectiion = new Vector3(1, 0, 0);
-    Rigidbody rigidbody;
-    float lifetime = 2.0f;
+    [SerializeField]
+    float lifetime = 2, speed = 1000, damage = 1;
+    [SerializeField]
+    bool destroyOnInteract = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (destroyOnInteract)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void Shoot(float speed, Vector3 direction, float lifetime)
+    public void Shoot(Vector3 direction)
     {
-        projectileSpeed = speed;
-        bulletDirectiion = direction;
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(bulletDirectiion * projectileSpeed);
-
+        GetComponent<Rigidbody>().AddForce(direction * speed);
         Destroy(gameObject, lifetime);
     }
 }

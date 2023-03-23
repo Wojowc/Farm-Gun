@@ -5,46 +5,51 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    GameObject projectile;
+    GameObject bullet;
     [SerializeField]
-    float bulletSpeed = 1000;
+    GameObject wideSweep;
     [SerializeField]
-    float bulletLifetime = 1;
+    GameObject longSweep;
     [SerializeField]
-    float wideSwipeSpeed = 1000;
-    [SerializeField]
-    float wideSwipetime = 0.5f;
-    [SerializeField]
-    float longSwipeSpeed = 1000;
-    [SerializeField]
-    float longSwipeLifetime = 0.5f;
     bool usingGun = true;
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && usingGun)
         {
-            //instantiate a bullet
-            GameObject shotProjectile = GameObject.Instantiate(projectile, this.transform.position, Quaternion.identity);
-
-            //add force to the bullet
-            shotProjectile.GetComponent<Projectile>().Shoot(bulletSpeed, transform.forward.normalized, bulletLifetime);
+            FireProjectile(bullet, false);
         }
 
         else if(Input.GetButtonDown("Fire1") && !usingGun)
         {
-
+            FireProjectile(longSweep, true);
         }
 
         else if (Input.GetButtonDown("Fire2") && !usingGun)
         {
-
+            FireProjectile(wideSweep, true);
         }
 
-        if (Input.mouseScrollDelta != new Vector2(0, 0))
+        if (Input.mouseScrollDelta.y > 0)
         {
-            Debug.Log("Swap");
+            usingGun = true;
         }
-        
+        else if (Input.mouseScrollDelta.y < 0)
+        {
+            usingGun = false;
+        }
+    }
+
+    private void FireProjectile(GameObject projectile, bool melee)
+    {
+        //instantiate a projectile
+        GameObject shotProjectile = GameObject.Instantiate(projectile, this.transform.position, Quaternion.identity);
+
+        shotProjectile.transform.rotation = transform.rotation;
+
+        if (melee) shotProjectile.transform.parent = transform;
+
+        //add force to the bullet
+        shotProjectile.GetComponent<Projectile>().Shoot(transform.forward.normalized);
     }
 }

@@ -225,8 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fc5b870da36fd4aaed28d921a4e204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5972924633316556883, guid: c9a451c454c9b1141bf951582a02609b, type: 3}
-  bulletSpeed: 1000
+  bullet: {fileID: 5972924633316556883, guid: c9a451c454c9b1141bf951582a02609b, type: 3}
+  wideSweep: {fileID: 867829230851777902, guid: 1b9250613793b4643aeab255e409eb0c, type: 3}
+  longSweep: {fileID: 867829230851777902, guid: e0bb087247568fc449185965b057a463, type: 3}
+  usingGun: 0
 --- !u!1 &1736198800819830932
 GameObject:
   m_ObjectHideFlags: 0
