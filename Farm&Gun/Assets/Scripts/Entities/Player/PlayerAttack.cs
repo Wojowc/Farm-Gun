@@ -10,7 +10,9 @@ public class PlayerAttack : MonoBehaviour
     float shotTime = 0.5f, multishotTime = 0.8f, wideAttackTime = 0.5f, longAttackTime = 0.5f, ammo = 20, multishot = 5, multishotSpread = 0.5f;
     [SerializeField]
     bool usingGun = true;
+    bool canAttack = true;
     PlayerMovement playerMovement;
+
 
     private void Awake()
     {
@@ -20,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //movement guard
-        if (!playerMovement.IsEnabled()) return;
+        if (!canAttack) return;
 
 
         //handle firing projectiles
@@ -82,6 +84,22 @@ public class PlayerAttack : MonoBehaviour
         //add force to the bullet
         shotProjectile.GetComponent<Projectile>().Shoot(transform.forward.normalized);
 
-        playerMovement.DisableMovement(attackTime);
+        DisableAttack(attackTime);
+    }
+
+    public void DisableAttack(float time)
+    {
+        Invoke("EnableAttack", time);
+        canAttack = false;
+    }
+
+    public void EnableAttack()
+    {
+        canAttack = true;
+    }
+
+    public bool IsEnabled()
+    {
+        return canAttack;
     }
 }

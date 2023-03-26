@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2
-  speed: 3000
+  speed: 2000
   damage: 1
   destroyOnInteract: 1
 --- !u!54 &5972924633316556889
