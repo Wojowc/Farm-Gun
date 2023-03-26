@@ -7,7 +7,7 @@ public class ExitApplication : MonoBehaviour
      */
     public void Exit()
     {
-        Debug.Log("Application Exited");
+        Debug.Log("Exiting application");
         Application.Quit();
     }
 }

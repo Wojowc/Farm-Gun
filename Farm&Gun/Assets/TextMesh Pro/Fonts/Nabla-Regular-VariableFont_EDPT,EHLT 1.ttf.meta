@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 53a02387aa4de6a4698470cf42b6026f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nabla
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ef62db26d80fc8541a4a1adab6290194, type: 3}
+  - {fileID: 12800000, guid: bc8e9e3b4e1154043b894735f80111b4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
