@@ -5,37 +5,40 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    GameObject bullet, wideSweep, longSweep;
+    private Animator animator;
     [SerializeField]
-    float shotTime = 0.5f, multishotTime = 0.8f, wideAttackTime = 0.5f, longAttackTime = 0.5f, ammo = 20, multishot = 5, multishotSpread = 0.5f;
+    public GameObject bullet, wideSweep, longSweep, gun, fork;
+    [SerializeField]
+    public float ammo = 20, multishot = 5, multishotSpread = 0.5f;    
     [SerializeField]
     bool usingGun = true;
     bool canAttack = true;
+    [SerializeField]
     PlayerMovement playerMovement;
-
-
-    private void Awake()
-    {
-        playerMovement = transform.parent.GetComponent<PlayerMovement>();
-    }
 
     void Update()
     {
+
+        if (animator.GetBool("Performing Attack")) return;
+
+        BugFix();
+
         //movement guard
         if (!canAttack) return;
-
 
         //handle firing projectiles
         if (!usingGun)
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                FireProjectile(longSweep, true, wideAttackTime, Vector2.zero);
+                animator?.SetBool("Performing Attack", true);
+                animator?.SetBool("Long Attack", true);              
             }
 
             else if (Input.GetButtonDown("Fire2"))
             {
-                FireProjectile(wideSweep, true, longAttackTime, Vector2.zero);
+                animator?.SetBool("Performing Attack", true);
+                animator?.SetBool("Wide Attack", true);
             }
         }
 
@@ -44,33 +47,29 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 ammo--;
-                FireProjectile(bullet, false, shotTime, Vector2.zero);
+                animator?.SetBool("Performing Attack", true);
+                animator?.SetBool("Shot Attack", true);
             }
 
             else if (Input.GetButtonDown("Fire2"))
             {
                 ammo -= multishot;
-                //generate bulets randomly
-                for (int i = 0; i < multishot; i++)
-                {
-                    Vector2 shift = new Vector2(Random.Range(-multishotSpread, multishotSpread), Random.Range(-multishotSpread, multishotSpread));
-                    FireProjectile(bullet, false, multishotTime, shift);
-                }
+                animator?.SetBool("Performing Attack", true);
+                animator?.SetBool("Multishot Attack", true);
             }
         }
 
         //swap weapon on scroll
-        if (Input.mouseScrollDelta.y > 0)
+        if (Input.mouseScrollDelta.y != 0)
         {
-            usingGun = true;
-        }
-        else if (Input.mouseScrollDelta.y < 0)
-        {
-            usingGun = false;
+
+            usingGun = !usingGun;
+            fork.SetActive(!fork.activeSelf);
+            gun.SetActive(!gun.activeSelf);
         }
     }
 
-    private void FireProjectile(GameObject projectile, bool melee, float attackTime, Vector2 shift)
+    public void FireProjectile(GameObject projectile, bool melee, Vector2 shift)
     {
         //instantiate a projectile
         GameObject shotProjectile = GameObject.Instantiate(projectile, this.transform.position + new Vector3(shift.x,shift.y,0), Quaternion.identity);
@@ -83,13 +82,10 @@ public class PlayerAttack : MonoBehaviour
 
         //add force to the bullet
         shotProjectile.GetComponent<Projectile>().Shoot(transform.forward.normalized);
-
-        DisableAttack(attackTime);
     }
 
-    public void DisableAttack(float time)
+    public void DisableAttack()
     {
-        Invoke("EnableAttack", time);
         canAttack = false;
     }
 
@@ -101,5 +97,16 @@ public class PlayerAttack : MonoBehaviour
     public bool IsEnabled()
     {
         return canAttack;
+    }
+
+    private void BugFix()
+    {
+        if (!animator.GetBool("Performing Attack"))
+        {
+            if (animator.GetBool("Long Attack")) animator.SetBool("Long Attack", false);
+            if (animator.GetBool("Wide Attack")) animator.SetBool("Wide Attack", false);
+            if (animator.GetBool("Shot Attack")) animator.SetBool("Shot Attack", false);
+            if (animator.GetBool("Multishot Attack")) animator.SetBool("Multishot Attack", false);
+        }
     }
 }
