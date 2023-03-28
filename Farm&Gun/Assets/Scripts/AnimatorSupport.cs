@@ -10,11 +10,37 @@ public class AnimatorSupport : MonoBehaviour
     private PlayerMovement playerMovement;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private float defaultZoom, longStepForward, longStepBackwards, longMaxZoom, wideStepForward, wideStepBackwards, wideMaxZoom;
+
+    private void Awake()
+    {
+        defaultZoom = Camera.main.orthographicSize;
+    }
 
     public void DisableMovement()
     {
         playerMovement.DisableMovement();
         playerAttack.DisableAttack();
+    }
+
+    public void SetDefaultZoom(float newDefaultZoom)
+    {
+        defaultZoom = newDefaultZoom;
+    }
+
+    private IEnumerator CameraZoomCoroutine(float stepForward, float stepBackwards, float maxZoom, float initialZoom)
+    {
+        while(Camera.main.orthographicSize > maxZoom)
+        {
+            Camera.main.orthographicSize -= stepForward * Time.deltaTime;
+            yield return null;
+        }
+        while (Camera.main.orthographicSize < initialZoom)
+        {
+            Camera.main.orthographicSize += stepBackwards * Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void EndAttack()
@@ -30,11 +56,13 @@ public class AnimatorSupport : MonoBehaviour
 
     public void LongAttackSupport()
     {
-        playerAttack.FireProjectile(playerAttack.longSweep, true, Vector2.zero);
+        StartCoroutine(CameraZoomCoroutine(longStepForward, longStepBackwards, Camera.main.orthographicSize - longMaxZoom, defaultZoom));
+        playerAttack.FireProjectile(playerAttack.longSweep, true, Vector2.zero);       
     }
 
     public void WideAttackSupport()
     {
+        StartCoroutine(CameraZoomCoroutine(wideStepForward, wideStepBackwards, Camera.main.orthographicSize - wideMaxZoom, defaultZoom));
         playerAttack.FireProjectile(playerAttack.wideSweep, true, Vector2.zero);
     }
 

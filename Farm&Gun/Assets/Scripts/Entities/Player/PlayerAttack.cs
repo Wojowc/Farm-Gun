@@ -58,11 +58,10 @@ public class PlayerAttack : MonoBehaviour
                 animator?.SetBool("Multishot Attack", true);
             }
         }
-
+        //if (Input.mouseScrollDelta.y != 0)
         //swap weapon on scroll
-        if (Input.mouseScrollDelta.y != 0)
+        if (Input.mouseScrollDelta.y != 0 || Input.GetKeyDown(KeyCode.Q))
         {
-
             usingGun = !usingGun;
             fork.SetActive(!fork.activeSelf);
             gun.SetActive(!gun.activeSelf);

@@ -525,6 +525,13 @@ MonoBehaviour:
   playerAttack: {fileID: 1736198799772313212}
   playerMovement: {fileID: 1736198800819830943}
   animator: {fileID: 2817588312001605690}
+  defaultZoom: 3.5
+  longStepForward: 2
+  longStepBackwards: 1
+  longMaxZoom: 0.4
+  wideStepForward: 3
+  wideStepBackwards: 2.5
+  wideMaxZoom: 0.7
 --- !u!4 &859775530812741983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1438546959266459337, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
