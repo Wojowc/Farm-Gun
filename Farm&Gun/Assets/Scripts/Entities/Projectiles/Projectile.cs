@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
         if (destroyOnInteract && other.tag != "Projectile" && other.tag != "Player")
         {
             Destroy(gameObject);
+            other.GetComponent<HealthManager>()?.DecreaseHealth(damage);
         }
     }
 
