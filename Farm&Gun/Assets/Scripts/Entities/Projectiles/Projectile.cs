@@ -11,13 +11,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         //destroy self on collission
         if (destroyOnInteract && other.tag != "Projectile" && other.tag != "Player")
         {
-            
             Destroy(gameObject);
-            
         }
     }
 

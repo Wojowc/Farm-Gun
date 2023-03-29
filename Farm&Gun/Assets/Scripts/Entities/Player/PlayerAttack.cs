@@ -21,12 +21,12 @@ public class PlayerAttack : MonoBehaviour
 
         if (animator.GetBool("Performing Attack")) return;
 
-        BugFix();
+        DeactivateAnimatorVariables();
 
         //movement guard
         if (!canAttack) return;
 
-        //handle firing projectiles
+        //send projectile type information to animator
         if (!usingGun)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -41,7 +41,6 @@ public class PlayerAttack : MonoBehaviour
                 animator?.SetBool("Wide Attack", true);
             }
         }
-
         else if (usingGun && ammo > 0)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -58,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
                 animator?.SetBool("Multishot Attack", true);
             }
         }
-        //if (Input.mouseScrollDelta.y != 0)
+
         //swap weapon on scroll
         if (Input.mouseScrollDelta.y != 0 || Input.GetKeyDown(KeyCode.Q))
         {
@@ -98,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
         return canAttack;
     }
 
-    private void BugFix()
+    private void DeactivateAnimatorVariables()
     {
         if (!animator.GetBool("Performing Attack"))
         {

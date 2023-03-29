@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1736198799772313215}
   - component: {fileID: 1736198799772313212}
   m_Layer: 0
-  m_Name: Attacks Generator
+  m_Name: Attacks Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_Name
-      value: HumanMale_Character_FREE
+      value: Player Model
       objectReference: {fileID: 0}
     - target: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_TagString
@@ -525,7 +525,6 @@ MonoBehaviour:
   playerAttack: {fileID: 1736198799772313212}
   playerMovement: {fileID: 1736198800819830943}
   animator: {fileID: 2817588312001605690}
-  defaultZoom: 3.5
   longStepForward: 2
   longStepBackwards: 1
   longMaxZoom: 0.4

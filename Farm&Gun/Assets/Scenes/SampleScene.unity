@@ -578,7 +578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811443312}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -2.14, y: -0.38, z: 4.07}
+  m_LocalPosition: {x: -2.089, y: -0.38, z: 4.07}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -857,17 +857,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473205958}
   m_CullTransparentMesh: 1
---- !u!114 &1491442132 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2013010810, guid: 4ad22451b4878294396cd09ce962023d, type: 3}
-  m_PrefabInstance: {fileID: 1736198800293682098}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf97f9c0b0e16945900e7c02d848178, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1491746604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1227,7 @@ GameObject:
   - component: {fileID: 2004050570}
   - component: {fileID: 2004050571}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1335,7 +1324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1687929041}
-  animatorSupport: {fileID: 1491442132}
   xFromPlayer: -4
   yFromPlayer: 3
   zFromPlayer: -4
@@ -1345,6 +1333,7 @@ MonoBehaviour:
   cameraMinZoomout: 2.5
   cameraMaxZoomout: 4.5
   zoomStep: 0.1
+  defaultZoom: 0
 --- !u!1001 &1736198800293682098
 PrefabInstance:
   m_ObjectHideFlags: 0

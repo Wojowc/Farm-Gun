@@ -10,12 +10,13 @@ public class AnimatorSupport : MonoBehaviour
     private PlayerMovement playerMovement;
     [SerializeField]
     private Animator animator;
+    private PlayerCamera playerCamera;
     [SerializeField]
-    private float defaultZoom, longStepForward, longStepBackwards, longMaxZoom, wideStepForward, wideStepBackwards, wideMaxZoom;
+    private float longStepForward, longStepBackwards, longMaxZoom, wideStepForward, wideStepBackwards, wideMaxZoom;
 
-    private void Awake()
+    public void Start()
     {
-        defaultZoom = Camera.main.orthographicSize;
+        playerCamera = GameObject.FindObjectOfType<PlayerCamera>();
     }
 
     public void DisableMovement()
@@ -24,25 +25,7 @@ public class AnimatorSupport : MonoBehaviour
         playerAttack.DisableAttack();
     }
 
-    public void SetDefaultZoom(float newDefaultZoom)
-    {
-        defaultZoom = newDefaultZoom;
-    }
-
-    private IEnumerator CameraZoomCoroutine(float stepForward, float stepBackwards, float maxZoom, float initialZoom)
-    {
-        while(Camera.main.orthographicSize > maxZoom)
-        {
-            Camera.main.orthographicSize -= stepForward * Time.deltaTime;
-            yield return null;
-        }
-        while (Camera.main.orthographicSize < initialZoom)
-        {
-            Camera.main.orthographicSize += stepBackwards * Time.deltaTime;
-            yield return null;
-        }
-    }
-
+    //called at the end of attack
     public void EndAttack()
     {
         animator.SetBool("Long Attack", false);
@@ -54,23 +37,27 @@ public class AnimatorSupport : MonoBehaviour
         playerAttack.EnableAttack();
     }
 
+    //animates and runs long attack 
     public void LongAttackSupport()
     {
-        StartCoroutine(CameraZoomCoroutine(longStepForward, longStepBackwards, Camera.main.orthographicSize - longMaxZoom, defaultZoom));
+        StartCoroutine(playerCamera.ZoomCoroutine(longStepForward, longStepBackwards, Camera.main.orthographicSize - longMaxZoom));
         playerAttack.FireProjectile(playerAttack.longSweep, true, Vector2.zero);       
     }
 
+    //animates and runs wide attack 
     public void WideAttackSupport()
     {
-        StartCoroutine(CameraZoomCoroutine(wideStepForward, wideStepBackwards, Camera.main.orthographicSize - wideMaxZoom, defaultZoom));
+        StartCoroutine(playerCamera.ZoomCoroutine(wideStepForward, wideStepBackwards, Camera.main.orthographicSize - wideMaxZoom));
         playerAttack.FireProjectile(playerAttack.wideSweep, true, Vector2.zero);
     }
 
+    //runs shot attack
     public void ShotSupport()
     {
         playerAttack.FireProjectile(playerAttack.bullet, true, new Vector2(0, 0.7f));
     }
 
+    //runs multipleShot attack
     public void MultishotSupport()
     {
         for (int i = 0; i < playerAttack.multishot; i++)

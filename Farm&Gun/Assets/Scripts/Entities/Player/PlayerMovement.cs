@@ -43,8 +43,6 @@ public class PlayerMovement : MonoBehaviour
         //get input from player
         inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), -velocityY, Input.GetAxisRaw("Vertical"));
 
-
-
         //multiply it by the rotation of camera
         correctedInputDirection = (Quaternion.Euler(0, cameraRotationY, 0) * inputDirection).normalized;
 
@@ -65,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         //rotate player
         transform.LookAt(transform.position + correctedMouseDirection3d);
 
+        //send input values to the animator
         animator.SetBool("Is Moving", (inputDirection.x != 0 || inputDirection.z != 0));
         animator.SetFloat("Left-Right", (Camera.main.transform.rotation * Quaternion.Inverse(transform.rotation) * inputDirection).x);
         animator.SetFloat("Front-Back", (Camera.main.transform.rotation * Quaternion.Inverse(transform.rotation) * inputDirection).z);
