@@ -50,7 +50,15 @@ public class WaveFunctionGenerator : MonoBehaviour
                 else
                 {
 #if UNITY_EDITOR
+                    if(allProtoPrefab is null)
+                    {
+                        Debug.Log("allProtoPrefab is null :))))");
+                    }
                     GameObject block = (GameObject)PrefabUtility.InstantiatePrefab(allProtoPrefab as GameObject);
+                    if (block is null)
+                    {
+                        Debug.Log("block is null :))))");
+                    }
                     PrefabUtility.UnpackPrefabInstance(block, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
                     block.transform.SetParent(this.transform);
                     block.transform.position = pos;
@@ -109,6 +117,7 @@ public class WaveFunctionGenerator : MonoBehaviour
         c.posXneighbour = GetCell(c.coordinates.x + 1, c.coordinates.y);
         c.negXneighbour = GetCell(c.coordinates.x - 1, c.coordinates.y);
     }
+
     private Cell GetCell(float x, float z)
     {
         Cell cell = null;
@@ -324,6 +333,9 @@ public class WaveFunctionGenerator : MonoBehaviour
             y++;
         }
     }
+
+    #region GetPossibleSockets
+
     private List<WFC_Socket> GetPossibleSocketsNegX(List<Prototype> prototypesAvailable)
     {
         List<WFC_Socket> socketsAccepted = new List<WFC_Socket>();
@@ -334,6 +346,7 @@ public class WaveFunctionGenerator : MonoBehaviour
         }
         return socketsAccepted;
     }
+
     private List<WFC_Socket> GetPossibleSocketsNegZ(List<Prototype> prototypesAvailable)
     {
         List<WFC_Socket> socketsAccepted = new List<WFC_Socket>();
@@ -344,6 +357,7 @@ public class WaveFunctionGenerator : MonoBehaviour
         }
         return socketsAccepted;
     }
+
     private List<WFC_Socket> GetPossibleSocketsPosZ(List<Prototype> prototypesAvailable)
     {
         List<WFC_Socket> socketsAccepted = new List<WFC_Socket>();
@@ -354,6 +368,7 @@ public class WaveFunctionGenerator : MonoBehaviour
         }
         return socketsAccepted;
     }
+
     private List<WFC_Socket> GetPossibleSocketsPosX(List<Prototype> prototypesAvailable)
     {
         List<WFC_Socket> socketsAccepted = new List<WFC_Socket>();
@@ -367,6 +382,8 @@ public class WaveFunctionGenerator : MonoBehaviour
         }
         return socketsAccepted;
     }
+
+    #endregion
 
     public void ClearAll()
     {
