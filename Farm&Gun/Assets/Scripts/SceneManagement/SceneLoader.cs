@@ -13,7 +13,8 @@ public static class SceneLoader
         PauseScreen,
         SampleScene,
         LoadingScene,
-        GameOver
+        GameOver,
+        Settings
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;
