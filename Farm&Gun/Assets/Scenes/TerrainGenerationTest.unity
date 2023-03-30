@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapStartingPosition: {x: 0, y: 0, z: 0}
-  mapSize: 10
+  mapSize: 5
   hasBorder: 1
   tileset:
   - {fileID: 5541647816728890609, guid: 1cdf5d93b00dbda4f9997709938bc887, type: 3}

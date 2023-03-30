@@ -62,7 +62,7 @@ public class MapGenerator : MonoBehaviour
 
             for (int z = 0; z < endMapSize; z++)
             {
-                var zPosition = mapStartingPosition.x + z * tileSize;
+                var zPosition = mapStartingPosition.z + z * tileSize;
 
                 var borderTileForColumn = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x, mapStartingPosition.y, zPosition);
@@ -105,12 +105,11 @@ public class MapGenerator : MonoBehaviour
 
             for (int z = 0; z < endMapSize; z++)
             {
-                var zPosition = mapStartingPosition.x + z * tileSize;
+                var zPosition = mapStartingPosition.z + z * tileSize;
 
                 var borderTileForColumn = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x + tileSize * (endMapSize - 1), mapStartingPosition.y, zPosition);
                 borderTileForColumn.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
-                Debug.Log($"Rotation for last border tiles: {z}, x: {borderTileForColumn.transform.rotation.x}, y: {borderTileForColumn.transform.rotation.y}, z: {borderTileForColumn.transform.rotation.z}");
                 lastColumn.Add(borderTileForColumn);
             }
             tilemap.Add(lastColumn);
@@ -119,7 +118,25 @@ public class MapGenerator : MonoBehaviour
             return;
         }
 
+        // set grid without borders
+        for (int x = 0; x < endMapSize; x++) // columns
+        {
+            var column = new List<GameObject>(endMapSize);
+            var xPosition = mapStartingPosition.x + x * tileSize;
 
+            for (int z = 0; z < endMapSize; z++) // rows
+            {
+                var randomizedFieldType = RandomizeField();
+                var tile = (GameObject)PrefabUtility.InstantiatePrefab(tileset[randomizedFieldType] as GameObject);
+                var zPosition = mapStartingPosition.z + z * tileSize;
+                tile.transform.position = new Vector3(xPosition, mapStartingPosition.y, zPosition);
+                tile.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
+                column.Add(tile);
+            }
+            tilemap.Add(column);
+        }
+        isMapAlreadyCreated = true;
+        return;
     }
 
     private void NormalizeWeightsAndTilesetValues()
@@ -128,14 +145,29 @@ public class MapGenerator : MonoBehaviour
         var startTilesWeightsCount = tilesWeights.Count; 
         var startTilesetCount = tileset.Count;
 
-        if (startTilesWeightsCount < startTilesetCount)
+        if (startTilesWeightsCount > startTilesetCount)
         {
-            for (int i = 0; i < startTilesetCount - startTilesWeightsCount; i++)
+            Debug.LogError("There are weights in the tileWeights without a corresponding tile.");
+            for (int i = 0; i < startTilesWeightsCount - startTilesetCount; i++)
             {
                 tilesWeights.RemoveAt(tilesWeights.Count - 1); // remove excess values (for example when there are 4 different tiles and 5 different weight values)
                 tilesWeights.TrimExcess();
+                Debug.Log($"There are {tilesWeights.Count} elements in the tilesWeights.");
             }
+            return;
         }
+        if(startTilesetCount > startTilesWeightsCount) 
+        {
+            Debug.LogError("There are tiles in the tilesets without a corresponding weight.");
+            for (int i = 0; i < startTilesetCount - startTilesWeightsCount; i++)
+            {
+                tileset.RemoveAt(tileset.Count - 1); // remove excess values (for example when there are 4 different tiles and 5 different weight values)
+                tileset.TrimExcess();
+                Debug.Log($"There are {tileset.Count} elements in the tileset.");
+            }
+            return;
+        }
+        return;
     }
     
     // returns an index of the prefab
@@ -153,7 +185,6 @@ public class MapGenerator : MonoBehaviour
             //Debug.Log(currentSum);
             if(currentSum > randomizedWeightValue)
             {
-                Debug.Log($"Returning index: {index}");
                 return index;
             }
         }
