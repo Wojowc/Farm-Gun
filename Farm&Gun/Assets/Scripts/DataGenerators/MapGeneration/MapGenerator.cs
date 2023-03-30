@@ -66,6 +66,7 @@ public class MapGenerator : MonoBehaviour
 
                 var borderTileForColumn = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x, mapStartingPosition.y, zPosition);
+                borderTileForColumn.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 firstColumn.Add(borderTileForColumn);
             }
             tilemap.Add(firstColumn);
@@ -78,6 +79,7 @@ public class MapGenerator : MonoBehaviour
 
                 var borderTileForColumnTop = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumnTop.transform.position = new Vector3(xPosition, mapStartingPosition.y, mapStartingPosition.z);
+                borderTileForColumnTop.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 column.Add(borderTileForColumnTop);
 
                 for (int z = 1; z < endMapSize - 1; z++) // rows
@@ -86,11 +88,13 @@ public class MapGenerator : MonoBehaviour
                     var tile = (GameObject)PrefabUtility.InstantiatePrefab(tileset[randomizedFieldType] as GameObject);
                     var zPosition = mapStartingPosition.z + z * tileSize;
                     tile.transform.position = new Vector3(xPosition, mapStartingPosition.y, zPosition);
+                    tile.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                     column.Add(tile);
                 }
 
                 var borderTileForColumnBottom = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumnBottom.transform.position = new Vector3(xPosition, mapStartingPosition.y, mapStartingPosition.z + tileSize * (endMapSize - 1));
+                borderTileForColumnBottom.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 column.Add(borderTileForColumnBottom);
 
                 tilemap.Add(column);
@@ -105,6 +109,8 @@ public class MapGenerator : MonoBehaviour
 
                 var borderTileForColumn = (GameObject)PrefabUtility.InstantiatePrefab(borderTile as GameObject);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x + tileSize * (endMapSize - 1), mapStartingPosition.y, zPosition);
+                borderTileForColumn.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
+                Debug.Log($"Rotation for last border tiles: {z}, x: {borderTileForColumn.transform.rotation.x}, y: {borderTileForColumn.transform.rotation.y}, z: {borderTileForColumn.transform.rotation.z}");
                 lastColumn.Add(borderTileForColumn);
             }
             tilemap.Add(lastColumn);
