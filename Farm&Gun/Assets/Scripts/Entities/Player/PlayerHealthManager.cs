@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerHealthManager : HealthManager
 {
+    [SerializeField]
+    Animator animator;
     public override void Die()
     {
-        Debug.Log("HE DED");
+        animator.SetBool("Dead", true);
     }
 }
