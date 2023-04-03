@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b7ecd616a00003f4e89c1e8c71f7d6b7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - DirectionalLight: {instanceID: 0}
+  - Preset: {fileID: 11400000, guid: 750301c12cfbe3340999fd8256ac89bb, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
