@@ -11,6 +11,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Enemy")) 
+        {
+            other.GetComponent<Opponent>().Hit(gameObject);
+        }
+
         //destroy self on collission
         if (destroyOnInteract && other.tag != "Projectile" && other.tag != "Player")
         {
@@ -25,4 +30,5 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(direction * speed);
         Destroy(gameObject, lifetime);
     }
+
 }

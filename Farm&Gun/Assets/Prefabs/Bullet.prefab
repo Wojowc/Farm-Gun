@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02444e02eae68f0449c355b2e205c6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
+  lifetime: 10
   speed: 2000
   damage: 1
-  destroyOnInteract: 1
+  destroyOnInteract: 0
 --- !u!54 &5972924633316556889
 Rigidbody:
   m_ObjectHideFlags: 0
