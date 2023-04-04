@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SettingsLoader : MonoBehaviour
 {
-    public void LoadSettingsMenu() // Method used for loading settings menu
+    public void LoadSettingsMenu()
     {
         Debug.Log("Loading Settings");
         SceneLoader.Load(SceneLoader.Scene.Settings);

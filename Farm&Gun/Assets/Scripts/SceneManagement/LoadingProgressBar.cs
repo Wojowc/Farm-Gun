@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadingProgressBar : MonoBehaviour
 {
-    private Image loadingBarImage; // use it after adding the loading bar image to the scene
+    private Slider loadingBarSlider; // use it after adding the loading bar image to the scene
 
     private void Awake()
     {
-        loadingBarImage = transform.GetComponent<Image>();
+        loadingBarSlider = transform.GetComponent<Slider>();
     }
 
-    void Update()
+    private void Update()
     {
-        loadingBarImage.fillAmount = SceneLoader.GetLoadingProgress();
+        loadingBarSlider.value  = SceneLoader.GetLoadingProgress();
     }
 }
