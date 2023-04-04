@@ -13,6 +13,9 @@ public class OpponentHitState : State
     [SerializeField]
     NavMeshAgent agent;
 
+    [SerializeField]
+    float coroutineTime = 0.25f;
+
     public override State RunCurrentState()
     {
         if (!gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
@@ -34,7 +37,7 @@ public class OpponentHitState : State
 
     private IEnumerator Hit()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(coroutineTime);
         gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsHit(false);
     }
 }

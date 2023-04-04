@@ -3,9 +3,6 @@ using UnityEngine.AI;
 
 public class Opponent : MonoBehaviour
 {
-
-    [SerializeField]
-    private float health;
     [SerializeField]
     private float power;
     [SerializeField]

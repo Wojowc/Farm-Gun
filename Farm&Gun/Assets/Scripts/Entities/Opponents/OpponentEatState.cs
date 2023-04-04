@@ -12,6 +12,9 @@ public class OpponentEatState : State
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    float coroutineTime = 3.0f;
+
 
     private void Awake()
     {
@@ -32,7 +35,7 @@ public class OpponentEatState : State
 
         else
         {
-            Debug.Log("eating");
+            //Debug.Log("eating");
             player.GetComponent<PlayerMovement>().DisableMovement();
             StartCoroutine(Eat());
             return this;
@@ -41,7 +44,7 @@ public class OpponentEatState : State
 
     private IEnumerator Eat()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(coroutineTime);
         gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsEating(false);
     }
 }

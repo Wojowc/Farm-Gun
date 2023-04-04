@@ -95,6 +95,7 @@ MonoBehaviour:
   opponentChaseState: {fileID: 7996228022765556616}
   opponentEatState: {fileID: 1971171341861764555}
   agent: {fileID: 8935432672092910288}
+  coroutineTime: 0.25
 --- !u!1 &4853820954271076445
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
   opponentChaseState: {fileID: 7996228022765556616}
   opponentHitState: {fileID: 5340119709718307718}
   player: {fileID: 0}
+  coroutineTime: 3
 --- !u!1 &8159077543199624705
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,10 +156,10 @@ GameObject:
   - component: {fileID: 8159077543199624710}
   - component: {fileID: 6928142717325509275}
   - component: {fileID: 8490006154295920010}
-  - component: {fileID: 3804410057625372397}
   - component: {fileID: 8458865156290209397}
   - component: {fileID: 8935432672092910288}
   - component: {fileID: 6214263042144775944}
+  - component: {fileID: 305481304630025916}
   m_Layer: 7
   m_Name: Wolf
   m_TagString: Enemy
@@ -172,7 +174,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8159077543199624705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.39, y: -0.1767, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -218,24 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e3d14c795cede4d89c6308fae3616c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
   power: 1
   speed: 1
-  shotForce: 10
+  shotForce: 20
   agent: {fileID: 8935432672092910288}
---- !u!114 &3804410057625372397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8159077543199624705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e1228f19ae4fb4191a7ee4c21dc921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!114 &8458865156290209397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +247,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 1.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -285,6 +273,19 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &305481304630025916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159077543199624705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1d24dda1444c042bcbf26d6cbd6cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &9164181531644071907
 GameObject:
   m_ObjectHideFlags: 0

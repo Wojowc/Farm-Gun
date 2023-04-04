@@ -33,7 +33,7 @@ public class OpponentChaseState : State
         }
         else
         {
-            Debug.Log("chasing");
+            //Debug.Log("chasing");
            // agent.enabled = true;
             agent.SetDestination(player.transform.position);
             player.GetComponent<PlayerMovement>().EnableMovement();

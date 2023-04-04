@@ -54,7 +54,7 @@ public class AnimatorSupport : MonoBehaviour
     //runs shot attack
     public void ShotSupport()
     {
-        playerAttack.FireProjectile(playerAttack.bullet, true, new Vector2(0, 0.7f));
+        playerAttack.FireProjectile(playerAttack.bullet, false, new Vector2(0, 0.7f));
     }
 
     //runs multipleShot attack
