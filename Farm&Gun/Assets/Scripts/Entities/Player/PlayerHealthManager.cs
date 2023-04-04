@@ -6,8 +6,9 @@ public class PlayerHealthManager : HealthManager
 {
     [SerializeField]
     Animator animator;
-    public override void Die()
+    protected override void Die()
     {
         animator.SetBool("Dead", true);
+        Debug.Log("Dead2");
     }
 }
