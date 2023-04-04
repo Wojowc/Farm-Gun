@@ -30,10 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!animator.GetBool("Performing Attack")) EnableMovement();
-
         //movement guard
         if (!canMove) return;
+
+        if (!animator.GetBool("Performing Attack")) EnableMovement();
+
+        if (animator.GetBool("Dead")) return;
 
         HandleRotation();
 

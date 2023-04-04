@@ -15,6 +15,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField]
     private float defaultZoom;
     private Camera thisCamera;
+    private bool movementEnabled = true;
 
 
     private void Awake()
@@ -31,11 +32,11 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        if (!movementEnabled) return;
         transform.position = new Vector3(player.transform.position.x + xFromPlayer, player.transform.position.y + yFromPlayer, player.transform.position.z + zFromPlayer);
         ZoomInOut();
         float distance = cameraMovementSpeed * Time.deltaTime;
         Comeback(TryMove(distance), distance);
-
     }
 
     //camera shake on attack
@@ -98,6 +99,11 @@ public class PlayerCamera : MonoBehaviour
             if (zFromPlayer - initialXZFromPlayer.y > 0.1f) zFromPlayer -= distance;
             else if (zFromPlayer - initialXZFromPlayer.y < -0.1f) zFromPlayer += distance;
         }
+    }
+
+    public void DisableCamera()
+    {
+        movementEnabled = false;
     }
 
     //camera shake coroutine
