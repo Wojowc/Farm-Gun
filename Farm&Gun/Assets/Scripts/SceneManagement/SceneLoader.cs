@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public static class SceneLoader
 {
-    private class LoadingMonoBehaviour : MonoBehaviour { } // dummy class for coroutine
+    private class LoadingMonoBehaviour : MonoBehaviour
+    { } // dummy class for coroutine
 
     public enum Scene
     {
@@ -36,7 +37,7 @@ public static class SceneLoader
 
         asyncOperation = SceneManager.LoadSceneAsync(Scene.LoadingScene.ToString());
 
-        while(!asyncOperation.isDone) 
+        while (!asyncOperation.isDone)
         {
             yield return null;
         }
@@ -44,7 +45,7 @@ public static class SceneLoader
 
     public static float GetLoadingProgress()
     {
-        if(asyncOperation != null)
+        if (asyncOperation != null)
         {
             return asyncOperation.progress;
         }

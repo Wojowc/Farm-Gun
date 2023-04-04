@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuLoader : MonoBehaviour
 {
-    public void loadMainMenu() // Method used for loading main menu
+    public void loadMainMenu()
     {
         Debug.Log("Loading Main Menu");
         SceneLoader.Load(SceneLoader.Scene.MainMenu);

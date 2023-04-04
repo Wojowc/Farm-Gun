@@ -33,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
         //movement guard
         if (!canMove) return;
 
-        if (!animator.GetBool("Performing Attack")) EnableMovement();
-
         if (animator.GetBool("Dead")) return;
 
+        if (!animator.GetBool("Performing Attack")) EnableMovement();
+        
         HandleRotation();
 
         //determine if falling
