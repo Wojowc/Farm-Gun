@@ -46,6 +46,7 @@ public class OpponentEatState : State
     {
         yield return new WaitForSeconds(coroutineTime);
         gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsEating(false);
+        player.GetComponent<PlayerMovement>().EnableMovement();
     }
 }
 
