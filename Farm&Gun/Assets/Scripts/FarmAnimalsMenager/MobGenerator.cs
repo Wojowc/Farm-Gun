@@ -12,8 +12,6 @@ public class MobGenerator : MonoBehaviour
     //tablica na male i duze zwierzeta dodawanie obiektu po stworzeniu
     public GameObject[] FarmMobs;//[1-kura,2-kaczka] TODO
     [SerializeField]
-    GameObject[] spawnPoints;
-    [SerializeField]
     int[] alreadySpawned = { 0, 0, 0, 0, 0 };
 
     public Vector3 spawnValues; //values used to constraint? spawning region TODO
@@ -37,7 +35,7 @@ public class MobGenerator : MonoBehaviour
         void SpawnAnimal(int animalIndexNumber)
         {
             Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
-            float distance = maxAnimalAmount[animalIndexNumber] % 15 / 2;
+            float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
             float randomX = UnityEngine.Random.Range(-distance, distance);
             float randomZ = UnityEngine.Random.Range(-distance, distance);
             Vector3 randomizedSpawnPosition = new Vector3(SpawnPoint.x + randomX, 0, SpawnPoint.z + randomZ);

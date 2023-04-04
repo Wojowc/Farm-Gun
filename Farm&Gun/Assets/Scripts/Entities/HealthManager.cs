@@ -20,8 +20,9 @@ public class HealthManager : MonoBehaviour
         if (health > maxHealth) health = maxHealth;
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
+        Debug.Log("Dead1");
         Destroy(gameObject);
     }
 }
