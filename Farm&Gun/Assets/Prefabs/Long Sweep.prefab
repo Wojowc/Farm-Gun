@@ -134,7 +134,7 @@ MonoBehaviour:
   lifetime: 0.25
   speed: 1000
   damage: 1
-  destroyOnInteract: 1
+  destroyOnInteract: 0
 --- !u!54 &8382901055539208558
 Rigidbody:
   m_ObjectHideFlags: 0
