@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpponentHealthManager : HealthManager
 {
-    public override void Die()
+    protected override void Die()
     {
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         //gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
