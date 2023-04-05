@@ -11,11 +11,16 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Enemy")) 
+        {
+            other.GetComponent<Opponent>().Hit(gameObject);
+            other.GetComponent<HealthManager>()?.DecreaseHealth(damage);
+        }
+
         //destroy self on collission
         if (destroyOnInteract && other.tag != "Projectile" && other.tag != "Player")
         {
             Destroy(gameObject);
-            other.GetComponent<HealthManager>()?.DecreaseHealth(damage);
         }
     }
 
@@ -25,4 +30,5 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(direction * speed);
         Destroy(gameObject, lifetime);
     }
+
 }
