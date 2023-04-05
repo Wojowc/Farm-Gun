@@ -19,7 +19,7 @@ public class GenerateOpponent : MonoBehaviour
 
     void InstantiateOponents()
     {
-        // jesli kilka wilkow to nalezy ich tworzyc i dodawac na liste
+        //TODO: if multiple add to list 
         GameObject wolfInstance = GameObject.Instantiate(wolf, this.transform.position, Quaternion.identity);
         wolfInstance.transform.rotation = transform.rotation;
         wolfs.Add(wolfInstance);

@@ -11,20 +11,20 @@ public class OpponentHitState : State
     private OpponentEatState opponentEatState;
 
     [SerializeField]
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     [SerializeField]
     float coroutineTime = 0.25f;
 
     public override State RunCurrentState()
     {
-        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
+           !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
             return opponentChaseState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
+           !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
             return opponentEatState;
         }
@@ -38,6 +38,6 @@ public class OpponentHitState : State
     private IEnumerator Hit()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsHit(false);
+        gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit = false;
     }
 }

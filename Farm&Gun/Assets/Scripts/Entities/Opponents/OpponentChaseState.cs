@@ -21,20 +21,17 @@ public class OpponentChaseState : State
     }
     public override State RunCurrentState()
     {
-        if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-            !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
+            !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
-            //agent.enabled = false;
             return opponentEatState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
             return opponentHitState;
         }
         else
         {
-            //Debug.Log("chasing");
-           // agent.enabled = true;
             agent.SetDestination(player.transform.position);
             player.GetComponent<PlayerMovement>().EnableMovement();
             return this;
