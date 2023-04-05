@@ -23,19 +23,18 @@ public class OpponentEatState : State
 
     public override State RunCurrentState()
     {
-        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-        !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
+        !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
             return opponentChaseState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
             return opponentHitState;
         }
 
         else
         {
-            //Debug.Log("eating");
             player.GetComponent<PlayerMovement>().DisableMovement();
             StartCoroutine(Eat());
             return this;
@@ -45,7 +44,7 @@ public class OpponentEatState : State
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsEating(false);
+        gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
         player.GetComponent<PlayerMovement>().EnableMovement();
     }
 }
