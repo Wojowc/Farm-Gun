@@ -9,7 +9,9 @@ using UnityEngine.UIElements;
 public class MapGenerator : MonoBehaviour
 {
     private const int BORDER_TILES_BUFFER = 2;
-    private const float TILE_EDGES_SMOOTHING_OFFSET = 2.0f;
+
+    [SerializeField]
+    private float TileEdgesSmootingOffset = 2.0f;
 
     public Vector3 mapStartingPosition = Vector3.zero;
 
@@ -18,23 +20,34 @@ public class MapGenerator : MonoBehaviour
     public List<GameObject> tileset = new List<GameObject>();   // tiles for the map
     public List<int> tilesWeights = new List<int>();            // weight for every tile
     public GameObject borderTile;
+    public GameObject mapParentObject;
 
     private int sumOfWeights = 0;
     private int endMapSize;
-    private float tileSize = 32f;                               // this has to be set based on used prefabs
+    private float tileSize;                               // this has to be set based on used prefabs
     private bool isMapAlreadyCreated = false;
 
     private List<List<GameObject>> tilemap = new List<List<GameObject>>();
 
     public void CreateMap()
     {
+        if(mapParentObject == null)
+        {
+            Debug.LogError("Set empty map parent object.");
+            return;
+        }
+        if(mapParentObject.transform.childCount > 0)
+        {
+
+        }
+
         if (isMapAlreadyCreated)
         {
             Debug.LogError("Map has already been created.");
             return;
         }
 
-        tileSize = tileset[0].GetComponent<MeshFilter>().sharedMesh.bounds.size.x - TILE_EDGES_SMOOTHING_OFFSET;
+        tileSize = tileset[0].GetComponent<MeshFilter>().sharedMesh.bounds.size.x - TileEdgesSmootingOffset;
         Debug.Log($"Tile size is: {tileSize}");
         NormalizeWeightsAndTilesetValues();
         if(hasBorder)
@@ -64,7 +77,7 @@ public class MapGenerator : MonoBehaviour
             {
                 var zPosition = mapStartingPosition.z + z * tileSize;
 
-                var borderTileForColumn = (GameObject)Instantiate(borderTile as GameObject);
+                var borderTileForColumn = (GameObject)Instantiate(borderTile as GameObject, mapParentObject.transform);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x, mapStartingPosition.y, zPosition);
                 borderTileForColumn.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 firstColumn.Add(borderTileForColumn);
@@ -77,7 +90,7 @@ public class MapGenerator : MonoBehaviour
                 var column = new List<GameObject>(endMapSize);
                 var xPosition = mapStartingPosition.x + x * tileSize;
 
-                var borderTileForColumnTop = (GameObject)Instantiate(borderTile as GameObject);
+                var borderTileForColumnTop = (GameObject)Instantiate(borderTile as GameObject, mapParentObject.transform);
                 borderTileForColumnTop.transform.position = new Vector3(xPosition, mapStartingPosition.y, mapStartingPosition.z);
                 borderTileForColumnTop.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 column.Add(borderTileForColumnTop);
@@ -85,14 +98,14 @@ public class MapGenerator : MonoBehaviour
                 for (int z = 1; z < endMapSize - 1; z++) // rows
                 {
                     var randomizedFieldType = RandomizeField();
-                    var tile = (GameObject)Instantiate(tileset[randomizedFieldType] as GameObject);
+                    var tile = (GameObject)Instantiate(tileset[randomizedFieldType] as GameObject, mapParentObject.transform);
                     var zPosition = mapStartingPosition.z + z * tileSize;
                     tile.transform.position = new Vector3(xPosition, mapStartingPosition.y, zPosition);
                     tile.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                     column.Add(tile);
                 }
 
-                var borderTileForColumnBottom = (GameObject)Instantiate(borderTile as GameObject);
+                var borderTileForColumnBottom = (GameObject)Instantiate(borderTile as GameObject, mapParentObject.transform);
                 borderTileForColumnBottom.transform.position = new Vector3(xPosition, mapStartingPosition.y, mapStartingPosition.z + tileSize * (endMapSize - 1));
                 borderTileForColumnBottom.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 column.Add(borderTileForColumnBottom);
@@ -107,7 +120,7 @@ public class MapGenerator : MonoBehaviour
             {
                 var zPosition = mapStartingPosition.z + z * tileSize;
 
-                var borderTileForColumn = (GameObject)Instantiate(borderTile as GameObject);
+                var borderTileForColumn = (GameObject)Instantiate(borderTile as GameObject, mapParentObject.transform);
                 borderTileForColumn.transform.position = new Vector3(mapStartingPosition.x + tileSize * (endMapSize - 1), mapStartingPosition.y, zPosition);
                 borderTileForColumn.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
                 lastColumn.Add(borderTileForColumn);
@@ -127,7 +140,7 @@ public class MapGenerator : MonoBehaviour
             for (int z = 0; z < endMapSize; z++) // rows
             {
                 var randomizedFieldType = RandomizeField();
-                var tile = (GameObject)Instantiate(tileset[randomizedFieldType] as GameObject);
+                var tile = (GameObject)Instantiate(tileset[randomizedFieldType] as GameObject, mapParentObject.transform);
                 var zPosition = mapStartingPosition.z + z * tileSize;
                 tile.transform.position = new Vector3(xPosition, mapStartingPosition.y, zPosition);
                 tile.transform.Rotate(0, 90 * Mathf.CeilToInt(RandomGaussian(0, 3)), 0);
