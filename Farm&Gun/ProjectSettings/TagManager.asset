@@ -6,15 +6,19 @@ TagManager:
   tags:
   - FarmAnimalsSpawnPoint
   - Projectile
+  - attackWeapon
+  - AttackWeapon
+  - Enemy
+  - Wolf
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
