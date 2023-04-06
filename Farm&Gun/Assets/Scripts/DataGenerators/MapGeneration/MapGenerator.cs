@@ -38,7 +38,8 @@ public class MapGenerator : MonoBehaviour
         }
         if(mapParentObject.transform.childCount > 0)
         {
-
+            Debug.LogError("This object already has other children.");
+            return;
         }
 
         if (isMapAlreadyCreated)
