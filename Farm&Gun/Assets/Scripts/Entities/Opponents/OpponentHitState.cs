@@ -14,7 +14,7 @@ public class OpponentHitState : State
     private NavMeshAgent agent;
 
     [SerializeField]
-    float coroutineTime = 0.25f;
+    float coroutineTime = 0.1f;
 
     public override State RunCurrentState()
     {

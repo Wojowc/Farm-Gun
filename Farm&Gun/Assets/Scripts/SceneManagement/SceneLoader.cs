@@ -15,6 +15,7 @@ public static class SceneLoader
         SampleScene, // TODO: When main scene is done, replace
         LoadingScene,
         GameOver,
+        FullScene
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;

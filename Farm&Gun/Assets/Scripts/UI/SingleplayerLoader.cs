@@ -7,6 +7,6 @@ public class SingleplayerLoader : MonoBehaviour
     public void LoadSingleplayer()
     {
         Debug.Log("Loading Singleplayer");
-        SceneLoader.Load(SceneLoader.Scene.SampleScene); // TODO: Replace with main game scene
+        SceneLoader.Load(SceneLoader.Scene.FullScene); // TODO: Replace with main game scene
     }
 }
