@@ -2052,7 +2052,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1412720788}
-        m_TargetAssemblyTypeName: LoaderInterface, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneLoaderCaller, Assembly-CSharp
         m_MethodName: LoadSelectedScene
         m_Mode: 3
         m_Arguments:
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412720781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5433b807d320f44a6c512e7e39b5c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 616163b6dab25434cb85ce98e1b0bd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1473205958

@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555496821445391990, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LoaderInterface, Assembly-CSharp
+      value: SceneLoaderCaller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3095279451908339399, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 20037622934303043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5433b807d320f44a6c512e7e39b5c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 616163b6dab25434cb85ce98e1b0bd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3329748103485421562

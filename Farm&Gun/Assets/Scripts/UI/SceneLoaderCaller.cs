@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoaderInterface : MonoBehaviour
+public class SceneLoaderCaller : MonoBehaviour
 {
     public void LoadSelectedScene(int scene)
     {
@@ -10,9 +10,9 @@ public class LoaderInterface : MonoBehaviour
         SceneLoader.Load((SceneLoader.Scene)scene);
     }
 
-    //public void LoadSelectedScene2(SceneLoader.Scene scene)
-    //{
-    //    Debug.Log("Loading " + scene.ToString() + " scene");
-    //    SceneLoader.Load(scene);
-    //}
+    public void LoadSelectedScene(SceneLoader.Scene scene)
+    {
+        Debug.Log("Loading " + scene.ToString() + " scene");
+        SceneLoader.Load(scene);
+    }
 }
