@@ -286,7 +286,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.26666668
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 3ae0da6038bb7064284f959880ded626, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c3a40487f69578744a08b0df6efd570b, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1010522072
 Transform:
@@ -746,6 +746,26 @@ PrefabInstance:
     - target: {fileID: 3329748103825035566, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329748103825035567, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
+      propertyPath: fox
+      value: 
+      objectReference: {fileID: 8159077543199624705, guid: c24356ecd0dd8124e92ebad7f62bac42, type: 3}
+    - target: {fileID: 3329748103825035567, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
+      propertyPath: speedFox
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329748103825035567, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
+      propertyPath: amountFox
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329748103825035567, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
+      propertyPath: speedWolf
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329748103825035567, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
+      propertyPath: amountWolf
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b07812eedb2ae454092ce24eff02acd3, type: 3}
