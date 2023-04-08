@@ -5,19 +5,17 @@ using UnityEngine.AI;
 public class Opponent : MonoBehaviour
 {
     [SerializeField]
-    private float power;
-
-    [SerializeField]
-    private float speed;
-
-    [SerializeField]
     private float shotForce;
 
     [SerializeField]
     private NavMeshAgent agent;
 
+    private const float buffAmount = 2;
+
+
     public bool IsEating { get; set; } = false;
     public bool IsHit { get; set; } = false;
+    public bool IsBuff { get; set; } = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -33,7 +31,18 @@ public class Opponent : MonoBehaviour
         IsHit = true;
 
         agent.enabled = false;
-        GetComponent<Rigidbody>().AddForce(shotForce * speed * direction, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(shotForce * agent.speed * direction, ForceMode.Impulse);
         agent.enabled = true;
+      
+    }
+
+    private void Update()
+    {
+        if (IsBuff)
+        {
+            agent.speed += buffAmount;
+            IsBuff = false;
+        }
+
     }
 }
