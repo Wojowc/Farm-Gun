@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public static class SceneLoader
 {
-    private class LoadingMonoBehaviour : MonoBehaviour { } // dummy class for coroutine
+    private class LoadingMonoBehaviour : MonoBehaviour
+    { } // dummy class for coroutine
 
     public enum Scene
     {
-        MainMenu,
-        Settings,
-        SampleScene, // TODO: When main scene is done, replace
-        LoadingScene,
-        GameOver,
+        MainMenu = 0,
+        Settings = 1,
+        SampleScene = 2,
+        LoadingScene = 3,
+        GameOver = 4,
+        FullScene = 5
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;
@@ -36,7 +38,7 @@ public static class SceneLoader
 
         asyncOperation = SceneManager.LoadSceneAsync(Scene.LoadingScene.ToString());
 
-        while(!asyncOperation.isDone) 
+        while (!asyncOperation.isDone)
         {
             yield return null;
         }
@@ -44,7 +46,7 @@ public static class SceneLoader
 
     public static float GetLoadingProgress()
     {
-        if(asyncOperation != null)
+        if (asyncOperation != null)
         {
             return asyncOperation.progress;
         }

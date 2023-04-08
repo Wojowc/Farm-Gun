@@ -1,12 +1,16 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool IsGamePaused = false; // Static variable used for controlling whether game is paused or not
     public GameObject pauseMenuUI;
+    public GameObject player;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,13 +28,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume() // Method used for resuming the game
     {
+        player.GetComponent<PlayerMovement>().EnableMovement();
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
         IsGamePaused = false;
     }
 
-    void Pause() // Method used for pausing the game
+    private void Pause() // Method used for pausing the game
     {
+        player.GetComponent<PlayerMovement>().DisableMovement();
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
         IsGamePaused = true;

@@ -29,20 +29,18 @@ public class MobGenerator : MonoBehaviour
         foundSpawnPoints = GameObject.FindGameObjectsWithTag("FarmAnimalsSpawnPoint");
 
     }
+    void SpawnAnimal(int animalIndexNumber)
+    {
+        Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
+        float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
+        float randomX = UnityEngine.Random.Range(-distance, distance);
+        float randomZ = UnityEngine.Random.Range(-distance, distance);
+        Vector3 randomizedSpawnPosition = new Vector3(SpawnPoint.x + randomX, SpawnPoint.y, SpawnPoint.z + randomZ);
+        Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
+    }
+
     void Update()
     {//game objecty w tablicy, tagi dla zwierzat
-
-        void SpawnAnimal(int animalIndexNumber)
-        {
-            Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
-            float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
-            float randomX = UnityEngine.Random.Range(-distance, distance);
-            float randomZ = UnityEngine.Random.Range(-distance, distance);
-            Vector3 randomizedSpawnPosition = new Vector3(SpawnPoint.x + randomX, 0, SpawnPoint.z + randomZ);
-            Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
-        }
-
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //first dice roll
