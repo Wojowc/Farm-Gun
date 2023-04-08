@@ -10,7 +10,7 @@ public class Opponent : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent;
 
-    private float buffAmount = 2;
+    private const float buffAmount = 2;
 
 
     public bool IsEating { get; set; } = false;
