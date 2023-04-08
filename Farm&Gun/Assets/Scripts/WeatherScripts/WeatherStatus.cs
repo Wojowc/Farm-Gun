@@ -9,7 +9,7 @@ public class WeatherStatus
     public string description;
     public float temperature; // in kelvin
     public float pressure;
-    public float windSpeed;
+    public float windSpeed; // in m/s
 
     public float Celsius()
     {
@@ -31,6 +31,12 @@ public class WeatherStatus
         {
             return number;
         }
+
+        if (number >=800 & number <=804) // special case for clouds weather condition
+        {
+            return number;
+        }
+
         // getting number of digits on this input number
         int numberOfDigits = (int)Math.Floor(Math.Log10(weatherId) + 1);
 

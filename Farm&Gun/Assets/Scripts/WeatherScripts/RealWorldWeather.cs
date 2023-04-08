@@ -28,15 +28,24 @@ public class RealWorldWeather : MonoBehaviour
 
     public enum Weather
     {
-        Reserverd0, //will be set to something in case of weather reading error
-        Reserverd1,
-        Thunderstorm,
-        Drizzle,
-        Reserved4,
-        Rain,
-        Snow,
-        Atmosphere, //eg. fog
-        Clear,
+        Reserverd0 = 0, //will be set to something in case of weather reading error
+        Reserverd1 = 1,
+        Thunderstorm = 2,
+        Drizzle = 3,
+        Reserved4 = 4,
+        Rain = 5,
+        Snow = 6,
+        Atmosphere = 7, //eg. fog
+        Clear = 800,
+        Clouds25 = 801,
+        Clouds50 = 802,
+        Clouds75 = 803,
+        Clouds100 = 804,
+    }
+
+    public void Awake()
+    {
+        GetRealWeather();
     }
 
     public void GetRealWeather()
