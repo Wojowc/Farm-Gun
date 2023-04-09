@@ -15,7 +15,16 @@ public class Opponent : MonoBehaviour
 
     public bool IsEating { get; set; } = false;
     public bool IsHit { get; set; } = false;
-    public bool IsBuff { get; set; } = false;
+    public bool IsBuffed { get; set; } = false;
+
+    private void Awake()
+    {
+        if (IsBuffed)
+        {
+            agent.speed += buffAmount;
+            IsBuffed = false;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,22 +36,13 @@ public class Opponent : MonoBehaviour
 
     public void Hit(GameObject projectile)
     {
-        var direction = (this.gameObject.transform.position - projectile.transform.position).normalized;
+        //var direction = (this.gameObject.transform.position - projectile.transform.position).normalized;
+        Vector3 direction = projectile.GetComponent<Rigidbody>().velocity.normalized;
         IsHit = true;
 
         agent.enabled = false;
         GetComponent<Rigidbody>().AddForce(shotForce * agent.speed * direction, ForceMode.Impulse);
         agent.enabled = true;
       
-    }
-
-    private void Update()
-    {
-        if (IsBuff)
-        {
-            agent.speed += buffAmount;
-            IsBuff = false;
-        }
-
     }
 }

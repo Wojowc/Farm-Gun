@@ -152,7 +152,7 @@ Material:
     - _HalftoneTilling: 30
     - _HatchingDensity: 1
     - _HatchingDiffuseOffset: 0
-    - _HatchingDrawStrength: 1
+    - _HatchingDrawStrength: 2.91
     - _HatchingEnabled: 0
     - _HatchingRotation: 0
     - _HatchingSmoothness: 0.1

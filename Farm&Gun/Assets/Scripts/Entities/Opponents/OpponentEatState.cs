@@ -45,7 +45,7 @@ public class OpponentEatState : State
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().IsBuff = true;
+        gameObject.transform.parent.parent.GetComponent<Opponent>().IsBuffed = true;
         player.GetComponent<PlayerMovement>().EnableMovement();
 
     }

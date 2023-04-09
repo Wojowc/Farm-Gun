@@ -27,13 +27,13 @@ public class AnimalMovement : MonoBehaviour
 
         if (enemy = GameObject.FindGameObjectWithTag("Enemy"))
         {
-            Debug.Log("enemy found");
+            //Debug.Log("enemy found");
             FindPlaceToGo(enemy);
         }
 
         else
         {
-            Debug.Log("go to papa");
+            //Debug.Log("go to papa");
             //TOCHANGE animal are moving around they spawn point
             //FindPlaceToGo(gameObject.transform.parent.gameObject);
 
