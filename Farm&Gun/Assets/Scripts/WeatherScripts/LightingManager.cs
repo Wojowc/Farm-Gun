@@ -11,15 +11,12 @@ public class LightingManager : MonoBehaviour
     [SerializeField]
     private LightingPreset Preset;
 
-    [SerializeField]
     public int DaylightLenght = 8;
-    [SerializeField]
     public int NightLenght = 16;
 
-    private int DayLenght;
+    private int DayLenght { get; set; }
 
     private float TimeOfDay;
-
     private void Awake()
     {
         DayLenght = DaylightLenght + NightLenght;
@@ -36,7 +33,7 @@ public class LightingManager : MonoBehaviour
             return;
         }
 
-        if(DayLenght <= 0)
+        if (DayLenght <= 0)
         {
             return;
         }
@@ -48,31 +45,28 @@ public class LightingManager : MonoBehaviour
             Debug.Log($"Current time is: {TimeOfDay}");
         }
 
-        float currentLightingSpeed;
+        UpdateLighting();
+    }
 
+    private void UpdateLighting()
+    {
+        if (DirectionalLight == null)
+        {
+            Debug.LogError("Directional light is not set!");
+            return;
+        }
+
+        RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(TimeOfDay / DayLenght);
+        RenderSettings.fogColor = Preset.FogColor.Evaluate(TimeOfDay / DayLenght);
+
+        DirectionalLight.color = Preset.DirectionalColor.Evaluate(TimeOfDay / DayLenght);
         if(TimeOfDay < DaylightLenght)
         {
-            currentLightingSpeed = DayLenght * ((float)DaylightLenght / (float)NightLenght);
+            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3(TimeOfDay/DaylightLenght * 180f, -170, 0));
         }
         else
         {
-            currentLightingSpeed = DayLenght * ((float)NightLenght / (float)DaylightLenght);
-        }
-
-        UpdateLighting(TimeOfDay / currentLightingSpeed);
-        // TimeOfDay = 8 / 8 = 1
-        // TimeOfDay = 9 / 40 = 1
-    }
-
-    private void UpdateLighting(float timePercent)
-    {
-        RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
-        RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
-
-        if (DirectionalLight != null)
-        {
-            DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
-            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, -170, 0));
+            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3(180f + (TimeOfDay - DaylightLenght)/NightLenght * 180f, -170, 0));
         }
     }
 
