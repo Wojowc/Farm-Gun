@@ -30,6 +30,7 @@ public class OpponentEatState : State
         }
         else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
         {
+            gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
             return opponentHitState;
         }
 
@@ -44,8 +45,9 @@ public class OpponentEatState : State
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
+        gameObject.transform.parent.parent.GetComponent<Opponent>().IsBuffed = true;
         player.GetComponent<PlayerMovement>().EnableMovement();
+
     }
 }
 
