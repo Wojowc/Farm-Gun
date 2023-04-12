@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
+
 public class RealWorldWeather : MonoBehaviour
 {
     /*
@@ -25,23 +26,6 @@ public class RealWorldWeather : MonoBehaviour
     public string longitude = "";
     public int truncatedWeatherId = 0;
     public float windSpeed = 0;
-
-    public enum Weather
-    {
-        Reserverd0 = 0, //will be set to something in case of weather reading error
-        Reserverd1 = 1,
-        Thunderstorm = 2,
-        Drizzle = 3,
-        Reserved4 = 4,
-        Rain = 5,
-        Snow = 6,
-        Atmosphere = 7, //eg. fog
-        Clear = 800,
-        Clouds25 = 801,
-        Clouds50 = 802,
-        Clouds75 = 803,
-        Clouds100 = 804,
-    }
 
     public void Awake()
     {
@@ -67,6 +51,7 @@ public class RealWorldWeather : MonoBehaviour
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
+#pragma warning disable 0618
             yield return webRequest.SendWebRequest();
             if (webRequest.isNetworkError)
             {
@@ -76,6 +61,7 @@ public class RealWorldWeather : MonoBehaviour
             {
                 ParseJson(webRequest.downloadHandler.text);
             }
+#pragma warning restore 0618
         }
     }
 
