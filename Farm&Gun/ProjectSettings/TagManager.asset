@@ -9,7 +9,11 @@ TagManager:
   - attackWeapon
   - AttackWeapon
   - Enemy
-  - Wolf
+  - Chicken
+  - Cow
+  - Duck
+  - Pig
+  - Sheep
   layers:
   - Default
   - TransparentFX

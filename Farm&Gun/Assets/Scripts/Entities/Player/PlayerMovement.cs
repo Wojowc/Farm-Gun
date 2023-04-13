@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (animator.GetBool("Dead")) return;
 
         if (!animator.GetBool("Performing Attack")) EnableMovement();
-        
+
         HandleRotation();
 
         //determine if falling

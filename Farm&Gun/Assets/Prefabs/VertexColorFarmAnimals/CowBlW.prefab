@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6560833370883717771}
   - component: {fileID: 8788200946217330124}
   - component: {fileID: 5537125414498374879}
+  - component: {fileID: 2896812940375111861}
   m_Layer: 0
   m_Name: CowBlW
-  m_TagString: Untagged
+  m_TagString: Cow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +176,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8788200946217330124}
   player: {fileID: 0}
+--- !u!114 &2896812940375111861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287295899898638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e1228f19ae4fb4191a7ee4c21dc921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5

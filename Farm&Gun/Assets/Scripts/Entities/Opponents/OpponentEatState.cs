@@ -10,16 +10,7 @@ public class OpponentEatState : State
     private OpponentHitState opponentHitState;
 
     [SerializeField]
-    private GameObject player;
-
-    [SerializeField]
-    float coroutineTime = 3.0f;
-
-
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+    float coroutineTime = 5.0f;
 
     public override State RunCurrentState()
     {
@@ -36,7 +27,8 @@ public class OpponentEatState : State
 
         else
         {
-            player.GetComponent<PlayerMovement>().DisableMovement();
+            //TODO: target.DisableMovement()
+            // player.GetComponent<PlayerMovement>().DisableMovement();
             StartCoroutine(Eat());
             return this;
         }
@@ -46,8 +38,10 @@ public class OpponentEatState : State
     {
         yield return new WaitForSeconds(coroutineTime);
         gameObject.transform.parent.parent.GetComponent<Opponent>().IsBuffed = true;
-        player.GetComponent<PlayerMovement>().EnableMovement();
+        gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
 
+        //TODO: target.EnableMovement()
+        //player.GetComponent<PlayerMovement>().EnableMovement();
     }
 }
 
