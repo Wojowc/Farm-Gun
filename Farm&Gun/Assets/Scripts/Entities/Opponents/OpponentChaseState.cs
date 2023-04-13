@@ -33,7 +33,6 @@ public class OpponentChaseState : State
         else
         {
             agent.SetDestination(player.transform.position);
-            player.GetComponent<PlayerMovement>().EnableMovement();
             return this;
         }
     }

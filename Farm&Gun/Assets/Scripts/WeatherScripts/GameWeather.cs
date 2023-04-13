@@ -63,7 +63,7 @@ public class GameWeather : MonoBehaviour
        //}
     }
 
-    void ActivateWeather(string weather)
+    public void ActivateWeather(string weather)
     {
         Debug.Log("Loading " + weather + " weather");
 

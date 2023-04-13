@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Farm&Gun/Assets/Scenes/WeatherImplementation.unity.meta
 guid: be3b358dfd1eebc45b201addb43c2177
+========
+guid: d1c72e4ca7617e9448f6696294425f16
+folderAsset: yes
+>>>>>>>> develop:Farm&Gun/Assets/Scenes/FullScene.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

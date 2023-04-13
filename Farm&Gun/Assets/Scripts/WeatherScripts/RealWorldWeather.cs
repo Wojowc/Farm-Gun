@@ -27,6 +27,8 @@ public class RealWorldWeather : MonoBehaviour
     public int truncatedWeatherId = 0;
     public float windSpeed = 0;
 
+    private GameObject weatherSystem;
+
     public void Awake()
     {
         GetRealWeather();
@@ -91,13 +93,15 @@ public class RealWorldWeather : MonoBehaviour
         truncatedWeatherId = weather.TruncatedWeatherId();
         windSpeed = weather.windSpeed;
 
-        SetGameWeather();
+        SetGameWeather(weather.TruncatedWeatherId());
 
         return weather;
     }
 
-    private void SetGameWeather()
+    private void SetGameWeather(int weatherId)
     {
-        //TODO: implement setting game weather feature
+        // call update weather method from GameWeather
+        weatherSystem = GameObject.Find("WeatherSystem");
+        weatherSystem.GetComponent<GameWeather>().ActivateWeather(((Weather)weatherId).ToString()); //may change
     }
 }
