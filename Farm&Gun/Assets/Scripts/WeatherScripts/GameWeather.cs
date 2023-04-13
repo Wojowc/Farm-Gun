@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum Weather
 {
-    Reserved0 = 0, //will be set to something in case of weather reading error
+    Reserved0 = 0, //default weather condition
     Reserved1 = 1,
     Thunderstorm = 2,
     Drizzle = 3,
@@ -31,8 +31,6 @@ public class GameWeather : MonoBehaviour
     public Weather weatherState;
     public WeatherData[] weatherData;
 
-    private int switchWeather; // weather number got from API
-
     public void Awake()
     {
         RenderSettings.fog = true;
@@ -56,11 +54,18 @@ public class GameWeather : MonoBehaviour
 
     IEnumerator  StartWeather()
     {
-        //while (true) 
-        //{
-       ActivateWeather(((Weather)weatherState).ToString());
-       yield return null;
-       //}
+        ActivateWeather(((Weather)weatherState).ToString());
+        yield return null;
+    }
+
+    public void RestartWeather()
+    {
+        if (StartWeather()!= null)
+        {
+            StopCoroutine(StartWeather());
+        }
+
+        StartCoroutine(StartWeather());
     }
 
     public void ActivateWeather(string weather)

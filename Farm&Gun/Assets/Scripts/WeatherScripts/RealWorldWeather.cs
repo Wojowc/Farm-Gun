@@ -4,7 +4,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-
 public class RealWorldWeather : MonoBehaviour
 {
     /*
@@ -24,29 +23,33 @@ public class RealWorldWeather : MonoBehaviour
     public bool useLatLng = false;
     public string latitude = "";
     public string longitude = "";
-    public int truncatedWeatherId = 0;
-    public float windSpeed = 0;
 
-    private GameObject weatherSystem;
+    private int _previousWeather = 0;
 
-    public void Awake()
+    private void Awake()
     {
-        GetRealWeather();
+        StartCoroutine(GetRealWeather());
     }
 
-    public void GetRealWeather()
+    private IEnumerator GetRealWeather()
     {
         city = GameSettings.LocationCity;
-        string uri = "api.openweathermap.org/data/2.5/weather?";
-        if (useLatLng)
+
+        while (true)
         {
-            uri += "lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
+            string uri = "api.openweathermap.org/data/2.5/weather?";
+            if (useLatLng)
+            {
+                uri += "lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
+            }
+            else
+            {
+                uri += "q=" + city + "&appid=" + apiKey;
+            }
+
+            StartCoroutine(GetWeatherCoroutine(uri));
+            yield return new WaitForSeconds(300f); // web request is sent every 5 minutes to check if weather has changed
         }
-        else
-        {
-            uri += "q=" + city + "&appid=" + apiKey;
-        }
-        StartCoroutine(GetWeatherCoroutine(uri));
     }
 
     private IEnumerator GetWeatherCoroutine(string uri)
@@ -61,13 +64,13 @@ public class RealWorldWeather : MonoBehaviour
             }
             else
             {
-                ParseJson(webRequest.downloadHandler.text);
+                StartCoroutine(ParseJson(webRequest.downloadHandler.text));
             }
 #pragma warning restore 0618
         }
     }
 
-    private WeatherStatus ParseJson(string json)
+    private IEnumerator ParseJson(string json)
     {
         WeatherStatus weather = new WeatherStatus();
         try
@@ -90,18 +93,19 @@ public class RealWorldWeather : MonoBehaviour
         Debug.Log("Wind speed: " + weather.windSpeed);
         Debug.Log("Current weather: " + (Weather)weather.TruncatedWeatherId());
 
-        truncatedWeatherId = weather.TruncatedWeatherId();
-        windSpeed = weather.windSpeed;
-
-        SetGameWeather(weather.TruncatedWeatherId());
-
-        return weather;
+        //coroutine is used to allow GameWeather script to Start properly
+        yield return new WaitForSeconds(2f); //TODO: maybe change it somehow in the future
+        if (_previousWeather != weather.TruncatedWeatherId())
+        {
+            SetGameWeather(weather.TruncatedWeatherId());
+        }
     }
 
     private void SetGameWeather(int weatherId)
     {
-        // call update weather method from GameWeather
-        weatherSystem = GameObject.Find("WeatherSystem");
-        weatherSystem.GetComponent<GameWeather>().ActivateWeather(((Weather)weatherId).ToString()); //may change
+        _previousWeather = weatherId;
+        GameObject weatherSystem = GameObject.Find("WeatherSystem");
+        weatherSystem.GetComponent<GameWeather>().weatherState = (Weather)weatherId;
+        weatherSystem.GetComponent<GameWeather>().RestartWeather();
     }
 }
