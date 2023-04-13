@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum Weather
@@ -22,23 +20,25 @@ public enum Weather
 
 public class GameWeather : MonoBehaviour
 {
-    public float minLightIntencity = 0f;
-    public float maxLightIntencity = 1f;
+    public float minLightIntensity = 0f;
+    public float maxLightIntensity = 1f;
 
     public Light sunLight;
-    public Transform windzone;
+    public AudioSource audioSource;
+    public Transform windZone;
 
     public Weather weatherState;
     public WeatherData[] weatherData;
 
-    public void Awake()
+    private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.ExponentialSquared;
-        RenderSettings.fogDensity = 0f;
+        RenderSettings.fogDensity = 0.0f;
     }
 
-    public void Start()
+    private void Start()
     {
         LoadWeatherSystem();
         StartCoroutine(StartWeather());
@@ -52,15 +52,15 @@ public class GameWeather : MonoBehaviour
         }
     }
 
-    IEnumerator  StartWeather()
+    private IEnumerator StartWeather()
     {
         ActivateWeather(((Weather)weatherState).ToString());
-        yield return null;
+        yield break;
     }
 
     public void RestartWeather()
     {
-        if (StartWeather()!= null)
+        if (StartWeather() != null)
         {
             StopCoroutine(StartWeather());
         }
@@ -68,9 +68,10 @@ public class GameWeather : MonoBehaviour
         StartCoroutine(StartWeather());
     }
 
-    public void ActivateWeather(string weather)
+    private void ActivateWeather(string weather)
     {
         Debug.Log("Loading " + weather + " weather");
+        ResetWeather();
 
         if (weatherData.Length > 0)
         {
@@ -81,22 +82,72 @@ public class GameWeather : MonoBehaviour
                     if (weatherData[i].name == weather)
                     {
                         weatherData[i].emission.enabled = true;
-                        weatherData[i].fogColor = RenderSettings.fogColor;
-                        RenderSettings.fogColor = Color.Lerp(weatherData[i].currentFogColor, weatherData[i].fogColor, Time.deltaTime);
-                        ChangeLighting(weatherData[i].lightIntencity);
+                        weatherData[i].currentFogColor = RenderSettings.fogColor;
+                        RenderSettings.fogColor = Color.Lerp(weatherData[i].fogColor, weatherData[i].currentFogColor, Time.deltaTime);
+                        RenderSettings.fogDensity = weatherData[i].fogDensity;
+                        StartCoroutine(ChangeWeatherSettings(weatherData[i].lightIntensity, weatherData[i].weatherAudio, weatherData[i].audioFadeInTimer));
                     }
                 }
             }
         }
     }
 
-    void ChangeLighting(float lightIntencity)
+    private void ResetWeather()
     {
-        Light tmpLight = GetComponent<Light>();
-        if (tmpLight.intensity > maxLightIntencity) 
-        { tmpLight.intensity -= lightIntencity * Time.deltaTime; }
+        if (weatherData.Length > 0)
+        {
+            for (int i = 0; i < weatherData.Length; i++)
+            {
+                if (weatherData[i].emission.enabled != false)
+                    weatherData[i].emission.enabled = false;
+            }
+        }
+    }
 
-        if (tmpLight.intensity < minLightIntencity) 
-        { tmpLight.intensity += lightIntencity * Time.deltaTime; }
+    private IEnumerator ChangeWeatherSettings(float lightIntensity, AudioClip audioClip, float fadeTimer) //TODO: to be fixed
+    {
+
+        bool finished = false;
+        while (!finished)
+        {
+            Light tmpLight = GetComponent<Light>();
+            AudioSource tmpAudio = GetComponent<AudioSource>();
+
+            if (tmpLight.intensity > maxLightIntensity)
+            {
+                tmpLight.intensity -= lightIntensity * Time.deltaTime;
+            }
+
+            if (tmpLight.intensity < minLightIntensity)
+            {
+                tmpLight.intensity += lightIntensity * Time.deltaTime;
+            }
+
+            if (tmpAudio.volume > 0 && tmpAudio.clip != audioClip)
+            {
+                tmpAudio.volume -= fadeTimer * Time.deltaTime;
+            }
+
+            if (tmpAudio.volume < 1 && tmpAudio.clip == audioClip)
+            {
+                tmpAudio.volume += fadeTimer * Time.deltaTime;
+            }
+
+            if (tmpAudio.volume >= 1 && tmpAudio.clip == audioClip)
+            {
+                finished = true;
+                yield break;
+            }
+
+            if (tmpAudio.volume <= 0)
+            {
+                tmpAudio.Stop();
+                tmpAudio.clip = audioClip;
+                tmpAudio.loop = true;
+                tmpAudio.Play();
+            }
+        }
+
+        yield return null;
     }
 }

@@ -48,7 +48,7 @@ public class RealWorldWeather : MonoBehaviour
             }
 
             StartCoroutine(GetWeatherCoroutine(uri));
-            yield return new WaitForSeconds(300f); // web request is sent every 5 minutes to check if weather has changed
+            yield return new WaitForSeconds(15f);
         }
     }
 

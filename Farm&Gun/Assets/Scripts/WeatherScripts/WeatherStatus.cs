@@ -32,7 +32,7 @@ public class WeatherStatus
             return number;
         }
 
-        if (number >=800 & number <=804) // special case for cloudy weather condition
+        if (number >= 800 & number <= 804) // special case for cloudy weather condition
         {
             return number;
         }
