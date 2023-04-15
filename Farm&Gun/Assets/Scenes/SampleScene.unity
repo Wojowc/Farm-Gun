@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17511097, g: 0.21907145, b: 0.30137292, a: 1}
+  m_IndirectSpecularColor: {r: 0.17511056, g: 0.21907069, b: 0.30137187, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1951,8 +1951,8 @@ GameObject:
   - component: {fileID: 1412720787}
   - component: {fileID: 1412720786}
   - component: {fileID: 1412720785}
-  - component: {fileID: 1412720784}
   - component: {fileID: 1412720783}
+  - component: {fileID: 1412720788}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1995,18 +1995,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 566087345}
   player: {fileID: 0}
---- !u!114 &1412720784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412720781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5762fee741c0e42bcb12157987f688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1412720785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,10 +2051,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1412720784}
-        m_TargetAssemblyTypeName: MainMenuLoader, Assembly-CSharp
-        m_MethodName: loadMainMenu
-        m_Mode: 1
+      - m_Target: {fileID: 1412720788}
+        m_TargetAssemblyTypeName: SceneLoaderCaller, Assembly-CSharp
+        m_MethodName: LoadSelectedScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2113,6 +2101,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412720781}
   m_CullTransparentMesh: 1
+--- !u!114 &1412720788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412720781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616163b6dab25434cb85ce98e1b0bd2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1473205958
 GameObject:
   m_ObjectHideFlags: 0

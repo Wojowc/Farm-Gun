@@ -10,12 +10,12 @@ public static class SceneLoader
 
     public enum Scene
     {
-        MainMenu,
-        Settings,
-        SampleScene, // TODO: When main scene is done, replace
-        LoadingScene,
-        GameOver,
-        FullScene
+        MainMenu = 0,
+        Settings = 1,
+        SampleScene = 2,
+        LoadingScene = 3,
+        GameOver = 4,
+        FullScene = 5
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;

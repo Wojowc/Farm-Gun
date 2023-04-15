@@ -30,6 +30,7 @@ public class OpponentHitState : State
         }
         else
         {
+            gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
             StartCoroutine(Hit());
             return this;
         }
