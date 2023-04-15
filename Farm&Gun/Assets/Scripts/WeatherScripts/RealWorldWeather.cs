@@ -49,6 +49,7 @@ public class RealWorldWeather : MonoBehaviour
 
             StartCoroutine(GetWeatherCoroutine(uri));
             yield return new WaitForSeconds(15f);
+            //yield return null;
         }
     }
 

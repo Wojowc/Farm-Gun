@@ -6,12 +6,12 @@ public struct WeatherData
     public string name;
     public ParticleSystem particleSystem;
 
-    [HideInInspector]
+   // [HideInInspector]
     public ParticleSystem.EmissionModule emission;
 
     public bool useAudio;
     public AudioClip weatherAudio;
-    public float audioFadeInTimer;
+    public float audioFadeTimer;
 
     public float lightIntensity;
     public float lightDimTimer;
