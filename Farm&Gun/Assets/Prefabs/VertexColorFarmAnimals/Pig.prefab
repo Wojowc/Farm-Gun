@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 4775010222740198220}
   - component: {fileID: 5224654533878859184}
   - component: {fileID: 6164737639444449966}
+  - component: {fileID: 7089455962083741897}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: Untagged
+  m_TagString: Pig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,3 +175,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5224654533878859184}
   player: {fileID: 0}
+--- !u!114 &7089455962083741897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055064919166404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e1228f19ae4fb4191a7ee4c21dc921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5

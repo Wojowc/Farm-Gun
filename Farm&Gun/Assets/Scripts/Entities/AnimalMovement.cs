@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-public class AnimalMovement : MonoBehaviour
+public class AnimalMovement : Movement
 {
 
     [SerializeField]
@@ -16,7 +14,10 @@ public class AnimalMovement : MonoBehaviour
 
     private GameObject enemy;
 
-    private float maxDistance = 15;
+    [SerializeField]
+    private float maxDistance = 5;
+
+    private bool canMove = true;
 
     private void Awake()
     {
@@ -24,22 +25,35 @@ public class AnimalMovement : MonoBehaviour
     }
     void Update()
     {
-
-        if (enemy = GameObject.FindGameObjectWithTag("Enemy"))
+        if (canMove)
         {
-            //Debug.Log("enemy found");
-            FindPlaceToGo(enemy);
-        }
+            if (enemy = GameObject.FindGameObjectWithTag("Enemy"))
+            {
+                FindPlaceToGo(enemy);
+            }
 
-        else
-        {
-            //Debug.Log("go to papa");
-            //TOCHANGE animal are moving around they spawn point
-            //FindPlaceToGo(gameObject.transform.parent.gameObject);
+            else
+            {
+                //TOCHANGE animal are moving around they spawn point
+                //FindPlaceToGo(gameObject.transform.parent.gameObject);
 
-            //NOW go to Player
-            agent.SetDestination(player.transform.position);
+                //NOW go to Player
+                agent.SetDestination(player.transform.position);
+            }
         }
+    }
+
+
+    //TODO Machine state
+    public override void DisableMovement()
+    {
+        canMove = false;
+        //agent.enabled = false;
+    }
+    public override void EnableMovement()
+    {
+        canMove = true;
+        //agent.enabled = true;
     }
 
     private void FindPlaceToGo(GameObject objectToMoveAwayFrom)
