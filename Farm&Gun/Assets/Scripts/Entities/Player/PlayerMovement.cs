@@ -35,7 +35,10 @@ public class PlayerMovement : Movement
 
         if (animator.GetBool("Dead")) return;
 
-        if (!animator.GetBool("Performing Attack")) EnableMovement();
+        if (!animator.GetBool("Performing Attack"))
+        {
+            EnableMovement();
+        }
 
         HandleRotation();
 

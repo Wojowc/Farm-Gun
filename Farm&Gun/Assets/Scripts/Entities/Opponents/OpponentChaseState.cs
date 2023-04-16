@@ -31,7 +31,8 @@ public class OpponentChaseState : State
         {
             return opponentEatState;
         }
-        else if (opponent.IsHit)
+
+        if (opponent.IsHit)
         {
             return opponentHitState;
         }

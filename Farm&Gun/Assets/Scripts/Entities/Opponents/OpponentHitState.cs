@@ -28,7 +28,8 @@ public class OpponentHitState : State
         {
             return opponentChaseState;
         }
-        else if (opponent.IsEating && !opponent.IsHit)
+
+        if (opponent.IsEating && !opponent.IsHit)
         {
             return opponentEatState;
         }
