@@ -16,29 +16,31 @@ public class OpponentHitState : State
     [SerializeField]
     float coroutineTime = 0.1f;
 
+    private Opponent opponent;
+
+    private void Awake()
+    {
+        opponent = gameObject.transform.parent.parent.GetComponent<Opponent>();
+    }
     public override State RunCurrentState()
     {
-        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+        if (!opponent.IsEating && !opponent.IsHit)
         {
             return opponentChaseState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+        else if (opponent.IsEating && !opponent.IsHit)
         {
             return opponentEatState;
         }
-        else
-        {
-            gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating = false;
-            StartCoroutine(Hit());
-            return this;
-        }
+
+        opponent.IsEating = false;
+        StartCoroutine(Hit());
+        return this;
     }
 
     private IEnumerator Hit()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit = false;
+        opponent.IsHit = false;
     }
 }

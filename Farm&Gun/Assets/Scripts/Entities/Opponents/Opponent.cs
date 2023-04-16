@@ -80,6 +80,7 @@ public class Opponent : MonoBehaviour
         {
             allAnimals.AddRange(GameObject.FindGameObjectsWithTag(animal));
         }
+
         return allAnimals;
     }
 
@@ -99,5 +100,4 @@ public class Opponent : MonoBehaviour
 
         return animalToChase;
     }
-    
 }

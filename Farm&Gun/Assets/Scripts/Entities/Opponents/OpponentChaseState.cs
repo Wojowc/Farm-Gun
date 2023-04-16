@@ -16,40 +16,40 @@ public class OpponentChaseState : State
     [SerializeField]
     private float coroutineTime = 2f;
 
-    private GameObject target;
+    public GameObject Target { set; get; }
+
+    private Opponent opponent;
 
     private void Awake()
     {
-        target = gameObject.transform.parent.parent.GetComponent<Opponent>().FindTheNearestAnimalToChase();
+        opponent = gameObject.transform.parent.parent.GetComponent<Opponent>();
+        Target = opponent.FindTheNearestAnimalToChase();
     }
     public override State RunCurrentState()
     {
-        if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
-            !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+        if (opponent.IsEating && !opponent.IsHit)
         {
             return opponentEatState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+        else if (opponent.IsHit)
         {
             return opponentHitState;
         }
-        else
+
+        if (!Target)
         {
-            if (target == null)
-            {
-                target = gameObject.transform.parent.parent.GetComponent<Opponent>().FindTheNearestAnimalToChase();
-            }
-            agent.SetDestination(target.transform.position);
-            StartCoroutine(FindAnimalToChase());
-            return this;
+            Target = opponent.FindTheNearestAnimalToChase();
         }
+
+        agent.SetDestination(Target.transform.position);
+        StartCoroutine(FindAnimalToChase());
+        return this;
     }
 
     private IEnumerator FindAnimalToChase()
     {
         yield return new WaitForSeconds(coroutineTime);
-        target = gameObject.transform.parent.parent.GetComponent<Opponent>().FindTheNearestAnimalToChase();
-        agent.SetDestination(target.transform.position);
+        Target = opponent.FindTheNearestAnimalToChase();
+        agent.SetDestination(Target.transform.position);
     }
-
 }
