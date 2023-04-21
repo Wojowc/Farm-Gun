@@ -19751,7 +19751,7 @@ MonoBehaviour:
     weatherAudio: {fileID: 8300000, guid: 2582a8341ef73634e9984fd0c52bcb33, type: 3}
     lightSettings: {fileID: 0}
     lightIntensity: 1
-    fogDensity: 0.5
+    fogDensity: 0.1
     fogColor: {r: 1, g: 1, b: 0, a: 0}
   - name: Reserved1
     particleSystem: {fileID: 0}
