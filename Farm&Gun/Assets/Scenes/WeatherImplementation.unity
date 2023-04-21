@@ -19738,8 +19738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherVolume: 0.5
-  audioFadeTimer: 0.00001
-  fogFadeTimer: 0.00001
+  audioFadeTimer: 0.0001
+  fogFadeTimer: 0.0001
   tempFogColor: {r: 0, g: 0, b: 0, a: 0}
   sunLight: {fileID: 1859215003}
   audioSource: {fileID: 1693412941}
@@ -19749,78 +19749,91 @@ MonoBehaviour:
   - name: Reserved0
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 8300000, guid: 2582a8341ef73634e9984fd0c52bcb33, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.5
     fogColor: {r: 1, g: 1, b: 0, a: 0}
   - name: Reserved1
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0.6792453, g: 0.5344251, b: 0.9019608, a: 0}
   - name: Thunderstorm
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 8300000, guid: c075e6ea8b1d91943b87dadeb4c4d3b2, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0.38679248, g: 0, b: 0.21806175, a: 0}
   - name: Drizzle
     particleSystem: {fileID: 239205060}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0.509434, g: 0.261476, b: 0, a: 0}
   - name: Reserved4
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Rain
     particleSystem: {fileID: 958874870}
     weatherAudio: {fileID: 8300000, guid: 87a2e92a58ff48b42a71e2f1b68f5d79, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 0.8
     fogDensity: 0.1
     fogColor: {r: 0, g: 0, b: 1, a: 0}
   - name: Snow
     particleSystem: {fileID: 753707592}
     weatherAudio: {fileID: 8300000, guid: ee52aabeda21f0f4ab7e0ce318b1f603, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 0.7
     fogDensity: 0.1
     fogColor: {r: 1, g: 0.5146321, b: 0, a: 0}
   - name: Atmosphere
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Clear
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 8300000, guid: 2582a8341ef73634e9984fd0c52bcb33, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.1
     fogColor: {r: 0, g: 1, b: 0, a: 0}
   - name: Clouds25
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0.86507034, g: 0, b: 1, a: 0}
   - name: Clouds50
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 8300000, guid: 2582a8341ef73634e9984fd0c52bcb33, type: 3}
+    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.1
     fogColor: {r: 1, g: 0, b: 0, a: 0}
   - name: Clouds75
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 0.8492962, g: 1, b: 0, a: 0}
   - name: Clouds100
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    lightSettings: {fileID: 0}
     lightIntensity: 1
     fogDensity: 0.1
     fogColor: {r: 1, g: 1, b: 1, a: 0}

@@ -95,6 +95,11 @@ public class GameWeather : MonoBehaviour
                         weatherData[i].emission.enabled = true;
                     }
 
+                    if (weatherData[i].lightSettings != null)
+                    {
+                        sunLight = weatherData[i].lightSettings;
+                    }
+
                     StartCoroutine(ChangeFog(weatherData[i].fogColor, weatherData[i].fogDensity));
                     StartCoroutine(ChangeAudio(weatherData[i].weatherAudio));
                 }
@@ -122,12 +127,7 @@ public class GameWeather : MonoBehaviour
         while (progress < 1)
         {
             RenderSettings.fogColor = Color.Lerp(tempFogColor, targetColor, progress);
-            progress += (fogFadeTimer * Time.deltaTime);
-
-            if (progress > 1.0f)
-            {
-                progress = 1.0f;
-            }
+            progress += (fogFadeTimer);// * Time.deltaTime);
         }
 
         yield return null;
