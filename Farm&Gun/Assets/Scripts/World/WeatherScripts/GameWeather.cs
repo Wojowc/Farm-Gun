@@ -30,10 +30,9 @@ public class GameWeather : MonoBehaviour
     public float fogFadeTimer = 0.0001f;
 
     public Color tempFogColor;
-
-    public Light sunLight;
+    
     public AudioSource audioSource;
-    public Transform windZone;
+    public Transform windZone; // TODO: add clouds
 
     public Weather weatherState;
     public WeatherData[] weatherData;
@@ -95,13 +94,8 @@ public class GameWeather : MonoBehaviour
                         weatherData[i].emission.enabled = true;
                     }
 
-                    if (weatherData[i].lightSettings != null)
-                    {
-                        sunLight = weatherData[i].lightSettings;
-                    }
-
                     StartCoroutine(ChangeFog(weatherData[i].fogColor, weatherData[i].fogDensity));
-                    StartCoroutine(ChangeAudio(weatherData[i].weatherAudio));
+                    ChangeAudio(weatherData[i].weatherAudio);
                 }
             }
         }
@@ -133,13 +127,13 @@ public class GameWeather : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator ChangeAudio(AudioClip audioClip)
+    private void ChangeAudio(AudioClip audioClip)
     {
         AudioSource tmpAudio = GetComponent<AudioSource>();
 
         if ((tmpAudio.clip != null) & ((audioClip == null) | (tmpAudio.clip != audioClip)))
         {
-            TurnVolumeDown();
+            StartCoroutine(TurnVolumeDown());
         }
 
         if ((audioClip != null) & (tmpAudio.clip != audioClip))
@@ -149,10 +143,10 @@ public class GameWeather : MonoBehaviour
 
         if ((tmpAudio.clip != null) & (tmpAudio.clip == audioClip))
         {
-            TurnVolumeUp();
+            StartCoroutine(TurnVolumeUp());
         }
 
-        yield return null;
+        //yield return null;
     }
 
     private void AdjustLightIntensity(float lightIntensity)
@@ -170,23 +164,27 @@ public class GameWeather : MonoBehaviour
         //}
     }
 
-    private void TurnVolumeDown()
+    private IEnumerator TurnVolumeDown()
     {
         AudioSource tmpAudio = GetComponent<AudioSource>();
 
         while (tmpAudio.volume > 0)
         {
-            tmpAudio.volume -= audioFadeTimer * Time.deltaTime;
+            tmpAudio.volume -= 0.05f;
+            yield return new WaitForSeconds(0.1f);
         }
+        yield break;
     }
 
-    private void TurnVolumeUp()
+    private IEnumerator TurnVolumeUp()
     {
         AudioSource tmpAudio = GetComponent<AudioSource>();
         while (tmpAudio.volume < weatherVolume)
         {
-            tmpAudio.volume += audioFadeTimer * Time.deltaTime;
+            tmpAudio.volume += 0.05f;
+            yield return new WaitForSeconds(0.1f);
         }
+        yield break;
     }
 
     private void ChangeAudioClip(AudioClip audioClip)
