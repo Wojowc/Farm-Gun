@@ -25,9 +25,9 @@ public class GameWeather : MonoBehaviour
     //public float minLightIntensity = 0f;
     //public float maxLightIntensity = 1f;
 
-    public float weatherVolume = 0.5f;
-    public float audioFadeTimer = 0.00001f;
-    public float fogFadeTimer = 0.00001f;
+    public float weatherVolume = 0.6f;
+    public float audioFadeTimer = 0.0001f;
+    public float fogFadeTimer = 0.0001f;
 
     public Color tempFogColor;
 
