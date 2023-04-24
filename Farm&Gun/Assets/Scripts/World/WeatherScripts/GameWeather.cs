@@ -32,7 +32,7 @@ public class GameWeather : MonoBehaviour
     public Color tempFogColor;
     
     public AudioSource audioSource;
-    public Transform windZone; // TODO: add clouds
+    //public Transform windZone; // TODO: add clouds
 
     public Weather weatherState;
     public WeatherData[] weatherData;

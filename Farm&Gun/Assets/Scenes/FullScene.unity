@@ -5523,8 +5523,8 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.01
-      minScalar: 0.1
+      scalar: 0.1
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5999,7 +5999,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10022,7 +10022,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10192,7 +10192,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.1
-      minScalar: 0.1
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10244,8 +10244,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 2
+      scalar: 0.5
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10297,8 +10297,8 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.01
-      minScalar: 0.1
+      scalar: 0.1
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10507,7 +10507,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 1
     rotation3D: 0
@@ -10773,7 +10773,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 1000
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -13636,7 +13636,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -13687,7 +13687,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 0
-    maxKillSpeed: 10000
+    maxKillSpeed: 1000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -14949,100 +14949,86 @@ MonoBehaviour:
   fogFadeTimer: 0.0001
   tempFogColor: {r: 0, g: 0, b: 0, a: 0}
   audioSource: {fileID: 0}
-  windZone: {fileID: 0}
   weatherState: 0
   weatherData:
   - name: Reserved0
-    particleSystem: {fileID: 478691022}
+    particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 1, g: 1, b: 0, a: 0}
+    fogColor: {r: 1, g: 0.63507825, b: 0, a: 0}
   - name: Reserved1
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Thunderstorm
-    particleSystem: {fileID: 0}
+    particleSystem: {fileID: 478691022}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 0.7139659, g: 0, b: 1, a: 0}
   - name: Drizzle
     particleSystem: {fileID: 266588654}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 0, g: 1, b: 0.4526844, a: 0}
   - name: Reserved4
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Rain
     particleSystem: {fileID: 478691022}
     weatherAudio: {fileID: 8300000, guid: 6a5b4bae6074da8478a74b2b76f9027d, type: 3}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0, g: 1, b: 1, a: 0}
   - name: Snow
     particleSystem: {fileID: 1671254698}
     weatherAudio: {fileID: 8300000, guid: 848dc8e8c84576446b7614d6c72275fe, type: 3}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0, g: 0, b: 1, a: 0}
   - name: Atmosphere
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
-    fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogDensity: 0.05
+    fogColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 0}
   - name: Clear
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 1, g: 0.733658, b: 0, a: 0}
   - name: Clouds25
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 0.37522745, g: 1, b: 0, a: 0}
   - name: Clouds50
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 0.9137428, g: 1, b: 0, a: 0}
   - name: Clouds75
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 1, g: 0, b: 0.16679955, a: 0}
   - name: Clouds100
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0.9
     fogDensity: 0.01
-    fogColor: {r: 0, g: 0, b: 0, a: 0}
+    fogColor: {r: 1, g: 0, b: 0.7403054, a: 0}
 --- !u!4 &721829579
 Transform:
   m_ObjectHideFlags: 0
@@ -15051,7 +15037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721829574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60, y: 16, z: 70}
+  m_LocalPosition: {x: 60, y: 16, z: 65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15894,7 +15880,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1671254697}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 0.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -16453,7 +16439,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 5000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -16719,7 +16705,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 1000
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -19081,7 +19067,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -20681,7 +20667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671254697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.11, y: 0.5, z: 0}
+  m_LocalPosition: {x: -2, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25911,7 +25897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003585680276131043, guid: fcc009c9594fe01448a58a23fef3e4f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc009c9594fe01448a58a23fef3e4f5, type: 3}

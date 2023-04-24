@@ -10,7 +10,6 @@ public struct WeatherData
     public ParticleSystem.EmissionModule emission;
     
     public AudioClip weatherAudio;
-    public LightingSettings lightSettings;
 
     public float lightIntensity;
 
