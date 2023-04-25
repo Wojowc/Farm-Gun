@@ -136,22 +136,23 @@ public class GameWeather : MonoBehaviour
     {
         AudioSource tmpAudio = GetComponent<AudioSource>();
 
-        if ((tmpAudio.clip != null) & ((audioClip == null) | (tmpAudio.clip != audioClip)))
+        if ((tmpAudio.clip != null) && ((audioClip == null) || (tmpAudio.clip != audioClip)))
         {
             StartCoroutine(TurnVolumeDown());
         }
 
-        if ((audioClip != null) & (tmpAudio.clip != audioClip))
+        if ((audioClip != null) && (tmpAudio.clip != audioClip))
         {
             ChangeAudioClip(audioClip);
         }
 
-        if ((tmpAudio.clip != null) & (tmpAudio.clip == audioClip))
+        if ((tmpAudio.clip != null) && (tmpAudio.clip == audioClip))
         {
             StartCoroutine(TurnVolumeUp());
         }
     }
 
+    //TODO: will be adjusted with day cycles
     //private void AdjustLightIntensity(float lightIntensity)
     //{
     //    Light tmpLight = GetComponent<Light>();

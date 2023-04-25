@@ -17,7 +17,7 @@ public class RealWorldWeather : MonoBehaviour
 		Api response docs: https://openweathermap.org/current
 	*/
 
-    public string apiKey = "3d573ab2ce591040e35f1011f55024ea";
+    public string apiKey = "3d573ab2ce591040e35f1011f55024ea"; //TODO: will be serialized to config file
 
     public string city = "";
     public bool useLatLng = false;

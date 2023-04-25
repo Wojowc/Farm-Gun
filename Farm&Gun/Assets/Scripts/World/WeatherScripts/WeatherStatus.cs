@@ -25,7 +25,7 @@ public class WeatherStatus
     public int TruncatedWeatherId()
     {
         int number = Math.Abs(weatherId);
-        int N = 1; // Amount of digits required
+        const int N = 1; // Amount of digits required
 
         if (number == 0) // special case for 0 as Log of 0 would be infinity
         {
