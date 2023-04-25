@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17053787, g: 0.16542515, b: 0.1600636, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19697,14 +19697,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401953781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.009643566, y: -0.01477501, z: -0.38356364, w: 0.9233459}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.67, y: -1.14, z: -45.1}
 --- !u!1 &1693412938
 GameObject:
   m_ObjectHideFlags: 0
@@ -19741,99 +19741,84 @@ MonoBehaviour:
   audioFadeTimer: 0.0001
   fogFadeTimer: 0.0001
   tempFogColor: {r: 0, g: 0, b: 0, a: 0}
-  sunLight: {fileID: 0}
   audioSource: {fileID: 0}
-  windZone: {fileID: 0}
   weatherState: 0
   weatherData:
   - name: Reserved0
     particleSystem: {fileID: 958874870}
     weatherAudio: {fileID: 8300000, guid: 9c1f34671ff4135498c08378d6805882, type: 3}
-    lightSettings: {fileID: 4890085278179872738, guid: 51107013db4cdde42a85516ee138bde2, type: 2}
     lightIntensity: 0.9
     fogDensity: 0.1
     fogColor: {r: 1, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 753707592}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: 
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
-    lightSettings: {fileID: 0}
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
@@ -24937,7 +24922,7 @@ Light:
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize: 100
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
