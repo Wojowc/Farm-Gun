@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Security.Cryptography;
-using UnityEditor;
 using UnityEngine;
 
 public enum Weather
@@ -22,20 +20,16 @@ public enum Weather
 
 public class GameWeather : MonoBehaviour
 {
-    //public float minLightIntensity = 0f;
-    //public float maxLightIntensity = 1f;
-
     public float weatherVolume = 0.6f;
-    public float audioFadeTimer = 0.0001f;
+    public float audioFader = 0.0001f;
     public float fogFadeTimer = 0.0001f;
-
-    public Color tempFogColor;
-    
     public AudioSource audioSource;
-    //public Transform windZone; // TODO: add clouds
-
+    public GameObject clouds;
+    private Material cloudsMaterial;
+    public float windSpeed = 1f;
     public Weather weatherState;
     public WeatherData[] weatherData;
+    public Color tempFogColor;
 
     private void Awake()
     {
@@ -43,6 +37,9 @@ public class GameWeather : MonoBehaviour
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.ExponentialSquared;
         RenderSettings.fogDensity = 0.0f;
+
+        clouds = GameObject.Find("CloudsPlane");
+        cloudsMaterial = clouds.GetComponent<MeshRenderer>().materials[0];
     }
 
     private void Start()
@@ -52,6 +49,14 @@ public class GameWeather : MonoBehaviour
         {
             StartCoroutine(StartWeather());
         }
+        cloudsMaterial.SetFloat("_AlphaClip", 1);
+        cloudsMaterial.SetFloat("_Cutoff", 0.9f);
+        cloudsMaterial.EnableKeyword("_ALPHATEST_ON");
+    }
+
+    private void Update()
+    {
+        cloudsMaterial.mainTextureOffset += new Vector2(0, windSpeed / 1000 * Time.deltaTime);
     }
 
     private void LoadWeatherSystem()
@@ -93,7 +98,7 @@ public class GameWeather : MonoBehaviour
                     {
                         weatherData[i].emission.enabled = true;
                     }
-
+                    cloudsMaterial.SetFloat("_Cutoff", weatherData[i].cloudsThreshold);
                     StartCoroutine(ChangeFog(weatherData[i].fogColor, weatherData[i].fogDensity));
                     ChangeAudio(weatherData[i].weatherAudio);
                 }
@@ -121,7 +126,7 @@ public class GameWeather : MonoBehaviour
         while (progress < 1)
         {
             RenderSettings.fogColor = Color.Lerp(tempFogColor, targetColor, progress);
-            progress += (fogFadeTimer);// * Time.deltaTime);
+            progress += (fogFadeTimer);
         }
 
         yield return null;
@@ -145,24 +150,22 @@ public class GameWeather : MonoBehaviour
         {
             StartCoroutine(TurnVolumeUp());
         }
-
-        //yield return null;
     }
 
-    private void AdjustLightIntensity(float lightIntensity)
-    {
-        //Light tmpLight = GetComponent<Light>();
+    //private void AdjustLightIntensity(float lightIntensity)
+    //{
+    //    Light tmpLight = GetComponent<Light>();
 
-        //if (tmpLight.intensity > maxLightIntensity)
-        //{
-        //    tmpLight.intensity -= lightIntensity * Time.deltaTime;
-        //}
+    //    if (tmpLight.intensity > maxLightIntensity)
+    //    {
+    //        tmpLight.intensity -= lightIntensity * Time.deltaTime;
+    //    }
 
-        //if (tmpLight.intensity < minLightIntensity)
-        //{
-        //    tmpLight.intensity += lightIntensity * Time.deltaTime;
-        //}
-    }
+    //    if (tmpLight.intensity < minLightIntensity)
+    //    {
+    //        tmpLight.intensity += lightIntensity * Time.deltaTime;
+    //    }
+    //}
 
     private IEnumerator TurnVolumeDown()
     {
@@ -170,7 +173,7 @@ public class GameWeather : MonoBehaviour
 
         while (tmpAudio.volume > 0)
         {
-            tmpAudio.volume -= 0.05f;
+            tmpAudio.volume -= audioFader;
             yield return new WaitForSeconds(0.1f);
         }
         yield break;
@@ -181,7 +184,7 @@ public class GameWeather : MonoBehaviour
         AudioSource tmpAudio = GetComponent<AudioSource>();
         while (tmpAudio.volume < weatherVolume)
         {
-            tmpAudio.volume += 0.05f;
+            tmpAudio.volume += audioFader;
             yield return new WaitForSeconds(0.1f);
         }
         yield break;

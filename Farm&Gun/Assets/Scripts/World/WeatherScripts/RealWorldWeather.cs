@@ -48,8 +48,7 @@ public class RealWorldWeather : MonoBehaviour
             }
 
             StartCoroutine(GetWeatherCoroutine(uri));
-            yield return new WaitForSeconds(15f);
-            //yield return null;
+            yield return new WaitForSeconds(180f);
         }
     }
 
@@ -94,19 +93,19 @@ public class RealWorldWeather : MonoBehaviour
         Debug.Log("Wind speed: " + weather.windSpeed);
         Debug.Log("Current weather: " + (Weather)weather.TruncatedWeatherId());
 
-        //coroutine is used to allow GameWeather script to Start properly
-        yield return new WaitForSeconds(2f); //TODO: maybe change it somehow in the future
+        yield return new WaitForSeconds(2f);
         if (_previousWeather != weather.TruncatedWeatherId())
         {
-            SetGameWeather(weather.TruncatedWeatherId());
+            SetGameWeather(weather.TruncatedWeatherId(), weather.windSpeed);
         }
     }
 
-    private void SetGameWeather(int weatherId)
+    private void SetGameWeather(int weatherId, float windSpeed)
     {
         _previousWeather = weatherId;
         GameObject weatherSystem = GameObject.Find("WeatherSystem");
         weatherSystem.GetComponent<GameWeather>().weatherState = (Weather)weatherId;
+        weatherSystem.GetComponent<GameWeather>().windSpeed = windSpeed;
         weatherSystem.GetComponent<GameWeather>().RestartWeather();
     }
 }

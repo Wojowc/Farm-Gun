@@ -14734,6 +14734,104 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &523094867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523094868}
+  - component: {fileID: 523094871}
+  - component: {fileID: 523094870}
+  - component: {fileID: 523094869}
+  m_Layer: 0
+  m_Name: CloudsPlane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &523094868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523094867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 19.93, z: 0}
+  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 721829579}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &523094869
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523094867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &523094870
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523094867}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f49061e002d73904da7f52cbc1af5127, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &523094871
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523094867}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &721829574
 GameObject:
   m_ObjectHideFlags: 0
@@ -14945,90 +15043,105 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherVolume: 0.6
-  audioFadeTimer: 0.0001
+  audioFader: 0.0001
   fogFadeTimer: 0.0001
-  tempFogColor: {r: 0, g: 0, b: 0, a: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 721829577}
+  clouds: {fileID: 523094867}
+  windSpeed: 0
   weatherState: 0
   weatherData:
   - name: Reserved0
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0.7
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 1, g: 0.63507825, b: 0, a: 0}
   - name: Reserved1
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Thunderstorm
     particleSystem: {fileID: 478691022}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0.7139659, g: 0, b: 1, a: 0}
   - name: Drizzle
     particleSystem: {fileID: 266588654}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0, g: 1, b: 0.4526844, a: 0}
   - name: Reserved4
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0
     lightIntensity: 0
     fogDensity: 0
     fogColor: {r: 0, g: 0, b: 0, a: 0}
   - name: Rain
     particleSystem: {fileID: 478691022}
     weatherAudio: {fileID: 8300000, guid: 6a5b4bae6074da8478a74b2b76f9027d, type: 3}
+    cloudsThreshold: 0
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0, g: 1, b: 1, a: 0}
   - name: Snow
     particleSystem: {fileID: 1671254698}
     weatherAudio: {fileID: 8300000, guid: 848dc8e8c84576446b7614d6c72275fe, type: 3}
+    cloudsThreshold: 0
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0, g: 0, b: 1, a: 0}
   - name: Atmosphere
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0
     lightIntensity: 0.9
     fogDensity: 0.05
     fogColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 0}
   - name: Clear
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 1
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 1, g: 0.733658, b: 0, a: 0}
   - name: Clouds25
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0.7
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0.37522745, g: 1, b: 0, a: 0}
   - name: Clouds50
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0.65
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 0.9137428, g: 1, b: 0, a: 0}
   - name: Clouds75
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0.5
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 1, g: 0, b: 0.16679955, a: 0}
   - name: Clouds100
     particleSystem: {fileID: 0}
     weatherAudio: {fileID: 0}
+    cloudsThreshold: 0.4
     lightIntensity: 0.9
     fogDensity: 0.01
     fogColor: {r: 1, g: 0, b: 0.7403054, a: 0}
+  tempFogColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &721829579
 Transform:
   m_ObjectHideFlags: 0
@@ -15044,6 +15157,7 @@ Transform:
   - {fileID: 266588652}
   - {fileID: 478691023}
   - {fileID: 1671254700}
+  - {fileID: 523094868}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
