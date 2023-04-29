@@ -4,22 +4,8 @@ using UnityEngine;
 
 public class BuildingPlacement : MonoBehaviour
 {
-    private static bool buildingScreenOpen = false;
+    [SerializeField]
+    private GameObject PlayerModel;
 
-    public static bool BuildingScreenOpen {
-        get {
-            return buildingScreenOpen;
-        }
-        private set {
-            buildingScreenOpen = value;
-        }
-    }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            buildingScreenOpen = !buildingScreenOpen;
-        }
-    }
 }
