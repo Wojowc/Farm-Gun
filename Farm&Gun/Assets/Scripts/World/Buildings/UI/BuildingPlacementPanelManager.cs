@@ -5,22 +5,23 @@ using UnityEngine;
 public class BuildingPlacementPanelManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject BuildingPlacementUICanvas;
+    private GameObject BuildingPlacementPanel;
 
     [SerializeField]
     private PlayerAttack PlayerModelAttackPoint; // for attack blocking while building screen is open
 
     public static bool BuildingScreenOpen { get; set; } = false;
+    public static bool TurretSelected { get; set; } = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && !TurretSelected)
         {
             BuildingScreenOpen = !BuildingScreenOpen;
-            BuildingPlacementUICanvas.SetActive(BuildingScreenOpen);
+            BuildingPlacementPanel.SetActive(BuildingScreenOpen);
         }
 
-        if (BuildingPlacementUICanvas.activeSelf)
+        if (BuildingPlacementPanel.activeSelf)
         {
             PlayerModelAttackPoint.DisableAttack();
             return;
