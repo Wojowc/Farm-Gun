@@ -51,7 +51,6 @@ public class BuildingPlacement : MonoBehaviour
 
     private void SetDefaultBuildingValues(bool turretSelected, bool buildingScreenOpen)
     {
-        BuildingModel.transform.position = Input.mousePosition;
         BuildingPlacementPanelManager.TurretSelected = turretSelected;
         BuildingPlacementPanelManager.BuildingScreenOpen = buildingScreenOpen;
         BuildingPlacementUICanvas.SetActive(false);
@@ -61,12 +60,12 @@ public class BuildingPlacement : MonoBehaviour
     {
         if (BuildingModel == null) return;
 
-        BuildingModel.transform.position = Input.mousePosition;
+        BuildingModel.transform.position = new Vector3(PlayerModel.transform.position.x + 3.0f, Map.transform.position.y + 1.0f, PlayerModel.transform.position.z);
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Tried to place a turret.");
             PlayerModel.EnableAttack();
-            BuildingPlacementUICanvas.SetActive(false);
+            SetDefaultBuildingValues(false, false);
             BuildingModel.gameObject.SetActive(true);
             BuildingModel = null;
         }
