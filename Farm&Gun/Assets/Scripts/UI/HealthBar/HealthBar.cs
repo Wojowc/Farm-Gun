@@ -10,13 +10,13 @@ public class HealthBar : MonoBehaviour
     public Image fill;
     public Image barIcon;
 
-    public void SetSliderValue(int value)
+    public void SetSliderValue(float value)
     {
         slider.value = value;
         fill.color = gradient.GradientPreset.Evaluate(slider.normalizedValue);
     }
 
-    public void SetMaxValue(int maxValue)
+    public void SetMaxValue(float maxValue)
     {
         slider.maxValue = maxValue;
 

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8966172274990671879}
   - component: {fileID: 6596306035837148365}
   - component: {fileID: 8058167642895422349}
+  - component: {fileID: -5109246554938227426}
+  - component: {fileID: 8888158553485172088}
   m_Layer: 0
   m_Name: DucksTower
   m_TagString: Untagged
@@ -104,6 +106,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02964749, y: 0.02777677, z: 0.08336795}
   m_Center: {x: 0.0045698388, y: -0.002706969, z: 0.039107233}
+--- !u!114 &-5109246554938227426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650587926193323288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33027608ebae56b4c9c375dea158efd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  buildingKey: 99
+  turretHealth: 10
+  turretCompleteness: 0
+  turretBuildingAmountNeeded: 1
+  turretBuildingSpeed: 0.1
+  buildingRange: 10
+  loadingBar: {fileID: 8240071552906825855, guid: e04cafeae6c3c484886ae4ef5cfce935, type: 3}
+  completnessBarGradientPreset: {fileID: 11400000, guid: 2994e761af7c9e34db9d519a58d00b54, type: 2}
+  hammerIcon: {fileID: 21300000, guid: 9c63a9647918de74392842650cd74076, type: 3}
+  borderBarImage: {fileID: 21300000, guid: 19a1cdc3ff4387d458c8e661aea534e5, type: 3}
+--- !u!135 &8888158553485172088
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650587926193323288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.045343157
+  m_Center: {x: -0.00083532557, y: -0.00090433646, z: 0.04484869}
 --- !u!1001 &968651897133071853
 PrefabInstance:
   m_ObjectHideFlags: 0
