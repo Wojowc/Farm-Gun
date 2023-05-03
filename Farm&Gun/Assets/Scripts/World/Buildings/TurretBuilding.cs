@@ -25,7 +25,6 @@ public class TurretBuilding : MonoBehaviour
     private float buildingRange; // its best if <1f
     private bool playerIsInRange = false;
 
-    // healthbar preset
     [SerializeField]
     private GameObject loadingBar;
 
@@ -63,7 +62,6 @@ public class TurretBuilding : MonoBehaviour
         SetupHealthbar();
         currentBuilding = gameObject.GetComponent<TurretBuilding>();
         buildingRangeTrigger = gameObject.GetComponent<SphereCollider>();
-        buildingRangeTrigger.enabled = true;
         buildingRangeTrigger.radius = buildingRange;
     }
 
@@ -85,10 +83,9 @@ public class TurretBuilding : MonoBehaviour
 
     private void SetupHealthbar()
     {
-        buildingBar = GameObject.Instantiate(loadingBar, this.transform);
-        buildingBar.transform.Rotate(new Vector3(90f, 0, 0));
-        buildingBar.transform.position = new Vector3(buildingBar.transform.position.x, buildingBar.transform.position.y + 3.5f, buildingBar.transform.position.z);
-        buildingBar.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+        buildingBar = GameObject.Instantiate(loadingBar);
+        buildingBar.gameObject.transform.parent = this.transform;
+        buildingBar.transform.position = new Vector3(this.transform.position.x + 1f, this.transform.position.y + 3.5f, this.transform.position.z);
         turretCompletenessBar = buildingBar.GetComponentInChildren<HealthBar>();
         turretCompletenessBar.enabled = true;
         turretCompletenessBar.SetMaxValue(turretBuildingAmountNeeded);
