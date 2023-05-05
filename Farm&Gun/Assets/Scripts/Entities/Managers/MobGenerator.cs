@@ -64,7 +64,7 @@ public class MobGenerator : MonoBehaviour
                         SpawnAnimal(firstAnimal);
                     else
                         UnityEngine.Debug.Log("Przekroczono limit tego zwierzaka :< ");
-            }
+                }
             }
 
 

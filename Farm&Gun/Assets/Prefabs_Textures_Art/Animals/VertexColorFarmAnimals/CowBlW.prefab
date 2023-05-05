@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8788200946217330124}
   player: {fileID: 0}
+  maxDistance: 5
 --- !u!114 &2896812940375111861
 MonoBehaviour:
   m_ObjectHideFlags: 0

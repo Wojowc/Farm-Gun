@@ -27,19 +27,19 @@ public class AnimalMovement : Movement
     {
         if (canMove)
         {
-            if (enemy = GameObject.FindGameObjectWithTag("Enemy"))
-            {
-                FindPlaceToGo(enemy);
-            }
+            //if (enemy = GameObject.FindGameObjectWithTag("Enemy"))
+            //{
+            //    FindPlaceToGo(enemy);
+            //}
 
-            else
-            {
+//            else
+//            {
                 //TOCHANGE animal are moving around they spawn point
                 //FindPlaceToGo(gameObject.transform.parent.gameObject);
 
                 //NOW go to Player
-                agent.SetDestination(player.transform.position);
-            }
+                //agent.SetDestination(player.transform.position);
+//            }
         }
     }
 
