@@ -76,6 +76,7 @@ public class TurretBuilding : MonoBehaviour
         }
         if (turretCompleteness >= turretBuildingAmountNeeded)
         {
+            currentBuilding.gameObject.transform.Find("BuildingRangeSphere").gameObject.SetActive(false); // removes the sphere that shows building range
             currentBuilding.enabled = false;
             buildingBar.SetActive(false);
         }

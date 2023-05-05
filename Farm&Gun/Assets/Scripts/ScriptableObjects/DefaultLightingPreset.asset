@@ -9,22 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71add1559f2186b40a054fc5f8255340, type: 3}
+  m_Script: {fileID: 11500000, guid: fb028c5c6d6d30b42808bc9b1181a619, type: 3}
   m_Name: DefaultLightingPreset
   m_EditorClassIdentifier: 
   AmbientColor:
     serializedVersion: 2
-    key0: {r: 0.4245283, g: 0.23829654, b: 0.32210487, a: 1}
-    key1: {r: 0.21960782, g: 0.42441186, b: 0.67058825, a: 1}
-    key2: {r: 0.18004628, g: 0.275952, b: 0.3207547, a: 0}
+    key0: {r: 0.27754536, g: 0.5590836, b: 0.5943396, a: 1}
+    key1: {r: 0.6415094, g: 0.29957277, b: 0.29957277, a: 1}
+    key2: {r: 0.6415094, g: 0.29957277, b: 0.29957277, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 13107
-    ctime1: 52428
-    ctime2: 51464
+    ctime0: 21845
+    ctime1: 43690
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -43,19 +43,19 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   DirectionalColor:
     serializedVersion: 2
-    key0: {r: 0.25013348, g: 0.6679078, b: 0.7264151, a: 1}
-    key1: {r: 0.5882353, g: 0.39607847, b: 0.39607847, a: 1}
-    key2: {r: 0.5943396, g: 0.40089887, b: 0.40089887, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.7264151, g: 0.5476352, b: 0.26383942, a: 1}
+    key1: {r: 0.5764706, g: 0.43921572, b: 0.21568629, a: 1}
+    key2: {r: 0.4024564, g: 0.57453, b: 0.7169812, a: 0}
+    key3: {r: 0.3372549, g: 0.45098042, b: 0.5568628, a: 0}
+    key4: {r: 0.5764706, g: 0.43921572, b: 0.21568629, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 13107
-    ctime1: 52428
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
+    ctime0: 21845
+    ctime1: 43690
+    ctime2: 41634
+    ctime3: 55898
+    ctime4: 62451
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -72,18 +72,18 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   FogColor:
     serializedVersion: 2
-    key0: {r: 0.34901962, g: 0.32941177, b: 0.32941177, a: 1}
-    key1: {r: 0.34901962, g: 0.32941177, b: 0.32941177, a: 1}
-    key2: {r: 0.6529459, g: 0.68470883, b: 0.6886792, a: 0}
-    key3: {r: 0.34901962, g: 0.32941177, b: 0.32941177, a: 0}
+    key0: {r: 0.5188679, g: 0.4919455, b: 0.4919455, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 13107
-    ctime1: 52428
-    ctime2: 52043
-    ctime3: 64186
+    ctime0: 21845
+    ctime1: 43690
+    ctime2: 0
+    ctime3: 0
     ctime4: 0
     ctime5: 0
     ctime6: 0
