@@ -16,7 +16,9 @@ public class LightingManager : MonoBehaviour
 
     private int DayLenght { get; set; }
 
-    private float TimeOfDay;
+    public float TimeOfDay { get; set; }
+
+
     private void Awake()
     {
         DayLenght = DaylightLenght + NightLenght;
@@ -42,7 +44,7 @@ public class LightingManager : MonoBehaviour
         {
             TimeOfDay += Time.deltaTime;
             TimeOfDay %= DayLenght;
-            Debug.Log($"Current time is: {TimeOfDay}");
+            //Debug.Log($"Current time is: {TimeOfDay}");
         }
 
         UpdateLighting();
