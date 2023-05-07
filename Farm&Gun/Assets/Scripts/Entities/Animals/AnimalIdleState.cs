@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.UI;
+using Vector3 = UnityEngine.Vector3;
 
 public class AnimalIdleState : State
 {
     [SerializeField] private AnimalFollowPlayerState followPlayerState;
     [SerializeField] private NavMeshAgent navMesh;
     [SerializeField] private GameObject player;
-    private bool isIdleCoroutineRunning = false;
+    private bool _isIdleCoroutineRunning = false;
 
     public void Awake()
     {
@@ -23,15 +25,15 @@ public class AnimalIdleState : State
         if (Vector3.Distance(player.transform.position, transform.position) > 8f)
         {
             Debug.Log("Enter follow player state");
-            if (isIdleCoroutineRunning)
+            if (_isIdleCoroutineRunning)
             {
                 StopCoroutine(IdleWalk());
-                isIdleCoroutineRunning = false;
+                _isIdleCoroutineRunning = false;
             }
             return followPlayerState;
         }
 
-        if (!isIdleCoroutineRunning)
+        if (!_isIdleCoroutineRunning)
         {
             Debug.Log("pyk0");
             StartCoroutine(IdleWalk());
@@ -42,13 +44,26 @@ public class AnimalIdleState : State
 
     IEnumerator IdleWalk()
     {
-        isIdleCoroutineRunning = true;
-        Vector3 randomDirection = Random.insideUnitSphere * 3;
+        _isIdleCoroutineRunning = true;
+        while (true)
+        {
+            navMesh.SetDestination(GenerateRandomLocation(3f));
+            Debug.Log("Pyk");
+            yield return new WaitForSeconds(5f);
+        }
+    }
+
+    Vector3 GenerateRandomLocation(float radius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, 3, NavMesh.AllAreas);
-        navMesh.SetDestination(hit.position);
-        Debug.Log("Pyk");
-        yield return new WaitForSeconds(2f);
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
+        {
+            finalPosition = hit.position;
+            finalPosition.y = 3;
+        }
+        return finalPosition;
     }
 }
