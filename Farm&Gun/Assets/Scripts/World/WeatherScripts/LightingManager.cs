@@ -14,6 +14,8 @@ public class LightingManager : MonoBehaviour
     public int DaylightLenght = 8;
     public int NightLenght = 16;
 
+    public int DaysCount = 0;
+
     private int DayLenght { get; set; }
 
     public float TimeOfDay { get; set; }
@@ -43,6 +45,10 @@ public class LightingManager : MonoBehaviour
         if (Application.isPlaying)
         {
             TimeOfDay += Time.deltaTime;
+            if(TimeOfDay >= DayLenght)
+            {
+                DaysCount++;
+            }
             TimeOfDay %= DayLenght;
             //Debug.Log($"Current time is: {TimeOfDay}");
         }
