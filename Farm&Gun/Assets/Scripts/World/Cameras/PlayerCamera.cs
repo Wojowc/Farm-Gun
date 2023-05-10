@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerCamera : MonoBehaviour
     private float defaultZoom;
     private Camera thisCamera;
     private bool movementEnabled = true;
+    private PhotonView view;
 
 
     private void Awake()
@@ -25,18 +27,22 @@ public class PlayerCamera : MonoBehaviour
         maxZDiversion = zFromPlayer + maxDiversion;
         minZDiversion = zFromPlayer - maxDiversion;
         initialXZFromPlayer = new Vector2(xFromPlayer, zFromPlayer);
-
         thisCamera = this.GetComponent<Camera>();
         defaultZoom = thisCamera.orthographicSize;
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        if (!movementEnabled) return;
-        transform.position = new Vector3(player.transform.position.x + xFromPlayer, player.transform.position.y + yFromPlayer, player.transform.position.z + zFromPlayer);
-        ZoomInOut();
-        float distance = cameraMovementSpeed * Time.deltaTime;
-        Comeback(TryMove(distance), distance);
+        if (view.IsMine && player.GetPhotonView().IsMine)
+        {
+            if (!movementEnabled) return;
+            transform.position = new Vector3(player.transform.position.x + xFromPlayer, player.transform.position.y + yFromPlayer, player.transform.position.z + zFromPlayer);
+            ZoomInOut();
+            float distance = cameraMovementSpeed * Time.deltaTime;
+            Comeback(TryMove(distance), distance);
+        }
+        
     }
 
     //camera shake on attack

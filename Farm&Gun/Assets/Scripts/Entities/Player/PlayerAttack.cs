@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,8 +17,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     PlayerMovement playerMovement;
 
+    PhotonView view;
+
+    private void Awake()
+    {
+        view = transform.parent.GetComponent<PhotonView>();
+    }
+
     void Update()
     {
+        if (!view.IsMine) return;
 
         if (animator.GetBool("Performing Attack")) return;
 

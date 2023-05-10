@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -19,44 +20,53 @@ public class PlayerMovement : Movement
     [SerializeField]
     Animator animator;
 
-    void Awake()
+    PhotonView view;
+
+    void Start()
     {
         //get characterComponent
         characterController = GetComponent<CharacterController>();
 
         //get the Y value of camera rotation in degrees
         cameraRotationY = Camera.main.transform.rotation.eulerAngles.y;
+
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        //movement guard
-        if (!canMove) return;
-
-        if (animator.GetBool("Dead")) return;
-
-        if (!animator.GetBool("Performing Attack"))
+        if (view.IsMine)
         {
-            EnableMovement();
+            //movement guard
+            if (!canMove) return;
+
+            if (animator.GetBool("Dead")) return;
+
+            if (!animator.GetBool("Performing Attack"))
+            {
+                EnableMovement();
+            }
+
+            HandleRotation();
+
+            //determine if falling
+            velocityY = characterController.isGrounded ? normalVelovityYValue : gravityValue;
+
+            //get input from player
+            inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), -velocityY, Input.GetAxisRaw("Vertical"));
+
+            //multiply it by the rotation of camera
+            correctedInputDirection = (Quaternion.Euler(0, cameraRotationY, 0) * inputDirection).normalized;
+
+            //move player
+            characterController.Move(correctedInputDirection * speed * Time.deltaTime);
         }
-
-        HandleRotation();
-
-        //determine if falling
-        velocityY = characterController.isGrounded ? normalVelovityYValue : gravityValue;
-
-        //get input from player
-        inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), -velocityY, Input.GetAxisRaw("Vertical"));
-
-        //multiply it by the rotation of camera
-        correctedInputDirection = (Quaternion.Euler(0, cameraRotationY, 0) * inputDirection).normalized;
-
-        //move player
-        characterController.Move(correctedInputDirection * speed * Time.deltaTime);
     }
 
     void HandleRotation()
     {
+        if (!view.IsMine) return;
+
         //get mouse and player position 2d
         Vector3 playerPos2d = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 mousePos2d = Input.mousePosition;
