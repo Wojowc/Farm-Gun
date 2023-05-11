@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MobGenerator : MonoBehaviour
@@ -13,18 +16,7 @@ public class MobGenerator : MonoBehaviour
     private int[] maxAnimalAmount = { 30, 12, 10, 6, 3 };
     private int firstAnimal, secondAnimal;
 
-
     private GameObject[] foundSpawnPoints;
-
-    void SpawnAnimal(int animalIndexNumber)
-    {
-        Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
-        float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
-        float randomX = Random.Range(-distance, distance);
-        float randomZ = Random.Range(-distance, distance);
-        Vector3 randomizedSpawnPosition = new Vector3(SpawnPoint.x + randomX, SpawnPoint.y, SpawnPoint.z + randomZ);
-        Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
-    }
 
     public bool CheckIfAllAnimalTypesPresent()
     {
@@ -38,16 +30,41 @@ public class MobGenerator : MonoBehaviour
         return true;
     }
 
-    public AnimalCount GetAnimalCount()
+    public Dictionary<AnimalType, int> GetAnimalsAmounts()
     {
-        return new AnimalCount()
+        return alreadySpawned.ToDictionary(x => (AnimalType)Array.IndexOf(alreadySpawned, x), x => x);
+    }
+
+    public void UpdateAnimalAmount(AnimalType animalType, int newValue)
+    {
+        switch (animalType)
         {
-            ChickensAmount = alreadySpawned[0],
-            DucksAmount = alreadySpawned[1],
-            SheepAmount = alreadySpawned[2],
-            PigsAmount = alreadySpawned[3],
-            CowsAmount = alreadySpawned[4]
-        };
+            case AnimalType.Chicken:
+                alreadySpawned[0] = newValue;
+                break; 
+            case AnimalType.Duck:
+                alreadySpawned[1] = newValue;
+                break;
+            case AnimalType.Sheep:
+                alreadySpawned[2] = newValue;
+                break;
+            case AnimalType.Pig:
+                alreadySpawned[3] = newValue;
+                break;
+            case AnimalType.Cow:
+                alreadySpawned[4] = newValue;
+                break;
+        }
+    }
+
+    void SpawnAnimal(int animalIndexNumber)
+    {
+        Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
+        float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
+        float randomX = UnityEngine.Random.Range(-distance, distance);
+        float randomZ = UnityEngine.Random.Range(-distance, distance);
+        Vector3 randomizedSpawnPosition = new Vector3(SpawnPoint.x + randomX, SpawnPoint.y, SpawnPoint.z + randomZ);
+        Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
     }
 
     void Start()
@@ -61,12 +78,12 @@ public class MobGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //first dice roll
-            firstAnimal = firstDice[Random.Range(0, 12)];      //rolled value as animal index
+            firstAnimal = firstDice[UnityEngine.Random.Range(0, 12)];      //rolled value as animal index
             Debug.Log("Pierwsza kostka: " + firstAnimal);
 
 
             //second dice roll
-            secondAnimal = secondDice[Random.Range(0, 12)];    //rolled value
+            secondAnimal = secondDice[UnityEngine.Random.Range(0, 12)];    //rolled value
             Debug.Log("Druga kostka: " + secondAnimal);
 
             if (firstAnimal == secondAnimal)                                    //if both rolled the same
@@ -123,13 +140,13 @@ public class MobGenerator : MonoBehaviour
         }
     }
 
-    public class AnimalCount
+    public enum AnimalType // type is also an index in the 'alreadySpawned' array
     {
-        public int DucksAmount;
-        public int PigsAmount;
-        public int ChickensAmount;
-        public int SheepAmount;
-        public int CowsAmount;
+        Chicken = 0,
+        Duck = 1,
+        Sheep = 2,
+        Pig = 3,
+        Cow = 4
     }
 }
 
