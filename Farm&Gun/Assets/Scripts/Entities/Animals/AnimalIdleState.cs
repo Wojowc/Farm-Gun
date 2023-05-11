@@ -1,18 +1,19 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering.UI;
 using Vector3 = UnityEngine.Vector3;
 
 public class AnimalIdleState : State
 {
     [SerializeField] private AnimalFollowPlayerState followPlayerState;
+    [SerializeField] private AnimalRunAwayState runAwayState;
     [SerializeField] private NavMeshAgent navMesh;
     [SerializeField] private GameObject player;
+    [SerializeField] private float playerDistanceThreshold = 8f;
+    [SerializeField] private float enemyDistanceThreshold = 5f;
+    [SerializeField] private float idleAnimationDelaySec = 6f;
+    [SerializeField] private float idleAnimationRadius = 2f;
+
     private bool _isIdleCoroutineRunning = false;
 
     public void Awake()
@@ -22,9 +23,8 @@ public class AnimalIdleState : State
 
     public override State RunCurrentState()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) > 8f)
+        if (!IsPlayerCloserThan(playerDistanceThreshold))
         {
-            Debug.Log("Enter follow player state");
             if (_isIdleCoroutineRunning)
             {
                 StopCoroutine(IdleWalk());
@@ -33,27 +33,29 @@ public class AnimalIdleState : State
             return followPlayerState;
         }
 
+        if (IsEnemyCloserThan(enemyDistanceThreshold))
+        {
+            return runAwayState;
+        }
+
         if (!_isIdleCoroutineRunning)
         {
-            Debug.Log("pyk0");
             StartCoroutine(IdleWalk());
-            Debug.Log("pyk1");
         }
         return this;
     }
 
-    IEnumerator IdleWalk()
+    private IEnumerator IdleWalk()
     {
         _isIdleCoroutineRunning = true;
         while (true)
         {
-            navMesh.SetDestination(GenerateRandomLocation(3f));
-            Debug.Log("Pyk");
-            yield return new WaitForSeconds(5f);
+            navMesh.SetDestination(GenerateRandomLocation(idleAnimationRadius));
+            yield return new WaitForSeconds(idleAnimationDelaySec);
         }
     }
 
-    Vector3 GenerateRandomLocation(float radius)
+    private Vector3 GenerateRandomLocation(float radius)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
@@ -65,5 +67,28 @@ public class AnimalIdleState : State
             finalPosition.y = 3;
         }
         return finalPosition;
+    }
+
+    private bool IsCloserThan(float thresholdDistance, Vector3 posA, Vector3 posB)
+    {
+        return Vector3.Distance(posA, posB) < thresholdDistance;
+    }
+
+    private bool IsPlayerCloserThan(float thresholdDistance)
+    {
+        return IsCloserThan(thresholdDistance, transform.position, player.transform.position);
+    }
+
+    private bool IsEnemyCloserThan(float thresholdDistance)
+    {
+        GameObject[] list = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var v in list)
+        {
+            if (IsCloserThan(thresholdDistance, transform.position, v.transform.position))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

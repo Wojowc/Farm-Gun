@@ -154,9 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83546915772d684cb584812a549cc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 2495170241473419976}
-  player: {fileID: 0}
-  maxDistance: 5
 --- !u!195 &2495170241473419976
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -171,7 +168,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -299,8 +296,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followPlayerState: {fileID: 5107310973279954416}
+  runAwayState: {fileID: 3022296619062567509}
   navMesh: {fileID: 2495170241473419976}
   player: {fileID: 0}
+  playerDistanceThreshold: 8
+  enemyDistanceThreshold: 5
+  idleAnimationDelaySec: 6
+  idleAnimationRadius: 2
 --- !u!1 &3463521527737653898
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,3 +426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0cc828fd778ef41a761e3300fcbc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerState: {fileID: 5107310973279954416}
+  idleState: {fileID: 1867670865142918834}
+  navMesh: {fileID: 2495170241473419976}
+  player: {fileID: 0}
+  distanceThreshold: 8
