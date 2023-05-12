@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private float health;
     private float maxHealth;
+    public float deadDelay = 3f;
 
     public void DecreaseHealth(float amount)
     {
@@ -23,6 +24,6 @@ public class HealthManager : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Dead1");
-        Destroy(gameObject);
+        Destroy(gameObject, deadDelay);
     }
 }

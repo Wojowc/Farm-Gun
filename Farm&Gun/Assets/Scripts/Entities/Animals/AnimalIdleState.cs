@@ -11,7 +11,7 @@ public class AnimalIdleState : State
     [SerializeField] private GameObject player;
     [SerializeField] private float playerDistanceThreshold = 8f;
     [SerializeField] private float enemyDistanceThreshold = 5f;
-    [SerializeField] private float idleAnimationDelaySec = 6f;
+    [SerializeField] private float idleAnimationDelaySec = 10f;
     [SerializeField] private float idleAnimationRadius = 2f;
 
     private bool _isIdleCoroutineRunning = false;
