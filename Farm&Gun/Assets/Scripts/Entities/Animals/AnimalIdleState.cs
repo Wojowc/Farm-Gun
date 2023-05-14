@@ -25,11 +25,11 @@ public class AnimalIdleState : State
     {
         if (!IsPlayerCloserThan(playerDistanceThreshold))
         {
-            if (_isIdleCoroutineRunning)
-            {
-                StopCoroutine(IdleWalk());
-                _isIdleCoroutineRunning = false;
-            }
+            //if (_isIdleCoroutineRunning)
+            //{
+            //     StopCoroutine(IdleWalk());
+            //    _isIdleCoroutineRunning = false;
+            //}
             return followPlayerState;
         }
 
@@ -38,11 +38,11 @@ public class AnimalIdleState : State
             return runAwayState;
         }
 
-        if (!_isIdleCoroutineRunning)
-        {
-            StartCoroutine(IdleWalk());
-        }
-        return this;
+        //if (!_isIdleCoroutineRunning)
+            //{
+            //    StartCoroutine(IdleWalk());
+            //}
+            return this;
     }
 
     private IEnumerator IdleWalk()

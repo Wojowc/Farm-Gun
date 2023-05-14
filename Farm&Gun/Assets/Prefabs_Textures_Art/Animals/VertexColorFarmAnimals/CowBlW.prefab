@@ -389,3 +389,4 @@ MonoBehaviour:
   runFromOpponentRadius: 0
   playerDistanceThreshold: 8
   enemyDistanceThreshold: 5
+  playerAvgLocationRadius: 3

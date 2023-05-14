@@ -354,6 +354,7 @@ MonoBehaviour:
   runFromOpponentRadius: 0
   playerDistanceThreshold: 8
   enemyDistanceThreshold: 5
+  playerAvgLocationRadius: 3
 --- !u!1 &8622842986086696709
 GameObject:
   m_ObjectHideFlags: 0

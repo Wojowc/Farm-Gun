@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  deadDelay: 3
 --- !u!114 &3685547800946663650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +254,7 @@ MonoBehaviour:
   runFromOpponentRadius: 0
   playerDistanceThreshold: 8
   enemyDistanceThreshold: 5
+  playerAvgLocationRadius: 3
 --- !u!1 &2484182692260248146
 GameObject:
   m_ObjectHideFlags: 0

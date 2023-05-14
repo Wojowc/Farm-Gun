@@ -15725,7 +15725,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -15966,6 +15966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
+  deadDelay: 3
   animator: {fileID: 85135098}
 --- !u!195 &1649851430
 NavMeshAgent:
