@@ -15,9 +15,10 @@ public class AnimalFollowPlayerState : State
     [SerializeField] private NavMeshAgent navMesh;
     [SerializeField] private GameObject player;
     [SerializeField] private float runFromOpponentRadius;
-    [SerializeField] private float playerDistanceThreshold = 8f;
+    [SerializeField] private float playerDistanceThreshold = 10f;
     [SerializeField] private float enemyDistanceThreshold = 6f;
-    [SerializeField] private float playerAvgLocationRadius = 4f;
+    [SerializeField] private float playerAvgLocationRadius = 7f;
+    [SerializeField] private float stoppingDistance = 5f;
 
     public void Awake()
     {
@@ -66,23 +67,17 @@ public class AnimalFollowPlayerState : State
 
     private void FollowPlayer()
     {
+        navMesh.stoppingDistance = stoppingDistance;
         navMesh.SetDestination(RandomLocationAroundPlayer(playerAvgLocationRadius));
-        //Vector3 vecToPlayer = transform.position - player.transform.position;
-        //vecToPlayer.Normalize();
-        //Vector3 normalizedPosToPlayer = transform.position - vecToPlayer;
-        //navMesh.SetDestination(normalizedPosToPlayer);
     }
 
     private Vector3 RandomLocationAroundPlayer(float radius)
     {
-        Vector3 randomDirection = Random.insideUnitSphere * Random.Range(1.1f, radius);
-        randomDirection += player.transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(player.transform.position, out hit, radius, NavMesh.AllAreas))
         {
             finalPosition = hit.position;
-            finalPosition.y = 3;
         }
         return finalPosition;
     }

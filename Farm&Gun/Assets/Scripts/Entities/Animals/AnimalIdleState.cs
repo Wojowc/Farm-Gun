@@ -9,10 +9,11 @@ public class AnimalIdleState : State
     [SerializeField] private AnimalRunAwayState runAwayState;
     [SerializeField] private NavMeshAgent navMesh;
     [SerializeField] private GameObject player;
-    [SerializeField] private float playerDistanceThreshold = 8f;
-    [SerializeField] private float enemyDistanceThreshold = 5f;
-    [SerializeField] private float idleAnimationDelaySec = 10f;
+    [SerializeField] private float playerDistanceThreshold = 12f;
+    [SerializeField] private float enemyDistanceThreshold = 6f;
+    [SerializeField] private float idleAnimationDelaySec = 12f;
     [SerializeField] private float idleAnimationRadius = 2f;
+    [SerializeField] private float stoppingDistance = 0.5f;
 
     private bool _isIdleCoroutineRunning = false;
 
@@ -25,23 +26,21 @@ public class AnimalIdleState : State
     {
         if (!IsPlayerCloserThan(playerDistanceThreshold))
         {
-            //if (_isIdleCoroutineRunning)
-            //{
-            //     StopCoroutine(IdleWalk());
-            //    _isIdleCoroutineRunning = false;
-            //}
+            navMesh.ResetPath();
+            if (_isIdleCoroutineRunning)
+            {
+                StopCoroutine(IdleWalk());
+            }
             return followPlayerState;
         }
 
         if (IsEnemyCloserThan(enemyDistanceThreshold))
         {
+            navMesh.ResetPath();
             return runAwayState;
         }
 
-        //if (!_isIdleCoroutineRunning)
-            //{
-            //    StartCoroutine(IdleWalk());
-            //}
+        IdleState();
             return this;
     }
 
@@ -52,6 +51,7 @@ public class AnimalIdleState : State
         {
             navMesh.SetDestination(GenerateRandomLocation(idleAnimationRadius));
             yield return new WaitForSeconds(idleAnimationDelaySec);
+            navMesh.ResetPath();
         }
     }
 
@@ -64,7 +64,6 @@ public class AnimalIdleState : State
         if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
         {
             finalPosition = hit.position;
-            finalPosition.y = 3;
         }
         return finalPosition;
     }
@@ -90,5 +89,13 @@ public class AnimalIdleState : State
             }
         }
         return false;
+    }
+    private void IdleState()
+    {
+        navMesh.stoppingDistance = stoppingDistance;
+        if (!_isIdleCoroutineRunning)
+        {
+            StartCoroutine(IdleWalk());
+        }
     }
 }

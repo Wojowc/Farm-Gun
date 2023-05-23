@@ -9,6 +9,7 @@ public class AnimalRunAwayState : State
     [SerializeField] private NavMeshAgent navMesh;
     [SerializeField] private GameObject player;
     [SerializeField] private float distanceThreshold = 8f;
+    [SerializeField] private float stoppingDistance = 0.5f;
 
     private GameObject[] enemiesList;
     private bool isRunningAway = true;
@@ -44,6 +45,7 @@ public class AnimalRunAwayState : State
 
     private void RunAwayFromEnemies()
     {
+        navMesh.stoppingDistance = stoppingDistance;
         List<GameObject> tmpEnemiesList = new List<GameObject>();
         foreach (var v in enemiesList)
         {
@@ -68,7 +70,7 @@ public class AnimalRunAwayState : State
                 resultVec += v;
             }
             resultVec.Normalize();
-            //resultVec *= 2;
+            resultVec += new Vector3(3f, 3f, 3f);
             navMesh.SetDestination(transform.position - resultVec);
         }
     }
