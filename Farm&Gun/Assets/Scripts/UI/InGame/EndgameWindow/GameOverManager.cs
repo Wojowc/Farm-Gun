@@ -58,13 +58,13 @@ public class GameOverManager : MonoBehaviour
 
     private void SetAmountTexts()
     {
-        var animalCount = animalSpawningManager.GetAnimalCount();
+        var animalCount = animalSpawningManager.GetAnimalsAmounts();
         daysAmountText.text = lightingManager.DaysCount.ToString();
-        chickensAmountText.text = animalCount.ChickensAmount.ToString();
-        ducksAmountText.text = animalCount.DucksAmount.ToString();
-        sheepAmountText.text = animalCount.SheepAmount.ToString();
-        pigsAmountText.text = animalCount.PigsAmount.ToString();
-        cowsAmountText.text = animalCount.CowsAmount.ToString();
+        chickensAmountText.text = animalCount.GetValueOrDefault(MobGenerator.AnimalType.Chicken).ToString();
+        ducksAmountText.text = animalCount.GetValueOrDefault(MobGenerator.AnimalType.Duck).ToString();
+        sheepAmountText.text = animalCount.GetValueOrDefault(MobGenerator.AnimalType.Sheep).ToString();
+        pigsAmountText.text = animalCount.GetValueOrDefault(MobGenerator.AnimalType.Pig).ToString();
+        cowsAmountText.text = animalCount.GetValueOrDefault(MobGenerator.AnimalType.Cow).ToString();
     }
 
     private void OnContinueClick()

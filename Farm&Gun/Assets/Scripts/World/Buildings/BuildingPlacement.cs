@@ -13,6 +13,7 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField]
     private BuildingsManager buildingsManager;
 
+    private Dictionary<BuildingType, int> buildingsAmounts = new();
 
     [SerializeField]
     private PlayerAttack playerModel;
@@ -43,39 +44,42 @@ public class BuildingPlacement : MonoBehaviour
     #region Placing turrets
     public void ChooseTurretOne()
     {
-        if(!CanPlaceTower(TowerType.Ducks))
+        if(!CanPlaceTower(BuildingType.Ducks))
         {
             SetBuildingModelValues();
             return;
         }
-        buildingsManager.AmountOfTurretsOne--;
-        buildingsManager.SetAmountOfTurrets(buildingsManager.AmountOfTurretsOne, TowerType.Ducks);
+        buildingsManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Ducks) - 1, BuildingType.Ducks);
+        buildingsAmounts = buildingsManager.GetBuildingsAmounts();
+        buildingsManager.UpdateDisplayedTexts();
         buildingModel = GameObject.Instantiate(turretOne, turretsParentObject.transform);
         SetBuildingModelValues();
     }
 
     public void ChooseTurretTwo()
     {
-        if (!CanPlaceTower(TowerType.Pig))
+        if (!CanPlaceTower(BuildingType.Pig))
         {
             SetBuildingModelValues();
             return;
         }
-        buildingsManager.AmountOfTurretsTwo--;
-        buildingsManager.SetAmountOfTurrets(buildingsManager.AmountOfTurretsTwo, TowerType.Pig);
+        buildingsManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Pig) - 1, BuildingType.Pig);
+        buildingsAmounts = buildingsManager.GetBuildingsAmounts();
+        buildingsManager.UpdateDisplayedTexts();
         buildingModel = GameObject.Instantiate(turretTwo, turretsParentObject.transform);
         SetBuildingModelValues();
     }
 
     public void ChooseFence()
     {
-        if (!CanPlaceTower(TowerType.Fence))
+        if (!CanPlaceTower(BuildingType.Fence))
         {
             SetBuildingModelValues();
             return;
         }
-        buildingsManager.AmountOfFences--;
-        buildingsManager.SetAmountOfTurrets(buildingsManager.AmountOfFences, TowerType.Fence);
+        buildingsManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Fence) - 1, BuildingType.Fence);
+        buildingsAmounts = buildingsManager.GetBuildingsAmounts();
+        buildingsManager.UpdateDisplayedTexts();
         buildingModel = GameObject.Instantiate(fence, turretsParentObject.transform);
         SetBuildingModelValues();
     }
@@ -104,26 +108,25 @@ public class BuildingPlacement : MonoBehaviour
         SetDefaultBuildingValues(false, false);
     }
 
-    private bool CanPlaceTower(TowerType towerType)
+    private bool CanPlaceTower(BuildingType towerType)
     {
         switch (towerType)
         {
-            case TowerType.Ducks:
-                if(buildingsManager.AmountOfTurretsOne < 1)
+            case BuildingType.Ducks:
+                if(buildingsAmounts.GetValueOrDefault(BuildingType.Ducks) < 1)
                 {
                     return false;
                 }
                 return true;
-            case TowerType.Pig:
-                if (buildingsManager.AmountOfTurretsTwo < 1)
+            case BuildingType.Pig:
+                if (buildingsAmounts.GetValueOrDefault(BuildingType.Pig) < 1)
                 {
                     return false;
                 }
                 return true;
-            case TowerType.Fence:
-                if (buildingsManager.AmountOfFences < 1)
+            case BuildingType.Fence:
+                if (buildingsAmounts.GetValueOrDefault(BuildingType.Fence) < 1)
                 {
-                    Debug.Log("Not enough fences.");
                     return false;
                 }
                 return true;
@@ -199,10 +202,10 @@ public class BuildingPlacement : MonoBehaviour
 
     #endregion Methods
 
-    public enum TowerType
-    {
-        Ducks,
-        Pig,
-        Fence
-    }
+}
+public enum BuildingType
+{
+    Ducks,
+    Pig,
+    Fence
 }

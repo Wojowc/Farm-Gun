@@ -1,47 +1,63 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using TowerType = BuildingPlacement.TowerType;
 
 public class BuildingsManager : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI amountOfTurretsOneText;
+    private TextMeshProUGUI amountOfTurretsPigsText;
     [SerializeField]
-    private TextMeshProUGUI amountOfTurretsTwoText;
+    private TextMeshProUGUI amountOfTurretsDucksText;
     [SerializeField]
     private TextMeshProUGUI amountOfFencesText;
 
+    [SerializeField]
+    private int[] amountOfBuildings = { 0, 0, 0 };
 
-    public int AmountOfTurretsOne;
-    public int AmountOfTurretsTwo;
-    public int AmountOfFences;
+    public Dictionary<BuildingType, int> GetBuildingsAmounts()
+    {
+        var dict = new Dictionary<BuildingType, int>();
 
-    public void SetAmountOfTurrets(int amountOfTurrets, TowerType towerType)
+        for (int i = 0; i < amountOfBuildings.Length; i++)
+        {
+            dict.TryAdd((BuildingType)i, amountOfBuildings[i]);
+        }
+
+        return dict;
+    }
+
+    public void SetAmountOfTurrets(int amountOfTurrets, BuildingType towerType)
     {
         switch (towerType)
         {
-            case TowerType.Ducks:
-                AmountOfTurretsOne = amountOfTurrets;
-                amountOfTurretsOneText.text = "Amount: " + amountOfTurrets.ToString();
+            case BuildingType.Ducks:
+                amountOfBuildings[0] = amountOfTurrets;
                 break;
-            case TowerType.Pig:
-                AmountOfTurretsTwo = amountOfTurrets;
-                amountOfTurretsTwoText.text = "Amount: " + amountOfTurrets.ToString();
+            case BuildingType.Pig:
+                amountOfBuildings[1] = amountOfTurrets;
                 break;
-            case TowerType.Fence:
-                AmountOfFences = amountOfTurrets;
-                amountOfFencesText.text = "Amount: " + amountOfTurrets.ToString();
+            case BuildingType.Fence:
+                amountOfBuildings[2] = amountOfTurrets;
                 break;
         }
     }
 
+    public void UpdateDisplayedTexts()
+    {
+        amountOfTurretsDucksText.text = "Amount: " + amountOfBuildings[(int)BuildingType.Ducks].ToString();
+        amountOfTurretsPigsText.text = "Amount: " + amountOfBuildings[(int)BuildingType.Pig].ToString();
+        amountOfFencesText.text = "Amount: " + amountOfBuildings[(int)BuildingType.Fence].ToString();
+    }
+
     private void Awake()
     {
-        SetAmountOfTurrets(AmountOfTurretsOne, TowerType.Ducks);
-        SetAmountOfTurrets(AmountOfTurretsTwo, TowerType.Pig);
-        SetAmountOfTurrets(AmountOfFences, TowerType.Fence);
+        SetAmountOfTurrets(amountOfBuildings[(int)BuildingType.Ducks], BuildingType.Ducks);
+        SetAmountOfTurrets(amountOfBuildings[(int)BuildingType.Pig], BuildingType.Pig);
+        SetAmountOfTurrets(amountOfBuildings[(int)BuildingType.Fence], BuildingType.Fence);
+        UpdateDisplayedTexts();
     }
 
 }
