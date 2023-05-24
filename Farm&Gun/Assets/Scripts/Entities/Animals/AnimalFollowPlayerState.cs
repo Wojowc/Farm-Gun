@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class AnimalFollowPlayerState : State
@@ -13,12 +7,11 @@ public class AnimalFollowPlayerState : State
     [SerializeField] private AnimalIdleState idleState;
     [SerializeField] private AnimalRunAwayState runAwayState;
     [SerializeField] private NavMeshAgent navMesh;
-    [SerializeField] private GameObject player;
-    [SerializeField] private float runFromOpponentRadius;
-    [SerializeField] private float playerDistanceThreshold = 10f;
-    [SerializeField] private float enemyDistanceThreshold = 6f;
-    [SerializeField] private float playerAvgLocationRadius = 7f;
-    [SerializeField] private float stoppingDistance = 5f;
+    private GameObject player;
+    private float playerDistanceThreshold = 16f;
+    private float enemyDistanceThreshold = 6f;
+    private float playerAvgLocationRadius = 10f;
+    private float stoppingDistance = 3f;
 
     public void Awake()
     {
@@ -27,7 +20,6 @@ public class AnimalFollowPlayerState : State
 
     public override State RunCurrentState()
     {
-
         if (IsPlayerCloserThan(playerDistanceThreshold))
         {
             return idleState;
@@ -40,6 +32,23 @@ public class AnimalFollowPlayerState : State
 
         FollowPlayer();
         return this;
+    }
+
+    private void FollowPlayer()
+    {
+        navMesh.stoppingDistance = stoppingDistance;
+        navMesh.SetDestination(RandomLocationAroundPlayer(playerAvgLocationRadius));
+    }
+
+    private Vector3 RandomLocationAroundPlayer(float radius)
+    {
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(player.transform.position, out hit, radius, NavMesh.AllAreas))
+        {
+            finalPosition = hit.position;
+        }
+        return finalPosition;
     }
 
     private bool IsCloserThan(float thresholdDistance, Vector3 posA, Vector3 posB)
@@ -63,22 +72,5 @@ public class AnimalFollowPlayerState : State
             }
         }
         return false;
-    }
-
-    private void FollowPlayer()
-    {
-        navMesh.stoppingDistance = stoppingDistance;
-        navMesh.SetDestination(RandomLocationAroundPlayer(playerAvgLocationRadius));
-    }
-
-    private Vector3 RandomLocationAroundPlayer(float radius)
-    {
-        NavMeshHit hit;
-        Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(player.transform.position, out hit, radius, NavMesh.AllAreas))
-        {
-            finalPosition = hit.position;
-        }
-        return finalPosition;
     }
 }

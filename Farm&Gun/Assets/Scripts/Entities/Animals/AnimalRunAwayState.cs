@@ -7,9 +7,9 @@ public class AnimalRunAwayState : State
     [SerializeField] private AnimalFollowPlayerState followPlayerState;
     [SerializeField] private AnimalIdleState idleState;
     [SerializeField] private NavMeshAgent navMesh;
-    [SerializeField] private GameObject player;
-    [SerializeField] private float distanceThreshold = 8f;
-    [SerializeField] private float stoppingDistance = 0.5f;
+    private GameObject player;
+    private float distanceThreshold = 8f;
+    private float stoppingDistance = 2f;
 
     private GameObject[] enemiesList;
     private bool isRunningAway = true;
@@ -47,27 +47,27 @@ public class AnimalRunAwayState : State
     {
         navMesh.stoppingDistance = stoppingDistance;
         List<GameObject> tmpEnemiesList = new List<GameObject>();
-        foreach (var v in enemiesList)
+        foreach (var e in enemiesList)
         {
-            if (IsCloserThan(distanceThreshold, transform.position, v.transform.position))
+            if (IsCloserThan(distanceThreshold, transform.position, e.transform.position))
             {
-                tmpEnemiesList.Add(v);
+                tmpEnemiesList.Add(e);
             }
         }
 
         if (tmpEnemiesList.Count > 0)
         {
             List<Vector3> vectors = new List<Vector3>();
-            foreach (var v in tmpEnemiesList)
+            foreach (var tmpEnemy in tmpEnemiesList)
             {
-                Vector3 vec = v.transform.position - transform.position;
+                Vector3 vec = tmpEnemy.transform.position - transform.position;
                 vec.Normalize();
                 vectors.Add(vec);
             }
             Vector3 resultVec = Vector3.zero;
-            foreach (var v in vectors)
+            foreach (var vec in vectors)
             {
-                resultVec += v;
+                resultVec += vec;
             }
             resultVec.Normalize();
             resultVec += new Vector3(3f, 3f, 3f);
@@ -87,9 +87,9 @@ public class AnimalRunAwayState : State
 
     private bool IsEnemyCloserThan(float thresholdDistance)
     {
-        foreach (var v in enemiesList)
+        foreach (var e in enemiesList)
         {
-            if (IsCloserThan(thresholdDistance, transform.position, v.transform.position))
+            if (IsCloserThan(thresholdDistance, transform.position, e.transform.position))
             {
                 return true;
             }
