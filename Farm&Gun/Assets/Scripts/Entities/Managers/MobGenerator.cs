@@ -32,7 +32,14 @@ public class MobGenerator : MonoBehaviour
 
     public Dictionary<AnimalType, int> GetAnimalsAmounts()
     {
-        return alreadySpawned.ToDictionary(x => (AnimalType)Array.IndexOf(alreadySpawned, x), x => x);
+        var dict = new Dictionary<AnimalType, int>();
+
+        for (int i = 0; i < alreadySpawned.Length; i++)
+        {
+            dict.TryAdd((AnimalType)i, alreadySpawned[i]);
+        }
+
+        return dict;
     }
 
     public void UpdateAnimalAmount(AnimalType animalType, int newValue)

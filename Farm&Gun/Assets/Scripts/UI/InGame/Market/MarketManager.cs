@@ -76,11 +76,22 @@ public class MarketManager : MonoBehaviour
 
     [Space()]
     [SerializeField]
+    private TextMeshProUGUI chickenToDuckText;
+    [SerializeField]
     private int chickenToDuckRatio = 6;
+
+    [SerializeField]
+    private TextMeshProUGUI duckToSheepText;
     [SerializeField]
     private int duckToSheepRatio = 6;
+
+    [SerializeField]
+    private TextMeshProUGUI sheepToPigText;
     [SerializeField]
     private int sheepToPigRatio = 6;
+
+    [SerializeField]
+    private TextMeshProUGUI pigToCowText;
     [SerializeField]
     private int pigToCowRatio = 6;
 
@@ -89,19 +100,38 @@ public class MarketManager : MonoBehaviour
     #region Turrets
 
     [SerializeField]
+    private TextMeshProUGUI turretsDucksCostText;
+    [SerializeField]
     private int turretsDucksCostInChickens = 6;
     [SerializeField]
+    private TextMeshProUGUI turretsDucksTradedAmountText;
+    [SerializeField]
     private int turretsDucksAmount = 1;
+
+    [SerializeField]
+    private TextMeshProUGUI turretsPigsCostText;
     [SerializeField]
     private int turretsPigsCostInChickens = 6;
     [SerializeField]
+    private TextMeshProUGUI turretsPigsTradedAmountText;
+    [SerializeField]
     private int turretsPigsAmount = 1;
+
+    [SerializeField]
+    private TextMeshProUGUI fencesCostText;
     [SerializeField]
     private int fencesCostInChickens = 2;
     [SerializeField]
+    private TextMeshProUGUI fencesTradedAmountText;
+    [SerializeField]
     private int fencesAmount = 1;
+
+    [SerializeField]
+    private TextMeshProUGUI ammoCostText;
     [SerializeField]
     private int ammoCostInChickens = 2;
+    [SerializeField]
+    private TextMeshProUGUI ammoTradedAmountText;
     [SerializeField]
     private int ammoAmount = 10;
 
@@ -275,6 +305,26 @@ public class MarketManager : MonoBehaviour
 
     #endregion
 
+    private void SetTradeValues()
+    {
+        chickenToDuckText.text = chickenToDuckRatio.ToString();
+        duckToSheepText.text = chickenToDuckRatio.ToString();
+        sheepToPigText.text = chickenToDuckRatio.ToString();
+        pigToCowText.text = chickenToDuckRatio.ToString();
+
+        turretsDucksCostText.text = turretsDucksCostInChickens.ToString();
+        turretsDucksTradedAmountText.text = turretsDucksAmount.ToString();
+
+        turretsPigsCostText.text = turretsPigsCostInChickens.ToString();
+        turretsPigsTradedAmountText.text = turretsPigsAmount.ToString();
+
+        fencesCostText.text = fencesCostInChickens.ToString();
+        fencesTradedAmountText.text = fencesAmount.ToString();
+
+        ammoCostText.text = ammoCostInChickens.ToString();
+        ammoTradedAmountText.text = ammoAmount.ToString();
+    }
+
     #endregion Trade logic
 
     private void Awake()
@@ -282,6 +332,7 @@ public class MarketManager : MonoBehaviour
         UpdateInventoryDisplay();
         SetupButtonOnClickMethods();
         SetupButtonTradeLists();
+        SetTradeValues();
         CheckButtonsInteractability();
     }
 

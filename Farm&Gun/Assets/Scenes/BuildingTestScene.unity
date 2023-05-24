@@ -2020,6 +2020,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72969460}
   m_Mesh: {fileID: 5006698605598939749, guid: a3ccb41ae53c6bf4bb0a5bfc470bf069, type: 3}
+--- !u!114 &74554794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 338322049026705540, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
+  m_PrefabInstance: {fileID: 338322049041908148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &75410005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +2775,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97338697}
   m_Mesh: {fileID: -1806810134458854372, guid: 7ed75b99c26237b4d844c1581c5da1b2, type: 3}
+--- !u!114 &101266513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 338322048591769588, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
+  m_PrefabInstance: {fileID: 338322049041908148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &106812653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,7 +5143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cf7ec93f75f58f4c88f10a2683554a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5565,7 +5587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b7732325a53da4e836ba692ccd941c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7602,7 +7624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8519,6 +8541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 360244704}
+  - component: {fileID: 360244705}
   m_Layer: 0
   m_Name: MarketManager
   m_TagString: Untagged
@@ -8542,6 +8565,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &360244705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360244703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e70e51bd44f88847b7f516f620bac32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalsManager: {fileID: 492716108}
+  buildingsInventoryManager: {fileID: 1696908726}
+  bulletsCount: 13
+  chickenAmountText: {fileID: 2014603092}
+  ducksAmountText: {fileID: 398903319}
+  sheepAmountText: {fileID: 1075985610}
+  pigsAmountText: {fileID: 219853692}
+  cowsAmountText: {fileID: 307018277}
+  turretsDucksAmountText: {fileID: 1083566032}
+  turretsPigsAmountText: {fileID: 1661964156}
+  fencesAmountText: {fileID: 454032043}
+  ammoAmountText: {fileID: 639526497}
+  chickenToDuckText: {fileID: 817831458}
+  chickenToDuckRatio: 6
+  duckToSheepText: {fileID: 215571900}
+  duckToSheepRatio: 6
+  sheepToPigText: {fileID: 1954723668}
+  sheepToPigRatio: 6
+  pigToCowText: {fileID: 1612874585}
+  pigToCowRatio: 6
+  turretsDucksCostText: {fileID: 1602385214}
+  turretsDucksCostInChickens: 6
+  turretsDucksTradedAmountText: {fileID: 1390769829}
+  turretsDucksAmount: 1
+  turretsPigsCostText: {fileID: 96731554}
+  turretsPigsCostInChickens: 6
+  turretsPigsTradedAmountText: {fileID: 1344854086}
+  turretsPigsAmount: 1
+  fencesCostText: {fileID: 1175281119}
+  fencesCostInChickens: 2
+  fencesTradedAmountText: {fileID: 1397704308}
+  fencesAmount: 1
+  ammoCostText: {fileID: 297823385}
+  ammoCostInChickens: 2
+  ammoTradedAmountText: {fileID: 1955627336}
+  ammoAmount: 10
+  chickenDuckTradeButton: {fileID: 1208154895}
+  duckSheepTradeButton: {fileID: 388342108}
+  sheepPigTradeButton: {fileID: 315560697}
+  pigCowTradeButton: {fileID: 983496267}
+  turretDucksTradeButton: {fileID: 1637386023}
+  turretPigTradeButton: {fileID: 1391136614}
+  fenceTradeButton: {fileID: 442777018}
+  ammoTradeButton: {fileID: 426519753}
 --- !u!1 &363675150
 GameObject:
   m_ObjectHideFlags: 0
@@ -9016,7 +9095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4e8c970daf0fee439fac729fa639088, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10166,7 +10245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ed9a11c1c90f4e48b767385e78176f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12125,7 +12204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93fb342ce7fbb574cbc4e3f7a651efd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12304,7 +12383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cf7ec93f75f58f4c88f10a2683554a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12450,7 +12529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FarmMobs: []
-  alreadySpawned: 0500000004000000030000000200000001000000
+  alreadySpawned: 0f0000000b0000000b0000000d00000000000000
   spawnValues: {x: 0, y: 0, z: 0}
 --- !u!4 &492716109
 Transform:
@@ -12496,7 +12575,7 @@ RectTransform:
   m_GameObject: {fileID: 496718049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1761415871}
@@ -15557,7 +15636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1631330728f23f844ae545667c65c837, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16071,7 +16150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18417,7 +18496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93fb342ce7fbb574cbc4e3f7a651efd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18570,8 +18649,8 @@ RectTransform:
   - {fileID: 20489}
   - {fileID: 1726482190}
   - {fileID: 1264822508}
-  - {fileID: 1546168320}
   - {fileID: 1950533370}
+  - {fileID: 1546168320}
   - {fileID: 1479285379}
   - {fileID: 1545691462}
   m_Father: {fileID: 1884649287}
@@ -21939,8 +22018,8 @@ RectTransform:
   - {fileID: 388342107}
   - {fileID: 315560696}
   - {fileID: 983496266}
-  - {fileID: 1391136613}
   - {fileID: 1637386022}
+  - {fileID: 1391136613}
   - {fileID: 442777017}
   - {fileID: 426519752}
   m_Father: {fileID: 1884649287}
@@ -23292,7 +23371,7 @@ GameObject:
   - component: {fileID: 926969710}
   - component: {fileID: 926969709}
   m_Layer: 5
-  m_Name: ChickenImage
+  m_Name: PigsImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23338,7 +23417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4e8c970daf0fee439fac729fa639088, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25712,7 +25791,7 @@ RectTransform:
   - {fileID: 437364209}
   - {fileID: 483358069}
   m_Father: {fileID: 1114302118}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -27609,7 +27688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca2a1e9c3515a9b42ae94d7d2e07f4b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27639,7 +27718,7 @@ GameObject:
   - component: {fileID: 1103893391}
   - component: {fileID: 1103893390}
   m_Layer: 5
-  m_Name: ChickenImage
+  m_Name: ChickensImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27685,7 +27764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27837,8 +27916,8 @@ RectTransform:
   - {fileID: 632981251}
   - {fileID: 1616294790}
   - {fileID: 597714746}
-  - {fileID: 990742284}
   - {fileID: 1625412788}
+  - {fileID: 990742284}
   - {fileID: 1443812280}
   - {fileID: 1916445552}
   m_Father: {fileID: 1884649287}
@@ -29544,7 +29623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e4e2b365ab6a40498046ad93d34647c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32872,7 +32951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e4e2b365ab6a40498046ad93d34647c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33427,7 +33506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca2a1e9c3515a9b42ae94d7d2e07f4b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34944,7 +35023,7 @@ RectTransform:
   m_Children:
   - {fileID: 1775855131}
   m_Father: {fileID: 872051193}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -36468,7 +36547,7 @@ GameObject:
   - component: {fileID: 1421577046}
   - component: {fileID: 1421577045}
   m_Layer: 5
-  m_Name: ChickenImage
+  m_Name: SheepImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36514,7 +36593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ed9a11c1c90f4e48b767385e78176f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38064,7 +38143,7 @@ GameObject:
   - component: {fileID: 1497761679}
   - component: {fileID: 1497761678}
   m_Layer: 5
-  m_Name: ChickenImage
+  m_Name: DucksImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38110,7 +38189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e4e2b365ab6a40498046ad93d34647c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38382,7 +38461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 170df5c82accee844a0e522016696045, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39368,7 +39447,7 @@ RectTransform:
   - {fileID: 1044372432}
   - {fileID: 214676155}
   m_Father: {fileID: 731949976}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -41083,7 +41162,7 @@ RectTransform:
   - {fileID: 702918192}
   - {fileID: 2125082399}
   m_Father: {fileID: 1114302118}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -41212,7 +41291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41258,7 +41337,7 @@ RectTransform:
   m_GameObject: {fileID: 1630936432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1201704420}
@@ -41312,7 +41391,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630936435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1201704419}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1630936435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41384,7 +41475,7 @@ RectTransform:
   m_Children:
   - {fileID: 434805452}
   m_Father: {fileID: 872051193}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -43403,6 +43494,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695020959}
   m_Mesh: {fileID: -1806810134458854372, guid: 7ed75b99c26237b4d844c1581c5da1b2, type: 3}
+--- !u!114 &1696908726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 338322048723658320, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
+  m_PrefabInstance: {fileID: 338322049041908148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1f949a39494ee47a2ac9e335a97e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1699166803
 GameObject:
   m_ObjectHideFlags: 0
@@ -44734,7 +44836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ed9a11c1c90f4e48b767385e78176f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44908,7 +45010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b7732325a53da4e836ba692ccd941c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -45051,7 +45153,7 @@ RectTransform:
   m_GameObject: {fileID: 1761415870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8500001, y: 0.8500001, z: 0.8500001}
+  m_LocalScale: {x: 0.8500001, y: 0.8500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 874373023}
@@ -47568,7 +47670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908b0ccf504a4a04aa5657b74e3a96bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47711,7 +47813,7 @@ RectTransform:
   m_GameObject: {fileID: 1884649286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8500001, y: 0.8500001, z: 0.8500001}
+  m_LocalScale: {x: 0.8500001, y: 0.8500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 731949976}
@@ -49421,7 +49523,7 @@ RectTransform:
   - {fileID: 1283603938}
   - {fileID: 615222081}
   m_Father: {fileID: 731949976}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -52331,7 +52433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4e8c970daf0fee439fac729fa639088, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53357,7 +53459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1631330728f23f844ae545667c65c837, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54289,6 +54391,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 338322048723658320, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
+      propertyPath: amountOfTurretsPigsText
+      value: 
+      objectReference: {fileID: 101266513}
+    - target: {fileID: 338322048723658320, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
+      propertyPath: amountOfTurretsDucksText
+      value: 
+      objectReference: {fileID: 74554794}
     - target: {fileID: 338322048935522478, guid: fef7e81bf593a81478e5cb652f576cae, type: 3}
       propertyPath: map
       value: 

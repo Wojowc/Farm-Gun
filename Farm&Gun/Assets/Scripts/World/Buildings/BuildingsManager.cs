@@ -19,7 +19,14 @@ public class BuildingsManager : MonoBehaviour
 
     public Dictionary<BuildingType, int> GetBuildingsAmounts()
     {
-        return amountOfBuildings.ToDictionary(x => (BuildingType)Array.IndexOf(amountOfBuildings, x), x => x);
+        var dict = new Dictionary<BuildingType, int>();
+
+        for (int i = 0; i < amountOfBuildings.Length; i++)
+        {
+            dict.TryAdd((BuildingType)i, amountOfBuildings[i]);
+        }
+
+        return dict;
     }
 
     public void SetAmountOfTurrets(int amountOfTurrets, BuildingType towerType)
