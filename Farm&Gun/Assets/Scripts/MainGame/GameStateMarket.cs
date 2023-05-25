@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateMarket : MonoBehaviour
+public class GameStateMarket : GameBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(GameStateManager game)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState(GameStateManager game)
     {
-        
     }
+    
 }
