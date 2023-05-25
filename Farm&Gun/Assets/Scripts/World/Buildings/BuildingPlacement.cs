@@ -115,6 +115,7 @@ public class BuildingPlacement : MonoBehaviour
             case BuildingType.Ducks:
                 if(buildingsAmounts.GetValueOrDefault(BuildingType.Ducks) < 1)
                 {
+                    Debug.Log($"Ducks amount: {buildingsAmounts.GetValueOrDefault(BuildingType.Ducks)}");
                     return false;
                 }
                 return true;
@@ -198,6 +199,11 @@ public class BuildingPlacement : MonoBehaviour
             buildingModel = null;
         }
 
+    }
+
+    private void Start()
+    {
+        buildingsAmounts = buildingsManager.GetBuildingsAmounts();
     }
 
     #endregion Methods
