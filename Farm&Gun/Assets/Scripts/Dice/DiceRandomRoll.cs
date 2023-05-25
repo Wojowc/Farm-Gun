@@ -17,7 +17,7 @@ public class DiceRandomRoll : MonoBehaviour
     string faceName;
     bool generated = false;
 
-    private DiceData GenerateDice(GameObject DicePrefab)
+    public DiceData GenerateDice(GameObject DicePrefab)
     {
         InitialState initial = SetInitialState();
 
@@ -127,29 +127,30 @@ public class DiceRandomRoll : MonoBehaviour
 
         return faceName;
     }
+
+    public void StartRoll()
+    {
+        //destroy old
+        Destroy(RedDiceData.diceObject);
+        Destroy(YellowDiceData.diceObject);
+
+        //generate new
+        RedDiceData = GenerateDice(RedDicePrefab);
+        YellowDiceData = GenerateDice(YellowDicePrefab);
+        generated = true;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            //destroy old
-            Destroy(RedDiceData.diceObject);
-            Destroy(YellowDiceData.diceObject);
-
-            //generate new
-            RedDiceData = GenerateDice(RedDicePrefab);
-            YellowDiceData = GenerateDice(YellowDicePrefab);
-            generated = true;
-        }
-
         if (generated == true && RedDiceData.rb.velocity == Vector3.zero && YellowDiceData.rb.velocity == Vector3.zero)
         {
             faceName = FindFaceResult(YellowDiceData.faceDetectors);
             Debug.Log("wylosowana zolta to = " + faceName);
+            //update view to display rolled animal
             faceName = FindFaceResult(RedDiceData.faceDetectors);
             Debug.Log("wylosowana czerwona to = " + faceName);
             generated = false;
-        }
-       
+        } 
     }
 }
 
