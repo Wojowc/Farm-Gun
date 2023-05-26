@@ -19,8 +19,8 @@ public class GenerateOpponent : MonoBehaviour
     {
         wolfs = new ();
         foxes = new ();
-        animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep", "Duck" };
-        animalsToChaseForFox = new() { "Chicken" };
+        animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep" };
+        animalsToChaseForFox = new() { "Chicken", "Duck" };
     }
 
     //TODO delete if no longer need for test 
