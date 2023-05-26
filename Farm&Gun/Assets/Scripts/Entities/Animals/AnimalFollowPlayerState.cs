@@ -7,11 +7,11 @@ public class AnimalFollowPlayerState : State
     [SerializeField] private AnimalIdleState idleState;
     [SerializeField] private AnimalRunAwayState runAwayState;
     [SerializeField] private NavMeshAgent navMesh;
-    private GameObject player;
-    private float playerDistanceThreshold = 16f;
-    private float enemyDistanceThreshold = 6f;
-    private float playerAvgLocationRadius = 10f;
-    private float stoppingDistance = 3f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private float playerDistanceThreshold = 16f;
+    [SerializeField] private float enemyDistanceThreshold = 6f;
+    [SerializeField] private float playerAvgLocationRadius = 10f;
+    [SerializeField] private float stoppingDistance = 3f;
 
     public void Awake()
     {

@@ -8,12 +8,12 @@ public class AnimalIdleState : State
     [SerializeField] private AnimalFollowPlayerState followPlayerState;
     [SerializeField] private AnimalRunAwayState runAwayState;
     [SerializeField] private NavMeshAgent navMesh;
-    private GameObject player;
-    private float playerDistanceThreshold = 20f;
-    private float enemyDistanceThreshold = 6f;
-    private float idleAnimationDelaySec = 15f;
-    private float idleAnimationRadius = 3f;
-    private float stoppingDistance = 0.5f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private float playerDistanceThreshold = 20f;
+    [SerializeField] private float enemyDistanceThreshold = 6f;
+    [SerializeField] private float idleAnimationDelaySec = 15f;
+    [SerializeField] private float idleAnimationRadius = 3f;
+    [SerializeField] private float stoppingDistance = 0.5f;
 
     private bool _isIdleCoroutineRunning = false;
 

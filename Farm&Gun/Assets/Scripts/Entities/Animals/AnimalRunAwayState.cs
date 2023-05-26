@@ -7,9 +7,9 @@ public class AnimalRunAwayState : State
     [SerializeField] private AnimalFollowPlayerState followPlayerState;
     [SerializeField] private AnimalIdleState idleState;
     [SerializeField] private NavMeshAgent navMesh;
-    private GameObject player;
-    private float distanceThreshold = 8f;
-    private float stoppingDistance = 2f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private float distanceThreshold = 8f;
+    [SerializeField] private float stoppingDistance = 2f;
 
     private GameObject[] enemiesList;
     private bool isRunningAway = true;
