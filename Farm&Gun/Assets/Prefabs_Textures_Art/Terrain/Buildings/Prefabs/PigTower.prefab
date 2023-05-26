@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2591175641720620738}
   - component: {fileID: 1509421490552929823}
   - component: {fileID: 7484701734244975592}
+  - component: {fileID: -8343719018807800697}
   m_Layer: 0
   m_Name: PigTower
   m_TagString: Tower
@@ -138,6 +139,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.042142984
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8343719018807800697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591175641720620739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352617f7b8bd0ea4485977d25bd8678c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingArea: 15
+  shootingFrequency: 1
+  Bullet: {fileID: 5972924633316556883, guid: c9a451c454c9b1141bf951582a02609b, type: 3}
+  fox: {fileID: 8159077543199624705, guid: c24356ecd0dd8124e92ebad7f62bac42, type: 3}
 --- !u!1 &6441807237541601909
 GameObject:
   m_ObjectHideFlags: 0
