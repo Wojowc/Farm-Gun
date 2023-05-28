@@ -14,7 +14,8 @@ public class LightingManager : MonoBehaviour
     public int DaylightLenght = 8;
     public int NightLenght = 16;
 
-    public int DaysCount = 0;
+    public int DaysCount { get; private set; } = 0;
+    public bool IsNight { get; private set; } = false;
 
     private int DayLenght { get; set; }
 
@@ -48,6 +49,15 @@ public class LightingManager : MonoBehaviour
             if(TimeOfDay >= DayLenght)
             {
                 DaysCount++;
+            }
+
+            if(TimeOfDay > DaylightLenght)
+            {
+                IsNight = true;
+            }
+            else
+            {
+                IsNight = false;
             }
             TimeOfDay %= DayLenght;
             //Debug.Log($"Current time is: {TimeOfDay}");

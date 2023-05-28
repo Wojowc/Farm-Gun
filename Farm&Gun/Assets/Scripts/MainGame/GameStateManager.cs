@@ -6,17 +6,41 @@ public class GameStateManager : MonoBehaviour
 {
     GameBaseState currentState;
 
-    public GameStateIntro IntroState = new GameStateIntro();
-    public GameStateDiceroll DicerollState = new GameStateDiceroll();
-    public GameStateDay DayState = new GameStateDay();
-    public GameStateNight NightState = new GameStateNight();
-    public GameStateMarket MarketState = new GameStateMarket();
-    public GameStateEnd EndState = new GameStateEnd();
+    public GameStateIntro IntroState;
+    public GameStateDiceroll DicerollState;
+    public GameStateDay DayState;
+    public GameStateNight NightState;
+    public GameStateMarket MarketState;
+    public GameStateEnd EndState;
+
+    public GameObject AnimalGenerator;
+    public GameObject MarketManager;
+    public GameObject GameOverScreenManager;
+    public GameObject BuildingPlacement;
+    public GameObject LightingManager;
+    public GameObject TerrainGenerator;
+    public GameObject DayNightBarCanvas;
+    public GameObject IntroCanvas;
+
+    public GameObject Player;
+
+    public GameObject MinimapCamera;
+
+    private void Awake()
+    {
+        IntroState = gameObject.AddComponent<GameStateIntro>();
+        DicerollState = gameObject.AddComponent<GameStateDiceroll>();
+        DayState = gameObject.AddComponent<GameStateDay>();
+        NightState = gameObject.AddComponent<GameStateNight>();
+        MarketState = gameObject.AddComponent<GameStateMarket>();
+        EndState = gameObject.AddComponent<GameStateEnd>();
+    }
 
     private void Start()
     {
         currentState = IntroState;
         currentState.EnterState(this);
+        Time.timeScale = 0.0f;
     }
 
     private void Update()

@@ -1,32 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameStateIntro : GameBaseState
 {
-    [SerializeField]
-    private GameObject introPanel;
-    [SerializeField]
+    private GameObject introCanvas;
     private Button confirmButton;
-
-    private bool skipIntroPanel = false;
+    private GameStateManager stateManager;
 
     public override void EnterState(GameStateManager game)
     {
-        Time.timeScale = 0;
-        Debug.Log("Entered intro state.");
-        skipIntroPanel = false;
-        confirmButton.onClick.RemoveAllListeners();
-        confirmButton.onClick.AddListener(() => { introPanel.SetActive(false); });
+        Debug.Log($"Entered state Intro");
+        game.Player.SetActive(false);
+        introCanvas = game.IntroCanvas;
+        confirmButton = introCanvas.GetComponentInChildren<Button>();
+        stateManager = game;
+        confirmButton.onClick.AddListener(ContinueAfterConfirm);
+        game.MinimapCamera.SetActive(false);
     }
 
     public override void UpdateState(GameStateManager game)
     {
-        if(skipIntroPanel)
-        {
-            introPanel.SetActive(false);
-            game.SwitchState(game.DicerollState);
-        }
+    }
+
+    private void ContinueAfterConfirm()
+    {
+        introCanvas.SetActive(false);
+        stateManager.SwitchState(stateManager.DicerollState);
     }
 }
