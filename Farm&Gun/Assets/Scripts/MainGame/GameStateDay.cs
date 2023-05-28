@@ -8,7 +8,7 @@ public class GameStateDay : GameBaseState
     private LightingManager lightingManager;
     private GameObject buildingPlacementManager;
 
-    public override void EnterState(GameStateManager game)
+    public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Day");
         game.Player.SetActive(true);

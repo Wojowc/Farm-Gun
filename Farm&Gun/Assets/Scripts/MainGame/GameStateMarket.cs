@@ -6,7 +6,7 @@ public class GameStateMarket : GameBaseState
 {
     private GameObject marketCanvas;
 
-    public override void EnterState(GameStateManager game)
+    public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Market");
         marketCanvas = game.MarketManager.transform.GetChild(0).gameObject;

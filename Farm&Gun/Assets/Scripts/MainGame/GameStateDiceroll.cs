@@ -6,7 +6,7 @@ public class GameStateDiceroll : GameBaseState
 {
     private GameObject animalGenerator;
     private MobGenerator mobGenerator;
-    public override void EnterState(GameStateManager game)
+    public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Diceroll");
         animalGenerator = game.AnimalGenerator;
@@ -18,8 +18,16 @@ public class GameStateDiceroll : GameBaseState
         if(Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Pseudo throw cause its not on develop.");
-            Time.timeScale = 1.0f;
-            game.SwitchState(game.DayState);
+
+            if (mobGenerator.CheckIfAllAnimalTypesPresent())
+            {
+                game.SwitchState(game.EndState, GameStateManager.WIN_STRING);
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                game.SwitchState(game.DayState);
+            }
         }
     }
 }

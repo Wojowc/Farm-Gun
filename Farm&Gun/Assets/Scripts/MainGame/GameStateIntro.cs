@@ -10,7 +10,7 @@ public class GameStateIntro : GameBaseState
     private Button confirmButton;
     private GameStateManager stateManager;
 
-    public override void EnterState(GameStateManager game)
+    public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Intro");
         game.Player.SetActive(false);

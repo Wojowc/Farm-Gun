@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    public const string WIN_STRING = "WIN";
+    public const string LOOSE_STRING = "LOST";
+
     GameBaseState currentState;
 
     public GameStateIntro IntroState;
@@ -48,9 +51,9 @@ public class GameStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    public void SwitchState(GameBaseState state)
+    public void SwitchState(GameBaseState state, params string[] args)
     {
         currentState = state;
-        state.EnterState(this);
+        state.EnterState(this, args);
     }
 }

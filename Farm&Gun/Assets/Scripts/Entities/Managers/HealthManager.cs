@@ -25,4 +25,9 @@ public class HealthManager : MonoBehaviour
         Debug.Log("Dead1");
         Destroy(gameObject);
     }
+
+    public virtual bool IsDead()
+    {
+        return health < 0;
+    }
 }
