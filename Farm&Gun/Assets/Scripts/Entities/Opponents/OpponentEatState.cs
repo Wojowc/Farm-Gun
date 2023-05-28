@@ -10,7 +10,7 @@ public class OpponentEatState : State
     private OpponentHitState opponentHitState;
 
     [SerializeField]
-    float coroutineTime = 5.0f;
+    float coroutineTime = 2.0f;
 
     private Opponent opponent;
 
@@ -46,11 +46,13 @@ public class OpponentEatState : State
 
     private void DisableMovement()
     {
-        opponentChaseState.Target?.GetComponent<Movement>().DisableMovement();
+        if (opponentChaseState.Target != null)
+            opponentChaseState.Target.GetComponent<Movement>().DisableMovement();
     }
     private void EnableMovement()
     {
-        opponentChaseState.Target?.GetComponent<Movement>().EnableMovement();
+        if (opponentChaseState.Target != null)
+            opponentChaseState.Target.GetComponent<Movement>().EnableMovement();
     }
 
 }

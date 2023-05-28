@@ -11,7 +11,8 @@ public class OpponentHealthManager : HealthManager
         gameObject.GetComponent<Opponent>().enabled = false;
         gameObject.GetComponent<OpponentHealthManager>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
-        Destroy(gameObject, 3);
+        Debug.Log("Dead2");
+        Destroy(gameObject, deadDelay);
     }
 }
 

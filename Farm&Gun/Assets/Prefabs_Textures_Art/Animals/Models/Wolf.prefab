@@ -48,7 +48,6 @@ MonoBehaviour:
   opponentHitState: {fileID: 5340119709718307718}
   agent: {fileID: 3326014866753643913}
   coroutineTime: 2
-  target: {fileID: 0}
 --- !u!1 &2136254255005836587
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponentChaseState: {fileID: 7996228022765556616}
   opponentHitState: {fileID: 5340119709718307718}
-  player: {fileID: 0}
   coroutineTime: 3
 --- !u!1 &8159077543199624705
 GameObject:
@@ -286,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  deadDelay: 3
 --- !u!1 &9164181531644071907
 GameObject:
   m_ObjectHideFlags: 0
