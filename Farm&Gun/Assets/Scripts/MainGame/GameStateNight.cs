@@ -7,12 +7,15 @@ public class GameStateNight : GameBaseState
     private GameObject lightingManagerObject;
     private LightingManager lightingManager;
     private PlayerHealthManager playerHealthManager;
+    private GenerateOpponent oponentGenerator;
 
     public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Night");
         lightingManagerObject = game.LightingManager;
         lightingManager = lightingManagerObject.GetComponent<LightingManager>();
+        oponentGenerator = game.OpponentsGenerator.GetComponent<GenerateOpponent>();
+        oponentGenerator.InstantiateOponentsParametrized(); // to change when the final game comes out
     }
 
     public override void UpdateState(GameStateManager game)
@@ -27,6 +30,7 @@ public class GameStateNight : GameBaseState
 
         if(!lightingManager.IsNight)
         {
+            oponentGenerator.DestroyAllOpponents();
             game.SwitchState(game.MarketState);
         }
     }

@@ -24,6 +24,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject TerrainGenerator;
     public GameObject DayNightBarCanvas;
     public GameObject IntroCanvas;
+    public GameObject OpponentsGenerator;
 
     public GameObject Player;
 
