@@ -24,21 +24,21 @@ public class GenerateOpponent : MonoBehaviour
     }
 
     //TODO delete if no longer need for test 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            InstantiateOponentsParametrized();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.O))
+    //    {
+    //        InstantiateOponentsParametrized();
+    //    }
+    //}
 
-    void InstantiateOponentsParametrized()
+    public void InstantiateOponentsParametrized()
     {
         InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs, animalsToChaseForWolf);
         InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes, animalsToChaseForFox);
     }
 
-    void InstantiateMultipleOpponentsForCategory(GameObject opponent, int amount, List<GameObject> opponents, List<string> animalsToChaseForOpponent)
+    public void InstantiateMultipleOpponentsForCategory(GameObject opponent, int amount, List<GameObject> opponents, List<string> animalsToChaseForOpponent)
     {
         for (int i = 0; i < amount; i++)
         {
@@ -47,5 +47,31 @@ public class GenerateOpponent : MonoBehaviour
             opponentInstance.GetComponent<Opponent>().InitAnimalsToChase(animalsToChaseForOpponent);
             opponents.Add(opponentInstance);
         }
+    }
+
+    public void DestroyAllOpponents(bool randomizeDestroyTime = false)
+    {
+        var randomTime = 0.0f;
+        foreach (var wolf in wolfs)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(wolf, randomTime);
+        }
+
+        wolfs.Clear();
+
+        foreach (var fox in foxes)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(fox, randomTime);
+        }
+        foxes.Clear();
+
     }
 }
