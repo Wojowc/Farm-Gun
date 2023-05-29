@@ -46,6 +46,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         if(!CanPlaceTower(BuildingType.Ducks))
         {
+            Debug.Log("Can't place ducks tower.");
             SetBuildingModelValues();
             return;
         }
@@ -60,6 +61,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         if (!CanPlaceTower(BuildingType.Pig))
         {
+            Debug.Log("Can't place pig tower.");
             SetBuildingModelValues();
             return;
         }
@@ -74,6 +76,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         if (!CanPlaceTower(BuildingType.Fence))
         {
+            Debug.Log("Can't place fence.");
             SetBuildingModelValues();
             return;
         }
