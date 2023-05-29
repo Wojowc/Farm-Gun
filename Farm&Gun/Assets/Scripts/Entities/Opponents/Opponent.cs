@@ -67,7 +67,7 @@ public class Opponent : MonoBehaviour
         var allAnimals = FindAllPossibleAnimalsToChase();
         if (allAnimals.Count == 0)
         {
-            return GameObject.FindGameObjectWithTag("Player");
+            return GameObject.Find("Player");
         }
 
         return CalcualteDistancesToFindTheNearestAnimal(allAnimals);
