@@ -23,7 +23,7 @@ public class GenerateOpponent : MonoBehaviour
         animalsToChaseForFox = new() { "Chicken", "Duck" };
     }
 
-    //TODO delete if no longer need for test 
+    //TODO delete if no longer need for test
     //void Update()
     //{
     //    if (Input.GetKeyDown(KeyCode.O))
