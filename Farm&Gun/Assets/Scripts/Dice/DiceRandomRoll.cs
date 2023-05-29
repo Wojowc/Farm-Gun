@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
@@ -12,9 +14,17 @@ public class DiceRandomRoll : MonoBehaviour
     public GameObject YellowDicePrefab;
     public GameObject RedDicePrefab;
 
+    public Text RedDiceTextDisplay;
+    public Text YellowDiceTextDisplay;
+
+    public Image RedDiceImageDisplay;
+    public Image YellowDiceImageDisplay;
+
+    public Texture[] FarmAnimalImages;
+
     public DiceData RedDiceData, YellowDiceData;
     
-    string faceName;
+    string yellowFaceName, redFaceName;
     bool generated = false;
 
     public DiceData GenerateDice(GameObject DicePrefab)
@@ -111,7 +121,7 @@ public class DiceRandomRoll : MonoBehaviour
         //Since we have all child objects for each face,
         //We just need to find the highest Y value
         int maxIndex = 0;
-        faceName = "";
+        string faceName = "";
         for (int i = 1; i < faceDetectors.Count; i++)
         {
             if (faceDetectors[maxIndex].transform.position.y <
@@ -133,8 +143,10 @@ public class DiceRandomRoll : MonoBehaviour
         //destroy old
         Destroy(RedDiceData.diceObject);
         Destroy(YellowDiceData.diceObject);
+        YellowDiceTextDisplay.text = "";
+        RedDiceTextDisplay.text = "";
 
-        //generate new
+        //generate newk
         RedDiceData = GenerateDice(RedDicePrefab);
         YellowDiceData = GenerateDice(YellowDicePrefab);
         generated = true;
@@ -144,11 +156,14 @@ public class DiceRandomRoll : MonoBehaviour
     {
         if (generated == true && RedDiceData.rb.velocity == Vector3.zero && YellowDiceData.rb.velocity == Vector3.zero)
         {
-            faceName = FindFaceResult(YellowDiceData.faceDetectors);
-            Debug.Log("wylosowana zolta to = " + faceName);
+            yellowFaceName = FindFaceResult(YellowDiceData.faceDetectors);
+            Debug.Log("wylosowana zolta to = " + yellowFaceName);
+            YellowDiceTextDisplay.text = yellowFaceName;
+            //YellowDiceImageDisplay.Icon;
             //update view to display rolled animal
-            faceName = FindFaceResult(RedDiceData.faceDetectors);
-            Debug.Log("wylosowana czerwona to = " + faceName);
+            redFaceName = FindFaceResult(RedDiceData.faceDetectors);
+            Debug.Log("wylosowana czerwona to = " + redFaceName);
+            RedDiceTextDisplay.text = redFaceName;
             generated = false;
         } 
     }

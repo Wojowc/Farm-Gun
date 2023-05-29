@@ -14,8 +14,8 @@ public class DiceRoll : MonoBehaviour
 
     public void RollDice()
     {
-        DiceRandomRoll dice;
-        dice.StartRoll();
+      //  DiceRandomRoll dice;
+       // dice.StartRoll();
     }
 
     public void SetVolume(float volume)
