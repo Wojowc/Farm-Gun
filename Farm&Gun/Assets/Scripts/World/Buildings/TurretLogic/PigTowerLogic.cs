@@ -1,62 +1,59 @@
-using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal.Profiling;
 using UnityEngine;
 
 public class PigTowerLogic : MonoBehaviour
 {
     [SerializeField] public float shootingArea = 15f;
+
     //[SerializeField] public float damageAmount = 5f;
     [SerializeField] public float shootingFrequency = 1f;
+
     //[SerializeField] public float bulletForce = 10f;
     [SerializeField] public GameObject Bullet;
-    private GameObject[] enemyList;
 
-    /////////////
-    [SerializeField] GameObject fox;
-    private void Start()
-    {
-        FindAllEnemiesWithinRange();
-        StartCoroutine(ShootPoopAtOpponent());
-    }
+    private GameObject[] enemyList;
+    bool _coroutineStarted = false;
 
     private void Update()
     {
         FindAllEnemiesWithinRange();
 
-        /////////////////testing
-        if (Input.GetKeyDown(KeyCode.G))
+        if (!_coroutineStarted)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            GameObject o = Instantiate(fox, player.transform);
-            
+            StartCoroutine(ShootAtOpponent());
+            _coroutineStarted = true;
         }
     }
 
     private void FindAllEnemiesWithinRange()
     {
         enemyList = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position, transform.position) < shootingArea).ToArray();
+        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position,
+            transform.position) < shootingArea).ToArray();
     }
 
-    private IEnumerator ShootPoopAtOpponent()
+    private IEnumerator ShootAtOpponent()
     {
-        while (enemyList!= null && enemyList.Length > 0)
+        while (true)
         {
-            int randomOpponent = Random.Range(0, enemyList.Length);
-            Vector3 targetPos = enemyList[randomOpponent].transform.position;
-            Fire(targetPos);
-
+            if (enemyList != null && enemyList.Length > 0)
+            {
+                int randomOpponent = Random.Range(0, enemyList.Length);
+                Vector3 targetPos = enemyList[randomOpponent].transform.position;
+                Fire(targetPos);
+            }
             yield return new WaitForSecondsRealtime(shootingFrequency);
         }
     }
 
     private void Fire(Vector3 targetPos)
     {
-        GameObject bulletInst = Instantiate(Bullet, transform);
+        Debug.Log("bum");
+        Vector3 direction = targetPos - this.transform.position;
+        Quaternion rotation = Quaternion.Euler(direction);
+        GameObject bulletInst = Instantiate(Bullet, this.transform.position
+            + new Vector3(0, 0, 2), rotation);
         bulletInst.GetComponent<Projectile>().Shoot(targetPos.normalized);
     }
 }

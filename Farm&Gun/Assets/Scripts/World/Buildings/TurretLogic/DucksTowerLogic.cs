@@ -7,16 +7,16 @@ public class DucksTowerLogic : MonoBehaviour
     [SerializeField] public float healingAmount = 5f;
     [SerializeField] public float healingFrequency = 1f;
     private GameObject[] animalList;
-
-    private void Start()
-    {
-        FindAllAnimals();
-        StartCoroutine(HealAnimals());
-    }
+    private bool _coroutineStarted = false;
 
     private void Update()
     {
         FindAllAnimals();
+        if (!_coroutineStarted)
+        {
+            StartCoroutine(HealAnimals());
+            _coroutineStarted = true;
+        }
     }
 
     private void FindAllAnimals()
@@ -26,18 +26,21 @@ public class DucksTowerLogic : MonoBehaviour
 
     private IEnumerator HealAnimals()
     {
-        while (animalList != null && animalList.Length > 0)
+        while (true)
         {
-            foreach (GameObject go in animalList)
+            if (animalList != null && animalList.Length > 0)
             {
-                if (Vector3.Distance(go.transform.position, transform.position) < healingArea)
+                foreach (GameObject go in animalList)
                 {
-                    var hm = go.GetComponent<HealthManager>();
-                    if (hm != null)
-                        hm.Heal(healingAmount);
+                    Debug.Log("heal");
+                    if (Vector3.Distance(go.transform.position, transform.position) < healingArea)
+                    {
+                        var hm = go.GetComponent<HealthManager>();
+                        if (hm != null)
+                            hm.Heal(healingAmount);
+                    }
                 }
             }
-
             yield return new WaitForSecondsRealtime(healingFrequency);
         }
     }
