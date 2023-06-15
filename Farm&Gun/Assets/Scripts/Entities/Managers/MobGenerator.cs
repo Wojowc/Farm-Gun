@@ -82,6 +82,10 @@ public class MobGenerator : MonoBehaviour
 
     void Update()
     {                                                          //game objecty w tablicy, tagi dla zwierzat
+        for (int i = 0; i < FarmMobs.Length; i++)
+        {
+          //  Debug.Log(FarmMobs[i].transform.name + " " + i + " " + FarmMobs[i].GetComponent<AudioSource>().time);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //first dice roll
