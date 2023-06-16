@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
+using Unity.AI.Navigation;
 
 public class TurretBuilding : MonoBehaviour
 {
@@ -38,6 +40,8 @@ public class TurretBuilding : MonoBehaviour
     [SerializeField]
     private Sprite hammerIcon;
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals(playerTag))
@@ -62,7 +66,7 @@ public class TurretBuilding : MonoBehaviour
         SetupHealthbar();
         currentBuilding = gameObject.GetComponent<TurretBuilding>();
         buildingRangeTrigger = gameObject.GetComponent<SphereCollider>();
-        buildingRangeTrigger.radius = buildingRange;
+        buildingRangeTrigger.radius = buildingRange; 
     }
 
     private void Update()
@@ -79,6 +83,7 @@ public class TurretBuilding : MonoBehaviour
             currentBuilding.gameObject.transform.Find("BuildingRangeSphere").gameObject.SetActive(false); // removes the sphere that shows building range
             currentBuilding.enabled = false;
             buildingBar.SetActive(false);
+          
         }
     }
 

@@ -15,6 +15,7 @@ TagManager:
   - Pig
   - Sheep
   - Tower
+  - NavMesh
   layers:
   - Default
   - TransparentFX

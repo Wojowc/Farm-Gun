@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1313972825}
   m_Layer: 0
   m_Name: NavMesh Surface
-  m_TagString: Untagged
+  m_TagString: NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,6 +1040,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2133939277437621454, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
+      propertyPath: surface
+      value: 
+      objectReference: {fileID: 1313972825}
     - target: {fileID: 2133939277467535421, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
