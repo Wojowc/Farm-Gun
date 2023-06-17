@@ -59,7 +59,7 @@ public class AnimalIdleState : State
         while (true)
         {
             navMesh.SetDestination(GenerateRandomLocation(idleAnimationRadius));
-            yield return new WaitForSeconds(Random.Range(idleAnimationDelaySec - idleAnimationDelaySec / 2,
+            yield return new WaitForSecondsRealtime(Random.Range(idleAnimationDelaySec - idleAnimationDelaySec / 2,
                 idleAnimationDelaySec + idleAnimationDelaySec / 2));
             navMesh.ResetPath();
         }
