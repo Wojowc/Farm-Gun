@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,10 +34,12 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField]
     private GameObject fence;
 
+    [SerializeField]
+    private NavMeshSurface surface;
+
     private GameObject buildingModel; // currently selected building model
     private BoxCollider buildingBoxCollider;
     private SphereCollider buildingSphereCollider;
-
     #endregion
 
     #region Methods
@@ -200,6 +203,8 @@ public class BuildingPlacement : MonoBehaviour
             buildingSphereCollider = null;
             buildingModel.gameObject.SetActive(true);
             buildingModel = null;
+            
+            surface.BuildNavMesh();
         }
 
     }
