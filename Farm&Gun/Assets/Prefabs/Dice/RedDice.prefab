@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3548124470686152530}
   m_Layer: 0
   m_Name: RedDice
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

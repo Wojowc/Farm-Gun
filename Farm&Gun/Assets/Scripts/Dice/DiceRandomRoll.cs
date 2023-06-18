@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -23,7 +24,13 @@ public class DiceRandomRoll : MonoBehaviour
     public Texture[] FarmAnimalImages;
 
     public DiceData RedDiceData, YellowDiceData;
-    
+
+    [FormerlySerializedAs("soundCollideFloor")]
+    public AudioSource soundCollideFloor;
+
+    [FormerlySerializedAs("soundCollideDice")]
+    public AudioSource soundCollideDice;
+
     string yellowFaceName, redFaceName;
     bool generated = false;
 
@@ -150,6 +157,29 @@ public class DiceRandomRoll : MonoBehaviour
         RedDiceData = GenerateDice(RedDicePrefab);
         YellowDiceData = GenerateDice(YellowDicePrefab);
         generated = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.CompareTag("Dice"))
+        {
+            PlaySoundCollideFloor();
+        }
+        if (collision.transform.CompareTag("Floor"))
+        {
+            PlaySoundCollideDice();
+        }
+    }
+
+    public void PlaySoundCollideFloor()
+    {
+        if (!soundCollideFloor.isPlaying)
+            soundCollideFloor.Play();
+    }
+    public void PlaySoundCollideDice()
+    {
+        if (!soundCollideDice.isPlaying)
+            soundCollideDice.Play();
     }
 
     private void Update()

@@ -10,6 +10,13 @@ TagManager:
   - AttackWeapon
   - Enemy
   - Wolf
+  - DiceFaceCow
+  - DiceFaceDuck
+  - DiceFaceChicken
+  - DiceFaceSheep
+  - DiceFacePig
+  - Dice
+  - Table
   layers:
   - Default
   - TransparentFX
