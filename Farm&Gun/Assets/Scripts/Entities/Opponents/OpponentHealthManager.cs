@@ -7,13 +7,19 @@ public class OpponentHealthManager : HealthManager
     protected override void Die()
     {
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        //gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+       // Debug.Log(gameObject.transform.rotation);
         gameObject.GetComponent<StateMachineManager>().enabled = false;
         gameObject.GetComponent<Opponent>().enabled = false;
         gameObject.GetComponent<OpponentHealthManager>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
-        Debug.Log("Dead2");
-        Destroy(gameObject, deadDelay);
+        //gameObject.GetComponent<Rigidbody>(). = false;
+       
+
+        Destroy(gameObject, 3);
+
     }
+
 }
 
 

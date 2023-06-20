@@ -32,7 +32,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
         IsGamePaused = false;
-        player.transform.Find("Attacks Point").GetComponent<PlayerAttack>().EnableAttack();
     }
 
     private void Pause() // Method used for pausing the game
@@ -41,6 +40,5 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
         IsGamePaused = true;
-        player.transform.Find("Attacks Point").GetComponent<PlayerAttack>().DisableAttack();
     }
 }
