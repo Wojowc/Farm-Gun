@@ -3,16 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FarmAnimalsSpawnPoint
+  - Projectile
+  - attackWeapon
+  - AttackWeapon
+  - Enemy
+  - Chicken
+  - Cow
+  - Duck
+  - Pig
+  - Sheep
+  - Tower
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Characters
+  - Buildings
   - 
   - 
   - 
