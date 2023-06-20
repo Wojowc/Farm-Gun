@@ -1,20 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class MobGenerator : MonoBehaviour
 {
     //tablica na male i duze zwierzeta dodawanie obiektu po stworzeniu
-    public GameObject[] FarmMobs;//[1-kura,2-kaczka] TODO
+    public GameObject[] FarmMobs;
     [SerializeField]
     private int[] alreadySpawned = { 0, 0, 0, 0, 0 };
+    private string[] animalLables = { "Chicken", "Duck", "Sheep", "Pig", "Cow" };
 
     public Vector3 spawnValues; //values used to constraint? spawning region TODO
     private int[] firstDice = { 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 3, 4 };//first dice array
     private int[] secondDice = { 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 4 };//second dice array
     private int[] maxAnimalAmount = { 30, 12, 10, 6, 3 };
     private int firstAnimal, secondAnimal;
+    //public List <GameObject> SpawnedFarmMobs;
 
     private GameObject[] foundSpawnPoints;
 
@@ -74,6 +78,79 @@ public class MobGenerator : MonoBehaviour
         Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
     }
 
+    private void DespawnAnimals(int animalIndexNumber, int amount)
+    {
+        while (alreadySpawned[animalIndexNumber]>0 && amount>0)
+        {
+            GameObject animalToDelete = GameObject.FindGameObjectWithTag(animalLables[animalIndexNumber]);
+            if (animalToDelete != null) 
+            {
+                Destroy(animalToDelete);
+                alreadySpawned[animalIndexNumber]--;
+            }
+            amount--;
+        }
+    }
+
+    private void SpawnRolledAnimals(int firstAnimal, int secondAnimal)
+    { 
+        if (firstAnimal == secondAnimal)                                    //if both rolled the same
+        {
+            //compare with animals with this index currently on farm
+            int animalsNewSum = (2 + alreadySpawned[firstAnimal]) / 2;
+            //increase the alreadySpawned animals value with the rolled animals
+
+            for (int i = 0; i < animalsNewSum; i++)
+            {
+                if (alreadySpawned[firstAnimal] + 1 <= maxAnimalAmount[firstAnimal])
+                {
+                    SpawnAnimal(firstAnimal);
+                    alreadySpawned[firstAnimal] ++;
+                }
+                else
+                {
+                    
+                    Debug.Log("Przekroczono limit tego zwierzaka :< ");
+                }
+            }
+        }
+
+        else if (firstAnimal != secondAnimal)   //if both rolled different
+        {
+            int animalsNewSum = (1 + alreadySpawned[firstAnimal]) / 2;
+            //alreadySpawned[firstAnimal] += animalsNewSum;
+
+            for (int i = 0; i < animalsNewSum; i++)
+            {
+                if (alreadySpawned[firstAnimal]+1 <= maxAnimalAmount[firstAnimal])
+                {
+                    SpawnAnimal(firstAnimal);
+                    alreadySpawned[firstAnimal]++;
+                }
+                else
+                {
+                    Debug.Log("Przekroczono limit tego zwierzaka :< ");
+                }
+            }
+
+            animalsNewSum = (1 + alreadySpawned[secondAnimal]) / 2;
+            //alreadySpawned[secondAnimal] += animalsNewSum;
+
+            for (int i = 0; i < animalsNewSum; i++)
+            {
+                if (alreadySpawned[secondAnimal]+1 <= maxAnimalAmount[secondAnimal])
+                {
+                    SpawnAnimal(secondAnimal);
+                    alreadySpawned[secondAnimal]++;
+                }
+                else
+                {
+                    Debug.Log("Przekroczono limit tego zwierzaka :< ");
+                }
+            }
+        }
+    }
+
     void Start()
     {
         //search for spawn points and ad correct nametags
@@ -82,10 +159,6 @@ public class MobGenerator : MonoBehaviour
 
     void Update()
     {                                                          //game objecty w tablicy, tagi dla zwierzat
-        for (int i = 0; i < FarmMobs.Length; i++)
-        {
-          //  Debug.Log(FarmMobs[i].transform.name + " " + i + " " + FarmMobs[i].GetComponent<AudioSource>().time);
-        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //first dice roll
@@ -97,57 +170,13 @@ public class MobGenerator : MonoBehaviour
             secondAnimal = secondDice[UnityEngine.Random.Range(0, 12)];    //rolled value
             Debug.Log("Druga kostka: " + secondAnimal);
 
-            if (firstAnimal == secondAnimal)                                    //if both rolled the same
-            {
-                                                                                //compare with animals with this index currently on farm
-                int animalsNewSum = (2 + alreadySpawned[firstAnimal]) / 2;
-                alreadySpawned[firstAnimal] += animalsNewSum;                   //increase the alreadySpawned animals value with the rolled animals
-                
-                for (int i = 0; i < animalsNewSum; i++)
-                {
-                    if (alreadySpawned[firstAnimal] < maxAnimalAmount[firstAnimal])
-                    {
-                        SpawnAnimal(firstAnimal);
-                    }
-                    else
-                    {
-                        Debug.Log("Przekroczono limit tego zwierzaka :< ");
-                    }
-                }
-            }
+            SpawnRolledAnimals(firstAnimal, secondAnimal);
+            
+        }
 
-            else if (firstAnimal != secondAnimal)   //if both rolled different
-            {
-                int animalsNewSum = (1 + alreadySpawned[firstAnimal]) / 2;
-                alreadySpawned[firstAnimal] += animalsNewSum;
-
-                for (int i = 0; i < animalsNewSum; i++)
-                {
-                    if (alreadySpawned[firstAnimal] < maxAnimalAmount[firstAnimal])
-                    {
-                        SpawnAnimal(firstAnimal);
-                    }
-                    else
-                    {
-                        Debug.Log("Przekroczono limit tego zwierzaka :< ");
-                    }
-                }
-
-                animalsNewSum = (1 + alreadySpawned[secondAnimal]) / 2;
-                alreadySpawned[secondAnimal] += animalsNewSum;
-
-                for (int i = 0; i < animalsNewSum; i++)
-                {
-                    if (alreadySpawned[firstAnimal] < maxAnimalAmount[firstAnimal])
-                    {
-                        SpawnAnimal(firstAnimal);
-                    }
-                    else
-                    {
-                        Debug.Log("Przekroczono limit tego zwierzaka :< ");
-                    }
-                }
-            }
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            DespawnAnimals(0, 1);
         }
     }
 
