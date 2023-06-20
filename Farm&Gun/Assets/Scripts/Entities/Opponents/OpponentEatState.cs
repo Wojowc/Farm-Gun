@@ -10,43 +10,50 @@ public class OpponentEatState : State
     private OpponentHitState opponentHitState;
 
     [SerializeField]
-    private GameObject player;
+    float coroutineTime = 2.0f;
 
-    [SerializeField]
-    float coroutineTime = 3.0f;
-
+    private Opponent opponent;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        opponent = gameObject.transform.parent.parent.GetComponent<Opponent>();
     }
-
     public override State RunCurrentState()
     {
-        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-        !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        if (!opponent.IsEating && !opponent.IsHit)
         {
             return opponentChaseState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+
+        if (opponent.IsHit)
         {
+            opponent.IsEating = false;
             return opponentHitState;
         }
 
-        else
-        {
-            //Debug.Log("eating");
-            player.GetComponent<PlayerMovement>().DisableMovement();
-            StartCoroutine(Eat());
-            return this;
-        }
+        DisableMovement();
+        StartCoroutine(Eat());
+        return this;
     }
 
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsEating(false);
-        player.GetComponent<PlayerMovement>().EnableMovement();
+        opponent.IsBuffed = true;
+        opponent.IsEating = false;
+        EnableMovement();
     }
+
+    private void DisableMovement()
+    {
+        if (opponentChaseState.Target != null)
+            opponentChaseState.Target.GetComponent<Movement>().DisableMovement();
+    }
+    private void EnableMovement()
+    {
+        if (opponentChaseState.Target != null)
+            opponentChaseState.Target.GetComponent<Movement>().EnableMovement();
+    }
+
 }
 

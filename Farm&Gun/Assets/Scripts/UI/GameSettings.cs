@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameSettings : MonoBehaviour
 {
-    public static string LocationCity = "Warsaw"; // City name variable used for in-game real time weather system
+    public static string LocationCity = "Gliwice"; // City name variable used for in-game real time weather system
     public static float Volume = 100; // In-game volume
 
     [SerializeField] private TextMeshProUGUI volumeValue;

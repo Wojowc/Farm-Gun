@@ -11,33 +11,37 @@ public class OpponentHitState : State
     private OpponentEatState opponentEatState;
 
     [SerializeField]
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     [SerializeField]
-    float coroutineTime = 0.25f;
+    float coroutineTime = 0.1f;
 
+    private Opponent opponent;
+
+    private void Awake()
+    {
+        opponent = gameObject.transform.parent.parent.GetComponent<Opponent>();
+    }
     public override State RunCurrentState()
     {
-        if (!gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+        if (!opponent.IsEating && !opponent.IsHit)
         {
             return opponentChaseState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsEating() &&
-           !gameObject.transform.parent.parent.GetComponent<Opponent>().GetIsHit())
+
+        if (opponent.IsEating && !opponent.IsHit)
         {
             return opponentEatState;
         }
-        else
-        {
-            StartCoroutine(Hit());
-            return this;
-        }
+
+        opponent.IsEating = false;
+        StartCoroutine(Hit());
+        return this;
     }
 
     private IEnumerator Hit()
     {
         yield return new WaitForSeconds(coroutineTime);
-        gameObject.transform.parent.parent.GetComponent<Opponent>().SetIsHit(false);
+        opponent.IsHit = false;
     }
 }

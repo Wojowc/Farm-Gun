@@ -6,22 +6,72 @@ public class GenerateOpponent : MonoBehaviour
     [SerializeField]
     private GameObject wolf, fox;
 
-    [SerializeField]
     private List<GameObject> wolfs, foxes;
 
-    void Update()
+    [SerializeField]
+    private int amountWolf, amountFox;
+
+    [SerializeField]
+    private List<string> animalsToChaseForWolf, animalsToChaseForFox;
+
+    
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        wolfs = new ();
+        foxes = new ();
+        animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep" };
+        animalsToChaseForFox = new() { "Chicken", "Duck" };
+    }
+
+    //TODO delete if no longer need for test
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.O))
+    //    {
+    //        InstantiateOponentsParametrized();
+    //    }
+    //}
+
+    public void InstantiateOponentsParametrized()
+    {
+        InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs, animalsToChaseForWolf);
+        InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes, animalsToChaseForFox);
+    }
+
+    public void InstantiateMultipleOpponentsForCategory(GameObject opponent, int amount, List<GameObject> opponents, List<string> animalsToChaseForOpponent)
+    {
+        for (int i = 0; i < amount; i++)
         {
-            InstantiateOponents();
+            GameObject opponentInstance = GameObject.Instantiate(opponent, this.transform.position, Quaternion.identity);
+            opponentInstance.transform.rotation = transform.rotation;
+            opponentInstance.GetComponent<Opponent>().InitAnimalsToChase(animalsToChaseForOpponent);
+            opponents.Add(opponentInstance);
         }
     }
 
-    void InstantiateOponents()
+    public void DestroyAllOpponents(bool randomizeDestroyTime = false)
     {
-        // jesli kilka wilkow to nalezy ich tworzyc i dodawac na liste
-        GameObject wolfInstance = GameObject.Instantiate(wolf, this.transform.position, Quaternion.identity);
-        wolfInstance.transform.rotation = transform.rotation;
-        wolfs.Add(wolfInstance);
+        var randomTime = 0.0f;
+        foreach (var wolf in wolfs)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(wolf, randomTime);
+        }
+
+        wolfs.Clear();
+
+        foreach (var fox in foxes)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(fox, randomTime);
+        }
+        foxes.Clear();
+
     }
 }

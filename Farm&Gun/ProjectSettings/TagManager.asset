@@ -9,7 +9,12 @@ TagManager:
   - attackWeapon
   - AttackWeapon
   - Enemy
-  - Wolf
+  - Chicken
+  - Cow
+  - Duck
+  - Pig
+  - Sheep
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -17,8 +22,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Player
-  - Enemy
+  - Characters
+  - Buildings
   - 
   - 
   - 
