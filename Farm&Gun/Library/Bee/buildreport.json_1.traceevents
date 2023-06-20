@@ -1,0 +1,629 @@
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
+{ "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 0, "tid": 1, "ts": 1685428006721298, "dur": 1077030, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428006721335, "dur": 15686, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428006737024, "dur": 33618, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428006770644, "dur": 283861, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428007054511, "dur": 730874, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428007785386, "dur": 12941, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428007798806, "dur": 11, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1685428006870059, "dur": 162102, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428006871157, "dur": 42385, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428007014636, "dur": 4668, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428007019308, "dur": 12842, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428007020184, "dur": 11118, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428007038319, "dur": 1295, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1685428007037273, "dur": 2365, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428007798896, "dur": 174, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1685428007097681, "dur":1738, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007099426, "dur":106, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1685428007099573, "dur":23, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1685428007099596, "dur":467, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1685428007100092, "dur":933, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007101025, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773303, "dur":283, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773586, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773595, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773597, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773601, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773603, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773608, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773609, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773614, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773615, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773619, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773621, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773627, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773628, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773632, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773633, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773638, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773639, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773643, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773644, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773649, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773650, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773654, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773655, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773659, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773672, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007773689, "dur":1634, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1685428007100244, "dur":787, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007101033, "dur":6179, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007107225, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1685428007107233, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007116528, "dur":644, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1685428007117180, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1685428007117275, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007117600, "dur":968, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1685428007118570, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1685428007118717, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007119395, "dur":6714, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":1, "ts":1685428007126160, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":1, "ts":1685428007126267, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007126301, "dur":7288, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":1, "ts":1685428007133639, "dur":106, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":1, "ts":1685428007133749, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007135018, "dur":51649, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":1, "ts":1685428007186709, "dur":188, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007186909, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007186917, "dur":2746, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007189707, "dur":23010, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007212721, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007212730, "dur":1681, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007214590, "dur":39381, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007253976, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007253985, "dur":4223, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007258246, "dur":150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007258400, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007258406, "dur":2096, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007260550, "dur":24292, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007284848, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007284857, "dur":2552, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007287462, "dur":17663, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007305129, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007305136, "dur":3769, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007308962, "dur":57091, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007366058, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007366065, "dur":2203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007368311, "dur":2756, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007371070, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007371076, "dur":6390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007377505, "dur":1104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.InputSystem.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007378612, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007378618, "dur":18953, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.InputSystem.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007397617, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007397762, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007397770, "dur":1327, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007399131, "dur":108431, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007507567, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007507576, "dur":6290, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007513909, "dur":1279, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007515192, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007515201, "dur":5092, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007520336, "dur":278, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007520618, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007520626, "dur":962, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007521627, "dur":130081, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007651713, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1685428007651722, "dur":1053, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":1, "ts":1685428007652804, "dur":120525, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007100286, "dur":755, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007101041, "dur":6371, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007107413, "dur":52849, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1685428007160266, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007160276, "dur":19776, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1685428007180097, "dur":24825, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007204926, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007204933, "dur":2385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007207357, "dur":28338, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007235700, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007235707, "dur":2669, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007238651, "dur":164, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007238820, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007238836, "dur":3304, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007242178, "dur":185, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007242367, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007242375, "dur":13779, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007256202, "dur":23054, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007279262, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007279272, "dur":6841, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007286153, "dur":150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007286306, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007286313, "dur":13165, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007299526, "dur":234, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007299764, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007299772, "dur":3498, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007303309, "dur":235, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007303547, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007303555, "dur":1271, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007304863, "dur":16902, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007321768, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007321773, "dur":2096, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007323915, "dur":26616, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007350538, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007350549, "dur":1921, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007352509, "dur":18198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007370710, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007370716, "dur":2859, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007373618, "dur":155, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Poly2Tri.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007373776, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007373782, "dur":3698, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Poly2Tri.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007377523, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007377669, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007377675, "dur":4760, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007382481, "dur":238271, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007620758, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1685428007620768, "dur":1336, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1685428007622151, "dur":151184, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007100277, "dur":760, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007101037, "dur":6406, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007107444, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1685428007107557, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007117035, "dur":4695, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1685428007121778, "dur":128, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1685428007121910, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007121976, "dur":7708, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1685428007129734, "dur":191876, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007321614, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007322581, "dur":4465, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007327092, "dur":173, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007327269, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007327279, "dur":1374, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007328700, "dur":37157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007365861, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007365869, "dur":2459, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007368369, "dur":139, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007368512, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007368519, "dur":1806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007370366, "dur":126, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007370495, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007370501, "dur":3199, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007373750, "dur":230, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.KdTree.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007373983, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007373989, "dur":4181, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.KdTree.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007378225, "dur":495, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007378724, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007378729, "dur":8268, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007387044, "dur":198030, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007585079, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007585086, "dur":2475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":3, "ts":1685428007587611, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level3" }}
+,{ "pid":12345, "tid":3, "ts":1685428007587678, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007587682, "dur":1674, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level3" }}
+,{ "pid":12345, "tid":3, "ts":1685428007589397, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level1.resS" }}
+,{ "pid":12345, "tid":3, "ts":1685428007589438, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007589444, "dur":1427, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level1.resS" }}
+,{ "pid":12345, "tid":3, "ts":1685428007590918, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1685428007590981, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1685428007590987, "dur":4690, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1685428007595720, "dur":177579, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007100313, "dur":733, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007101046, "dur":6352, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007107398, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1685428007107526, "dur":4, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007110214, "dur":11016, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1685428007121277, "dur":13788, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1685428007135070, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007135079, "dur":1167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1685428007136370, "dur":223, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007136597, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007136838, "dur":943, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007137827, "dur":19518, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007157349, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007157357, "dur":28847, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007186244, "dur":33088, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007219338, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007219348, "dur":10169, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007229561, "dur":76261, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007305826, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007305833, "dur":5938, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007311815, "dur":162, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007311981, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007311988, "dur":1462, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007313498, "dur":17346, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007330847, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007330853, "dur":1467, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007332613, "dur":25640, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007358258, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007358269, "dur":2549, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007360872, "dur":206, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007361081, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007361088, "dur":1021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007362145, "dur":148, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007362296, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007362302, "dur":10342, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007372684, "dur":126, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Stl.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007372813, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007372819, "dur":6430, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Stl.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007380225, "dur":169538, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007549768, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007549778, "dur":1331, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007551156, "dur":220993, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007772154, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1685428007772163, "dur":1082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1685428007773274, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":4, "ts":1685428007773276, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007100361, "dur":688, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007101049, "dur":6305, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007107354, "dur":673, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1685428007108031, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007119991, "dur":7256, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1685428007127456, "dur":202637, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007330099, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007330205, "dur":3454, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007333705, "dur":26408, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007360118, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007360128, "dur":1346, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007361514, "dur":61482, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007423002, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007423010, "dur":2666, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007425719, "dur":44989, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007470714, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007470726, "dur":1063, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007471854, "dur":46376, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007518236, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007518246, "dur":10910, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007529206, "dur":180, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/OtoonShader.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007529390, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007529399, "dur":12193, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/OtoonShader.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007541636, "dur":2449, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007544090, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007544100, "dur":2758, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007546905, "dur":211, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007547120, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007547128, "dur":1273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007548442, "dur":4548, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007552994, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007553004, "dur":7061, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007560113, "dur":204, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007560320, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007560326, "dur":2208, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":5, "ts":1685428007562578, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets5.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007562628, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007562633, "dur":7560, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets5.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007570240, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.resource" }}
+,{ "pid":12345, "tid":5, "ts":1685428007570289, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007570295, "dur":4675, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.resource" }}
+,{ "pid":12345, "tid":5, "ts":1685428007575017, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":5, "ts":1685428007575065, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007575071, "dur":2554, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":5, "ts":1685428007577665, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":5, "ts":1685428007577708, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007577713, "dur":2915, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":5, "ts":1685428007580667, "dur":150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":5, "ts":1685428007580820, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007580826, "dur":1076, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":5, "ts":1685428007581941, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007581989, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007581994, "dur":4597, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007586632, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level3.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007586676, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007586681, "dur":1382, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level3.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007588101, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level2" }}
+,{ "pid":12345, "tid":5, "ts":1685428007588145, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007588150, "dur":1704, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level2" }}
+,{ "pid":12345, "tid":5, "ts":1685428007589897, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level0.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007589943, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007589948, "dur":2055, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level0.resS" }}
+,{ "pid":12345, "tid":5, "ts":1685428007592045, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":5, "ts":1685428007592089, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1685428007592095, "dur":1439, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":5, "ts":1685428007593573, "dur":179744, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007100383, "dur":671, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007101054, "dur":6299, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007107353, "dur":46760, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1685428007154117, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007154125, "dur":2142, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1685428007156345, "dur":47735, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007204087, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007204096, "dur":9700, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007213839, "dur":21111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007234956, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007234966, "dur":2929, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007237941, "dur":20027, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007257972, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007257979, "dur":1347, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007259362, "dur":198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007259563, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007259569, "dur":2362, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007261977, "dur":155, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007262136, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007262142, "dur":1465, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007263645, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007263781, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007263787, "dur":884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007264708, "dur":27610, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007292323, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007292330, "dur":15516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007307898, "dur":57136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007365038, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007365046, "dur":1671, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007366763, "dur":286, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007367053, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007367059, "dur":2211, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007369317, "dur":547, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007369868, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007369900, "dur":2039, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007371982, "dur":441, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007372427, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007372433, "dur":3117, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007375604, "dur":162, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Csg.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007375770, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007375776, "dur":3373, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.Csg.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007379418, "dur":156, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007379578, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007379584, "dur":19070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007398696, "dur":104316, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007503019, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007503030, "dur":2752, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007505843, "dur":205812, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007711679, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1685428007711687, "dur":1185, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":6, "ts":1685428007712909, "dur":60407, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007100401, "dur":656, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007101057, "dur":6223, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007107280, "dur":572, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1685428007107855, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007119250, "dur":6056, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1685428007125465, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1685428007125579, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007125588, "dur":4220, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1685428007129856, "dur":474530, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":7, "ts":1685428007604391, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1685428007604397, "dur":12078, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":7, "ts":1685428007616524, "dur":156773, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007100423, "dur":639, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007101062, "dur":6156, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007107225, "dur":23298, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":8, "ts":1685428007130527, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007130537, "dur":972, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":8, "ts":1685428007131548, "dur":181857, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":8, "ts":1685428007313484, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007313490, "dur":1711, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":8, "ts":1685428007315240, "dur":105502, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1685428007420748, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007420759, "dur":6986, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1685428007427787, "dur":131000, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":8, "ts":1685428007558791, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007558800, "dur":3286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":8, "ts":1685428007562124, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":8, "ts":1685428007562168, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007562208, "dur":985, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":8, "ts":1685428007563233, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":8, "ts":1685428007563274, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007563279, "dur":6930, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":8, "ts":1685428007570253, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007570298, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007570303, "dur":4348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007574722, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007574798, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007574807, "dur":2979, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007577840, "dur":520, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007578364, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007578370, "dur":2466, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007580878, "dur":892, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":8, "ts":1685428007581774, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007581781, "dur":1740, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":8, "ts":1685428007583567, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level5.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007583611, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007583616, "dur":1277, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level5.resS" }}
+,{ "pid":12345, "tid":8, "ts":1685428007584943, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level5" }}
+,{ "pid":12345, "tid":8, "ts":1685428007584988, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007584994, "dur":1219, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level5" }}
+,{ "pid":12345, "tid":8, "ts":1685428007586571, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level4" }}
+,{ "pid":12345, "tid":8, "ts":1685428007586628, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007586634, "dur":4127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level4" }}
+,{ "pid":12345, "tid":8, "ts":1685428007590806, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level0" }}
+,{ "pid":12345, "tid":8, "ts":1685428007590849, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007590854, "dur":2054, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level0" }}
+,{ "pid":12345, "tid":8, "ts":1685428007592958, "dur":412, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1685428007593373, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1685428007593381, "dur":2116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1685428007595538, "dur":177762, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007100439, "dur":626, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007101065, "dur":6152, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007107225, "dur":414, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":9, "ts":1685428007107642, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007118061, "dur":6401, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":9, "ts":1685428007124517, "dur":25147, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":9, "ts":1685428007149670, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007149682, "dur":1688, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":9, "ts":1685428007151424, "dur":183, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007151638, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007151711, "dur":1086, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007152836, "dur":52254, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007205094, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007205101, "dur":7625, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007212771, "dur":17588, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007230363, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007230373, "dur":4978, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007235404, "dur":18733, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007254141, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007254148, "dur":3185, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007257393, "dur":167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007257563, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007257569, "dur":1438, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007259042, "dur":285, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007259331, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007259337, "dur":1571, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007260951, "dur":227, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007261182, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007261187, "dur":2004, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007263227, "dur":46997, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007310228, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007310235, "dur":2202, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007312483, "dur":289, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007312776, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007312782, "dur":934, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007313751, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007313888, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007313893, "dur":904, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007314833, "dur":16047, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007330884, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007330891, "dur":1318, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007332249, "dur":1247, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007333500, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007333509, "dur":1638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007335285, "dur":210, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007335568, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007335575, "dur":1471, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007337084, "dur":35001, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007372089, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007372096, "dur":3017, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007375155, "dur":470, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007375629, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007375635, "dur":3819, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.ProBuilder.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007379504, "dur":128061, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007507569, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007507577, "dur":1596, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007509213, "dur":182336, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007691554, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1685428007691562, "dur":1633, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":9, "ts":1685428007693225, "dur":80094, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007100477, "dur":592, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007101069, "dur":6145, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007107225, "dur":149067, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":10, "ts":1685428007256296, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007291527, "dur":7780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":10, "ts":1685428007299358, "dur":22089, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007321453, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007321464, "dur":2285, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007323789, "dur":48070, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007371863, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007371875, "dur":4057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007375972, "dur":551, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Postprocessing.Runtime.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007376528, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007376534, "dur":2956, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Postprocessing.Runtime.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007379535, "dur":283017, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007662557, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1685428007662568, "dur":2069, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":10, "ts":1685428007664667, "dur":108657, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007100496, "dur":577, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007101073, "dur":6466, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007107541, "dur":46024, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1685428007153569, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007153579, "dur":1657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1685428007155286, "dur":92634, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007247926, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007247936, "dur":1079, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007249053, "dur":2261, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007251318, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007251328, "dur":3083, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007254462, "dur":352, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007254818, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007254823, "dur":2517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007263443, "dur":25845, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007289293, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007289302, "dur":930, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007290273, "dur":15239, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007305517, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007305526, "dur":1847, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007307418, "dur":325, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007307835, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007307843, "dur":1271, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007309156, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007309300, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007309307, "dur":1118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007310477, "dur":167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007310648, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007310654, "dur":2365, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007313057, "dur":17734, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007330823, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007330832, "dur":3084, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007333957, "dur":18436, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007352398, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007352405, "dur":1237, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007353683, "dur":304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007353990, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007353995, "dur":1151, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007355184, "dur":196592, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007551780, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007551789, "dur":6673, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007558505, "dur":385, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Microsoft.CSharp.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007558893, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007558899, "dur":3094, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Microsoft.CSharp.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007562043, "dur":35302, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007597350, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1685428007597904, "dur":1042, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":11, "ts":1685428007598990, "dur":174311, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007100513, "dur":564, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007101077, "dur":6642, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007107719, "dur":121, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1685428007107844, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007118345, "dur":7099, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1685428007125495, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":12, "ts":1685428007125586, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007125592, "dur":7258, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":12, "ts":1685428007132898, "dur":48374, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun.exe" }}
+,{ "pid":12345, "tid":12, "ts":1685428007181275, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007181282, "dur":2332, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun.exe" }}
+,{ "pid":12345, "tid":12, "ts":1685428007183655, "dur":48833, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007232494, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007232504, "dur":5357, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007237910, "dur":115702, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007353639, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007353646, "dur":9650, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007363330, "dur":390, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007363724, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007363730, "dur":1601, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007365388, "dur":679, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007366071, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007366077, "dur":1520, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007367644, "dur":252, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007367900, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007367906, "dur":1918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007369911, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007370049, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007370055, "dur":2420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007372568, "dur":239, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007372810, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007372816, "dur":3345, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007376211, "dur":838, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007377053, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007377059, "dur":3993, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007381096, "dur":122666, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007503766, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007503773, "dur":2539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007506360, "dur":2647, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007509012, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007509046, "dur":3079, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007512172, "dur":57921, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007570101, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007570113, "dur":1127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":12, "ts":1685428007571285, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007571338, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007571344, "dur":3932, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007575314, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets2.assets.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007575357, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007575362, "dur":1362, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets2.assets.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007576774, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007576822, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007576828, "dur":2507, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007579483, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007579543, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007579549, "dur":3665, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007583263, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/resources.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007583317, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007583323, "dur":2732, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/resources.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007586103, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level4.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007586156, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007586161, "dur":1675, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level4.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007587881, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level2.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007587924, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007587929, "dur":1709, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level2.resS" }}
+,{ "pid":12345, "tid":12, "ts":1685428007589684, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level1" }}
+,{ "pid":12345, "tid":12, "ts":1685428007589733, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007589738, "dur":2158, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/level1" }}
+,{ "pid":12345, "tid":12, "ts":1685428007591940, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007591988, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1685428007591994, "dur":3312, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Wroblotron/Desktop/Farm&Gun_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":12, "ts":1685428007595354, "dur":177949, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1685428007776784, "dur":1922, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1685428007799124, "dur": 659, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1685428007798793, "dur": 1006, "ph": "X", "name": "Write chrome-trace events", "args": {} },
