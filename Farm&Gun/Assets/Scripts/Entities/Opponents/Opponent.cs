@@ -1,103 +1,58 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Opponent : MonoBehaviour
 {
     [SerializeField]
+    private float power;
+    [SerializeField]
+    private float speed;
+
+    [SerializeField]
     private float shotForce;
 
     [SerializeField]
     private NavMeshAgent agent;
 
-    private const float buffAmount = 2;
-
-    [SerializeField]
-    private List<string> animalsToChase;
-
-    public bool IsEating { get; set; } = false;
-    public bool IsHit { get; set; } = false;
-    public bool IsBuffed { get; set; } = false;
-
-    private void Awake()
-    {
-        if (IsBuffed)
-        {
-            agent.speed += buffAmount;
-            IsBuffed = false;
-        }
-    }
-    public void InitAnimalsToChase(List<string> animalsToChase)
-    {
-        this.animalsToChase = animalsToChase;
-    }
+    private bool isEating = false;
+    private bool isHit = false;
+    private Vector3 direction;
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach (var animal in animalsToChase)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.gameObject.CompareTag(animal) || collision.gameObject.CompareTag("Player"))
-            {
-                IsEating = true;
-                collision.gameObject.GetComponent<HealthManager>().DecreaseHealth(1);
-            }
-            else if (collision.gameObject.CompareTag("Player"))
-            {
-                IsEating = true;
-                collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
-            }
+            isEating = true;
         }
     }
 
     public void Hit(GameObject projectile)
     {
-        Vector3 direction = projectile.GetComponent<Rigidbody>().velocity.normalized;
-        IsHit = true;
+        direction = (this.gameObject.transform.position - projectile.transform.position).normalized;
+        isHit = true;
 
         agent.enabled = false;
-        GetComponent<Rigidbody>().AddForce(shotForce * agent.speed * direction, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(shotForce * speed * direction, ForceMode.Impulse);
         agent.enabled = true;
-
     }
 
 
-    public GameObject FindTheNearestAnimalToChase()
+    public void SetIsEating(bool state)
     {
-        var allAnimals = FindAllPossibleAnimalsToChase();
-        if (allAnimals.Count == 0)
-        {
-            return GameObject.Find("Player");
-        }
-
-        return CalcualteDistancesToFindTheNearestAnimal(allAnimals);
+        isEating = state;
     }
 
-    private List<GameObject> FindAllPossibleAnimalsToChase()
+    public bool GetIsEating()
     {
-        var allAnimals = new List<GameObject>();
-        foreach (var animal in animalsToChase)
-        {
-            allAnimals.AddRange(GameObject.FindGameObjectsWithTag(animal));
-        }
-
-        return allAnimals;
+        return isEating;
     }
 
-    private GameObject CalcualteDistancesToFindTheNearestAnimal(List<GameObject> allAnimals)
+    public bool GetIsHit()
     {
-        GameObject animalToChase = allAnimals[0];
-        float distance = Mathf.Infinity;
-
-        foreach (var animal in allAnimals)
-        {
-            float newDistance = Vector3.Distance(gameObject.transform.position, animal.transform.position);
-            if (newDistance < distance)
-            {
-                animalToChase = animal;
-            }
-        }
-
-        return animalToChase;
+        return isHit;
+    }
+    public void SetIsHit(bool state)
+    {
+        isHit = state;
     }
 }

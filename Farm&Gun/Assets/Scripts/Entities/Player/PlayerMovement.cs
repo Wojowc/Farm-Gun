@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : Movement
+public class PlayerMovement : MonoBehaviour
 {
     CharacterController characterController;
     bool canMove = true;
@@ -35,11 +35,8 @@ public class PlayerMovement : Movement
 
         if (animator.GetBool("Dead")) return;
 
-        if (!animator.GetBool("Performing Attack"))
-        {
-            EnableMovement();
-        }
-
+        if (!animator.GetBool("Performing Attack")) EnableMovement();
+        
         HandleRotation();
 
         //determine if falling
@@ -74,12 +71,12 @@ public class PlayerMovement : Movement
         animator.SetFloat("Front-Back", (Camera.main.transform.rotation * Quaternion.Inverse(transform.rotation) * inputDirection).z);
     }
 
-    public override void DisableMovement()
+    public void DisableMovement()
     {
         canMove = false;
     }
 
-    public override void EnableMovement()
+    public void EnableMovement()
     {
         canMove = true;
     }
