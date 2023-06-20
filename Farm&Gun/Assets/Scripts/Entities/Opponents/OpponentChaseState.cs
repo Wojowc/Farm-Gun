@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,30 +11,46 @@ public class OpponentChaseState : State
     private OpponentHitState opponentHitState;
 
     [SerializeField]
-    private GameObject player;
+    private NavMeshAgent agent;
 
     [SerializeField]
-    private NavMeshAgent agent;
+    private float coroutineTime = 2f;
+
+    public GameObject Target { set; get; }
+
+    private Opponent opponent;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        opponent = gameObject.transform.parent.parent.GetComponent<Opponent>();
+        Target = opponent.FindTheNearestAnimalToChase();
     }
     public override State RunCurrentState()
     {
-        if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsEating &&
-            !gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+        if (opponent.IsEating && !opponent.IsHit)
         {
             return opponentEatState;
         }
-        else if (gameObject.transform.parent.parent.GetComponent<Opponent>().IsHit)
+
+        if (opponent.IsHit)
         {
             return opponentHitState;
         }
-        else
+
+        if (!Target)
         {
-            agent.SetDestination(player.transform.position);
-            return this;
+            Target = opponent.FindTheNearestAnimalToChase();
         }
+
+        agent.SetDestination(Target.transform.position);
+        StartCoroutine(FindAnimalToChase());
+        return this;
+    }
+
+    private IEnumerator FindAnimalToChase()
+    {
+        yield return new WaitForSeconds(coroutineTime);
+        Target = opponent.FindTheNearestAnimalToChase();
+        agent.SetDestination(Target.transform.position);
     }
 }

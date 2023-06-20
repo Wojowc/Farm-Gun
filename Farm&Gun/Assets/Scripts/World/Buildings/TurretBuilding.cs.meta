@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 33027608ebae56b4c9c375dea158efd5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - loadingBar: {fileID: 8240071552906825855, guid: e04cafeae6c3c484886ae4ef5cfce935, type: 3}
+  - completnessBarGradientPreset: {fileID: 11400000, guid: 2994e761af7c9e34db9d519a58d00b54, type: 2}
+  - hammerIcon: {fileID: 21300000, guid: 9c63a9647918de74392842650cd74076, type: 3}
+  - borderBarImage: {fileID: 21300000, guid: 19a1cdc3ff4387d458c8e661aea534e5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

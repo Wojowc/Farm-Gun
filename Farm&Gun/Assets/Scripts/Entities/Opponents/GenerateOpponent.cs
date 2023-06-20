@@ -10,54 +10,68 @@ public class GenerateOpponent : MonoBehaviour
 
     [SerializeField]
     private int amountWolf, amountFox;
+
+    [SerializeField]
+    private List<string> animalsToChaseForWolf, animalsToChaseForFox;
+
     
     private void Awake()
     {
         wolfs = new ();
         foxes = new ();
+        animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep" };
+        animalsToChaseForFox = new() { "Chicken", "Duck" };
     }
 
-    //TODO delete if no longer need for test 
-    void Update()
+    //TODO delete if no longer need for test
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.O))
+    //    {
+    //        InstantiateOponentsParametrized();
+    //    }
+    //}
+
+    public void InstantiateOponentsParametrized()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            InstantiateOponents();
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            InstantiateOponentsParametrized();
-        }
-
+        InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs, animalsToChaseForWolf);
+        InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes, animalsToChaseForFox);
     }
 
-    //TODO delete if no longer need for test 
-    void InstantiateOponents()
-    {
-        //WOLF
-        GameObject wolfInstance = GameObject.Instantiate(wolf, this.transform.position, Quaternion.identity);
-        wolfInstance.transform.rotation = transform.rotation;
-        wolfs.Add(wolfInstance);
-
-        //FOX
-        //GameObject foxInstance = GameObject.Instantiate(fox, this.transform.position, Quaternion.identity);
-        //foxInstance.transform.rotation = transform.rotation;
-        //wolfs.Add(foxInstance);
-    }
-
-    void InstantiateOponentsParametrized()
-    {
-        InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs);
-        InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes);
-    }
-
-    void InstantiateMultipleOpponentsForCategory(GameObject opponent, int amount, List<GameObject> opponents)
+    public void InstantiateMultipleOpponentsForCategory(GameObject opponent, int amount, List<GameObject> opponents, List<string> animalsToChaseForOpponent)
     {
         for (int i = 0; i < amount; i++)
         {
             GameObject opponentInstance = GameObject.Instantiate(opponent, this.transform.position, Quaternion.identity);
             opponentInstance.transform.rotation = transform.rotation;
+            opponentInstance.GetComponent<Opponent>().InitAnimalsToChase(animalsToChaseForOpponent);
             opponents.Add(opponentInstance);
         }
+    }
+
+    public void DestroyAllOpponents(bool randomizeDestroyTime = false)
+    {
+        var randomTime = 0.0f;
+        foreach (var wolf in wolfs)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(wolf, randomTime);
+        }
+
+        wolfs.Clear();
+
+        foreach (var fox in foxes)
+        {
+            if (randomizeDestroyTime)
+            {
+                randomTime = Random.Range(0.0f, 1.0f);
+            }
+            Destroy(fox, randomTime);
+        }
+        foxes.Clear();
+
     }
 }
