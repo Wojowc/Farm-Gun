@@ -9,12 +9,14 @@ TagManager:
   - attackWeapon
   - AttackWeapon
   - Enemy
-  - Chicken
-  - Cow
-  - Duck
-  - Pig
-  - Sheep
-  - Tower
+  - Wolf
+  - DiceFaceCow
+  - DiceFaceDuck
+  - DiceFaceChicken
+  - DiceFaceSheep
+  - DiceFacePig
+  - Dice
+  - Table
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - Water
   - UI
   - Characters
-  - Buildings
+  - 
   - 
   - 
   - 
