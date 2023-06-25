@@ -12,6 +12,7 @@ public class MobGenerator : MonoBehaviour
     [SerializeField]
     private int[] alreadySpawned = { 0, 0, 0, 0, 0 };
     private string[] animalLables = { "Chicken", "Duck", "Sheep", "Pig", "Cow" };
+    
 
     public Vector3 spawnValues; //values used to constraint? spawning region TODO
     private int[] firstDice = { 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 3, 4 };//first dice array
@@ -92,8 +93,27 @@ public class MobGenerator : MonoBehaviour
         }
     }
 
+    public void SpawnAnimalsFromDice(string animalRed, string animalYellow)
+    {
+        int redIndex = 0;
+        int yellowIndex = 0;
+        for (int i = 0; i < animalLables.Length;  i++)
+        {
+            if (animalLables[i] == animalRed)
+            {
+                redIndex = i;
+            }
+            if (animalLables[i] == animalYellow)
+            {
+                yellowIndex = i;
+            }
+        }
+        Debug.Log(redIndex +" " + yellowIndex);
+        SpawnRolledAnimals(yellowIndex, redIndex);
+    }
+
     private void SpawnRolledAnimals(int firstAnimal, int secondAnimal)
-    { 
+    {
         if (firstAnimal == secondAnimal)                                    //if both rolled the same
         {
             //compare with animals with this index currently on farm
@@ -145,7 +165,7 @@ public class MobGenerator : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Przekroczono limit tego zwierzaka :< ");
+                    Debug.Log("Przekroczono limit tego zwierzaka :<");
                 }
             }
         }
@@ -159,7 +179,7 @@ public class MobGenerator : MonoBehaviour
 
     void Update()
     {                                                          //game objecty w tablicy, tagi dla zwierzat
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             //first dice roll
             firstAnimal = firstDice[UnityEngine.Random.Range(0, 12)];      //rolled value as animal index
@@ -177,7 +197,7 @@ public class MobGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             DespawnAnimals(0, 1);
-        }
+        }*/
     }
 
     public enum AnimalType // type is also an index in the 'alreadySpawned' array

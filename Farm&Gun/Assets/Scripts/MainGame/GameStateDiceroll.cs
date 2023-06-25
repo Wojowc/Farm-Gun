@@ -14,6 +14,8 @@ public class GameStateDiceroll : GameBaseState
         Debug.Log($"Entered state Diceroll");
         animalGenerator = game.AnimalGenerator;
         mobGenerator = animalGenerator.GetComponent<MobGenerator>();
+        game.Player.GetComponent<PlayerMovement>().DisableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().DisableAttack();
         game.DiceRollComponents.SetActive(true);
         game.LightingManager.SetActive(false);
         game.DayNightBarCanvas.SetActive(false);

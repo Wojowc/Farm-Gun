@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
 using UnityEngine.Rendering;
 
 public class GameStateManager : MonoBehaviour
@@ -33,9 +34,11 @@ public class GameStateManager : MonoBehaviour
     public VolumeProfile Night;
     public GameObject Postprocessing;
 
-
+    
     public GameObject Player;
     public GameObject MinimapCamera;
+
+    public NavMeshSurface Surface;
 
     private void Awake()
     {

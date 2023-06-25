@@ -12,6 +12,8 @@ using Random = UnityEngine.Random;
 
 public class DiceRandomRoll : MonoBehaviour
 {
+    [SerializeField]
+    private MobGenerator mobGenerator;
     private GameObject RollButtonObject;
     private GameObject OkButtonObject;
     public Button OkButton;
@@ -216,6 +218,7 @@ public class DiceRandomRoll : MonoBehaviour
             Debug.Log("wylosowana czerwona to = " + redFaceName);
             RedDiceTextDisplay.text = redFaceName;
             generated = false;
+            mobGenerator.SpawnAnimalsFromDice(redFaceName, yellowFaceName);
         } 
     }
 

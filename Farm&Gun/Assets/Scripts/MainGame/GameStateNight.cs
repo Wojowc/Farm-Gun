@@ -13,6 +13,8 @@ public class GameStateNight : GameBaseState
     public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Night");
+        game.Player.GetComponent<PlayerMovement>().EnableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().EnableAttack();
         lightingManagerObject = game.LightingManager;
         lightingManager = lightingManagerObject.GetComponent<LightingManager>();
         oponentGenerator = game.OpponentsGenerator.GetComponent<GenerateOpponent>();

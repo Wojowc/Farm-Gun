@@ -12,7 +12,9 @@ public class GameStateMarket : GameBaseState
         marketCanvas = game.MarketManager.transform.GetChild(0).gameObject;
         marketCanvas.SetActive(true);
         game.MinimapCamera.SetActive(false);
-        game.Player.SetActive(false);
+        //game.Player.SetActive(false);
+        game.Player.GetComponent<PlayerMovement>().DisableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().DisableAttack();
         game.MarketManager.SetActive(true);
         Time.timeScale = 0.0f;
     }

@@ -12,7 +12,8 @@ public class GameStateDay : GameBaseState
     public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Day");
-        game.Player.SetActive(true);
+        game.Player.GetComponent<PlayerMovement>().EnableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().EnableAttack();
         lightingManagerObject = game.LightingManager;
         lightingManager = lightingManagerObject.GetComponent<LightingManager>();
         buildingPlacementManager = game.BuildingPlacement.transform.GetChild(1).gameObject;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.AI.Navigation;
 
 public class GameStateIntro : GameBaseState
 {
@@ -13,7 +14,11 @@ public class GameStateIntro : GameBaseState
     public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Intro");
-        game.Player.SetActive(false);
+        //game.Player.SetActive(false);
+        game.Player.GetComponent<PlayerMovement>().DisableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().DisableAttack();
+        game.TerrainGenerator.GetComponent<MapGenerator>().CreateMap();
+        game.Surface.BuildNavMesh();
         introCanvas = game.IntroCanvas;
         confirmButton = introCanvas.GetComponentInChildren<Button>();
         stateManager = game;
