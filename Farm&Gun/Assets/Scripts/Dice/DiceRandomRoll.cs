@@ -12,6 +12,10 @@ using Random = UnityEngine.Random;
 
 public class DiceRandomRoll : MonoBehaviour
 {
+    private GameObject RollButtonObject;
+    private GameObject OkButtonObject;
+    public Button OkButton;
+
     public GameObject YellowDicePrefab;
     public GameObject RedDicePrefab;
 
@@ -33,6 +37,21 @@ public class DiceRandomRoll : MonoBehaviour
 
     string yellowFaceName, redFaceName;
     bool generated = false;
+
+    private void Awake()
+    {
+        RollButtonObject = GameObject.Find("RollButton");
+        OkButtonObject = GameObject.Find("OkButton");
+        OkButton = GameObject.Find("OkButton").GetComponent<Button>();
+    }
+
+    private void OnEnable()
+    {
+        RollButtonObject.SetActive(true);
+        OkButtonObject.SetActive(false);
+        GameObject.Find("YellowDiceTextDisplay").GetComponent<Text>().text = "";
+        GameObject.Find("RedDiceTextDisplay").GetComponent<Text>().text = "";
+    }
 
     public DiceData GenerateDice(GameObject DicePrefab)
     {
@@ -157,6 +176,7 @@ public class DiceRandomRoll : MonoBehaviour
         RedDiceData = GenerateDice(RedDicePrefab);
         YellowDiceData = GenerateDice(YellowDicePrefab);
         generated = true;
+        RollButtonObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -186,6 +206,7 @@ public class DiceRandomRoll : MonoBehaviour
     {
         if (generated == true && RedDiceData.rb.velocity == Vector3.zero && YellowDiceData.rb.velocity == Vector3.zero)
         {
+            Invoke("OkButtonActive", 1);
             yellowFaceName = FindFaceResult(YellowDiceData.faceDetectors);
             Debug.Log("wylosowana zolta to = " + yellowFaceName);
             YellowDiceTextDisplay.text = yellowFaceName;
@@ -196,6 +217,11 @@ public class DiceRandomRoll : MonoBehaviour
             RedDiceTextDisplay.text = redFaceName;
             generated = false;
         } 
+    }
+
+    private void OkButtonActive()
+    {
+        OkButtonObject.SetActive(true);
     }
 }
 

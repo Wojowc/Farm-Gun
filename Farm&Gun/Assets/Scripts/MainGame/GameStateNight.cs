@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameStateNight : GameBaseState
 {
@@ -16,6 +17,7 @@ public class GameStateNight : GameBaseState
         lightingManager = lightingManagerObject.GetComponent<LightingManager>();
         oponentGenerator = game.OpponentsGenerator.GetComponent<GenerateOpponent>();
         oponentGenerator.InstantiateOponentsParametrized(); // to change when the final game comes out
+        game.Postprocessing.GetComponent<Volume>().profile = game.Night;
     }
 
     public override void UpdateState(GameStateManager game)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -26,9 +27,14 @@ public class GameStateManager : MonoBehaviour
     public GameObject DayNightBarCanvas;
     public GameObject IntroCanvas;
     public GameObject OpponentsGenerator;
+    public GameObject DiceRollComponents;
+
+    public VolumeProfile Day;
+    public VolumeProfile Night;
+    public GameObject Postprocessing;
+
 
     public GameObject Player;
-
     public GameObject MinimapCamera;
 
     private void Awake()

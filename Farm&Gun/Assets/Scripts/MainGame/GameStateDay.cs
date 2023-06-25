@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameStateDay : GameBaseState
 {
@@ -17,6 +18,7 @@ public class GameStateDay : GameBaseState
         buildingPlacementManager = game.BuildingPlacement.transform.GetChild(1).gameObject;
         buildingPlacementManager.SetActive(true);
         game.MinimapCamera.SetActive(true);
+        game.Postprocessing.GetComponent<Volume>().profile = game.Day;
     }
 
     public override void UpdateState(GameStateManager game)

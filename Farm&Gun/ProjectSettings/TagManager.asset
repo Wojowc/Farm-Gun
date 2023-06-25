@@ -17,6 +17,12 @@ TagManager:
   - DiceFacePig
   - Dice
   - Table
+  - Tower
+  - Pig
+  - Duck
+  - Cow
+  - Chicken
+  - Sheep
   layers:
   - Default
   - TransparentFX
