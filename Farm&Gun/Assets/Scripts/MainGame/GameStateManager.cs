@@ -7,6 +7,7 @@ public class GameStateManager : MonoBehaviour
     public const string WIN_STRING = "WIN";
     public const string LOOSE_STRING = "LOST";
 
+    [SerializeField]
     GameBaseState currentState;
 
     public GameStateIntro IntroState;

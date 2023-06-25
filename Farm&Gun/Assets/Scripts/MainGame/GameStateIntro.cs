@@ -27,6 +27,7 @@ public class GameStateIntro : GameBaseState
 
     private void ContinueAfterConfirm()
     {
+        Debug.Log("Click");
         introCanvas.SetActive(false);
         stateManager.SwitchState(stateManager.DicerollState);
     }
