@@ -14,7 +14,6 @@ public class DucksTowerLogic : MonoBehaviour
 
 private void Update()
     {
-        FindAllAnimals();
         if (!_coroutineStarted)
         {
             StartCoroutine(HealAnimals());
@@ -28,19 +27,13 @@ private void Update()
         {
             animalsList.AddRange(GameObject.FindGameObjectsWithTag(animal));
         }
-
-        foreach( var a in animalsList)
-        {
-            Debug.Log(a);
-        }
-      
-
     }
 
     private IEnumerator HealAnimals()
     {
         while (true)
         {
+            FindAllAnimals();
             if (animalsList != null && animalsList.Count > 0)
             {
                 foreach (GameObject go in animalsList)

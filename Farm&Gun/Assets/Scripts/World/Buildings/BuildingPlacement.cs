@@ -202,8 +202,7 @@ public class BuildingPlacement : MonoBehaviour
             buildingSphereCollider = null;
             buildingModel.gameObject.SetActive(true);
             buildingModel = null;
-            
-          
+           
         }
 
     }

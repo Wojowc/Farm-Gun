@@ -11,17 +11,17 @@ public class TooltipSystem : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+       // instance = this;
     }
 
     public static void Show(string content, string header = "")
     {
-        instance.tooltip.SetText(content, header);
-        instance.tooltip.gameObject.SetActive(true);
+      //  instance.tooltip.gameObject.SetActive(true);
+        //instance.tooltip.SetText(content, header);
     }
 
     public static void Hide()
     {
-        instance.tooltip.gameObject.SetActive(false);
+       // instance.tooltip.gameObject.SetActive(false);
     }
 }

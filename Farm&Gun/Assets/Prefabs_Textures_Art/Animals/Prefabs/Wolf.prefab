@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e3d14c795cede4d89c6308fae3616c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotForce: 20
+  shotForce: 3
   agent: {fileID: 3326014866753643913}
   animalsToChase: []
 --- !u!114 &8458865156290209397
