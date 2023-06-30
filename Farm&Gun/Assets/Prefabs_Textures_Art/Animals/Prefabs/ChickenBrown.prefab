@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 6850230087635784370}
   - component: {fileID: -5594658634799965792}
   - component: {fileID: -6770931647241246146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChickenBrown
   m_TagString: Chicken
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3099693467411717525}
   - component: {fileID: 5107310973279954416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FollowPlayerState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7650012645411411049}
   - component: {fileID: 1867670865142918834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8934782332890180150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465111325028261465}
   - component: {fileID: 3022296619062567509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RunAwayState
   m_TagString: Untagged
   m_Icon: {fileID: 0}

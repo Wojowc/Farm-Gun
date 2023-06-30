@@ -23,6 +23,7 @@ TagManager:
   - Cow
   - Chicken
   - Sheep
+  - NavMeshExcluded
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Water
   - UI
   - Characters
-  - 
+  - NavMeshExcluded
   - 
   - 
   - 

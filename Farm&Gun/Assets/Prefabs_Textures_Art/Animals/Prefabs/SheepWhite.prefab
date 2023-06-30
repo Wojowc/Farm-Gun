@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -662710637208179888}
   - component: {fileID: -5689022833016158802}
   - component: {fileID: 4784253017941914016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SheepWhite
   m_TagString: Sheep
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2928726961454495233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1391134689298044680}
   - component: {fileID: 6971550189651073472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RunAwayState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5395023891148334145}
   - component: {fileID: 4727796043040503801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FollowPlayerState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7083755947674709967}
   - component: {fileID: 3025142708900495054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}

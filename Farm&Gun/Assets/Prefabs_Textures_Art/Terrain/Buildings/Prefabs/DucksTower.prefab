@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4093339139978663338}
   m_Layer: 7
   m_Name: BuildingRangeSphere
-  m_TagString: Untagged
+  m_TagString: NavMeshExcluded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,6 +264,10 @@ PrefabInstance:
     - {fileID: 6204124947913094488, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 3326112589834990052, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 881877147199371805, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -1875961906588873494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -3286268491467322431, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -5514923888644720349, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: 7667061820146640494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
 --- !u!4 &342256729837052787 stripped
 Transform:
@@ -348,6 +352,10 @@ PrefabInstance:
     - {fileID: 3326112589834990052, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 881877147199371805, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 95010028461246732, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -1875961906588873494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -3286268491467322431, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -5514923888644720349, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: 7667061820146640494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
 --- !u!4 &2161668713259026303 stripped
 Transform:
@@ -435,6 +443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4755856650611079428}
     m_Modifications:
+    - target: {fileID: -1875961906588873494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1522729216997060, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
       propertyPath: m_Name
       value: DuckWhiteOne
@@ -518,6 +530,10 @@ PrefabInstance:
     - {fileID: 7902549509179784606, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 6204124947913094488, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
     - {fileID: 95010028461246732, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -1875961906588873494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -3286268491467322431, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: -5514923888644720349, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
+    - {fileID: 7667061820146640494, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32026357c04e0e944835774b42e3c1b7, type: 3}
 --- !u!4 &8994212302195046709 stripped
 Transform:

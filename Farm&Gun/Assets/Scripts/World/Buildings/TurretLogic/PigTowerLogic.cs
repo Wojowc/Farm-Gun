@@ -14,6 +14,8 @@ public class PigTowerLogic : MonoBehaviour
 
     private void Update()
     {
+        if (GetComponent<TurretBuilding>().GetTurretCompleteness() < 1)
+            return;
         FindAllEnemiesWithinRange();
 
         if (!_coroutineStarted)
@@ -41,6 +43,7 @@ public class PigTowerLogic : MonoBehaviour
                 GameObject bullet = Instantiate(
                     Bullet, transform.position + new Vector3(0, 4, 0),
                     Quaternion.LookRotation(targetPos.normalized));
+                Destroy(bullet, 3);
                 var setup = bullet.GetComponent<PooBullet>();
                 if (setup != null)
                     setup.Setup((targetPos - transform.position).normalized,

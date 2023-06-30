@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6441807237541601917}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: Pig
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 3259654072705976246}
   m_Layer: 7
   m_Name: BuildingRangeSphere
-  m_TagString: Untagged
+  m_TagString: NavMeshExcluded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

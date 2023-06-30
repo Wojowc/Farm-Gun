@@ -35,18 +35,20 @@ public class Opponent : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.name == "Player")
+        {
+            IsEating = true;
+            collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
+        }
+
         foreach (var animal in animalsToChase)
         {
-            if (collision.gameObject.CompareTag(animal) || collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag(animal))
             {
                 IsEating = true;
                 collision.gameObject.GetComponent<HealthManager>().DecreaseHealth(1);
             }
-            else if (collision.gameObject.CompareTag("Player"))
-            {
-                IsEating = true;
-                collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
-            }
+          
         }
     }
 

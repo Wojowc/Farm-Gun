@@ -34,8 +34,7 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField]
     private GameObject fence;
 
-    [SerializeField]
-    private NavMeshSurface surface;
+
 
     private GameObject buildingModel; // currently selected building model
     private BoxCollider buildingBoxCollider;
@@ -204,7 +203,7 @@ public class BuildingPlacement : MonoBehaviour
             buildingModel.gameObject.SetActive(true);
             buildingModel = null;
             
-            surface.BuildNavMesh();
+          
         }
 
     }

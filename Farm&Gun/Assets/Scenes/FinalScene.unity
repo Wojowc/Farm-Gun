@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.5188679, g: 0.4919455, b: 0.4919455, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.6415094, g: 0.29957277, b: 0.29957277, a: 1}
+  m_AmbientSkyColor: {r: 0.27754536, g: 0.5590836, b: 0.5943396, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -130,26 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1040917027980878179, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -564.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560778585179522265, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -562.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560778585179522265, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -155.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2047083555421517704, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -564.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2047083555421517704, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -152.01
-      objectReference: {fileID: 0}
     - target: {fileID: 2133939275555974557, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -421,10 +401,6 @@ PrefabInstance:
     - target: {fileID: 2133939277467535421, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736958100376302094, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -148.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceadac195e3b3284c842fc6283cf0ac1, type: 3}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.AI.Navigation;
 
 public class TurretBuilding : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class TurretBuilding : MonoBehaviour
     private GameObject loadingBar;
 
     private GameObject buildingBar;
+
+    private Collider collider;
 
 
 
@@ -63,6 +66,8 @@ public class TurretBuilding : MonoBehaviour
         currentBuilding = gameObject.GetComponent<TurretBuilding>();
         buildingRangeTrigger = gameObject.GetComponent<SphereCollider>();
         buildingRangeTrigger.radius = buildingRange;
+        collider = GetComponent<Collider>();
+        collider.enabled = false;
     }
 
     private void Update()
@@ -79,6 +84,8 @@ public class TurretBuilding : MonoBehaviour
             currentBuilding.gameObject.transform.Find("BuildingRangeSphere").gameObject.SetActive(false); // removes the sphere that shows building range
             currentBuilding.enabled = false;
             buildingBar.SetActive(false);
+            collider.enabled = true;
+            GameObject.Find("NavMesh Surface").GetComponent<NavMeshSurface>().BuildNavMesh();
         }
     }
 
@@ -94,6 +101,12 @@ public class TurretBuilding : MonoBehaviour
         turretCompletenessBar.barIcon.sprite = hammerIcon;
 
         buildingBar.SetActive(true);
+    }
+
+
+    public float GetTurretCompleteness ()
+    {
+        return this.turretCompleteness;
     }
 
 }

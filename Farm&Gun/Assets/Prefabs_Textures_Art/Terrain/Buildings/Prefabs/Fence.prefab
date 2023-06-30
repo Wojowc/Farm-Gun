@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 255823562177139822}
   m_Layer: 7
   m_Name: BuildingRangeSphere
-  m_TagString: Untagged
+  m_TagString: NavMeshExcluded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

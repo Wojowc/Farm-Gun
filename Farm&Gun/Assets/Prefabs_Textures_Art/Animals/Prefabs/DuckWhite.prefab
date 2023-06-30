@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -3286268491467322431}
   - component: {fileID: -5514923888644720349}
   - component: {fileID: 7667061820146640494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DuckWhite
   m_TagString: Duck
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3546810712841456923}
   - component: {fileID: 4342326001754762387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RunAwayState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4075774143319032992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7282568951316088544}
   - component: {fileID: 7199303120827924537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6018198659257746655}
   - component: {fileID: 3337714232579037475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FollowPlayerState
   m_TagString: Untagged
   m_Icon: {fileID: 0}

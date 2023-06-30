@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -2680735012987980390}
   - component: {fileID: 8429584104343851471}
   - component: {fileID: 1856877813487533767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CowBlW
   m_TagString: Cow
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8976451450575866116}
   - component: {fileID: 2351597319435232689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388390191271969952}
   - component: {fileID: 6223853178428959864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RunAwayState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005650898550837381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260081712978854654}
   - component: {fileID: 461490912871606671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FollowPlayerState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
