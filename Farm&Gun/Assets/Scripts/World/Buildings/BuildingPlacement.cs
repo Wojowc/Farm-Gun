@@ -56,6 +56,7 @@ public class BuildingPlacement : MonoBehaviour
         buildingsAmounts = buildingsManager.GetBuildingsAmounts();
         buildingsManager.UpdateDisplayedTexts();
         buildingModel = GameObject.Instantiate(turretOne, turretsParentObject.transform);
+        buildingModel.transform.rotation = Quaternion.Euler(-90, 0, -90);
         SetBuildingModelValues();
     }
 
@@ -71,6 +72,7 @@ public class BuildingPlacement : MonoBehaviour
         buildingsAmounts = buildingsManager.GetBuildingsAmounts();
         buildingsManager.UpdateDisplayedTexts();
         buildingModel = GameObject.Instantiate(turretTwo, turretsParentObject.transform);
+        buildingModel.transform.rotation = Quaternion.Euler(-90, 0, -90);
         SetBuildingModelValues();
     }
 
@@ -101,7 +103,6 @@ public class BuildingPlacement : MonoBehaviour
         if (buildingModel != null)
         {
             Debug.Log("Building Model is not null!!");
-            //buildingModel.layer = 7;
             buildingBoxCollider = buildingModel.GetComponent<BoxCollider>();
             buildingBoxCollider.isTrigger = true;
             buildingSphereCollider = buildingModel.GetComponent<SphereCollider>();

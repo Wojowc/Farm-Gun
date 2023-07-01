@@ -5,6 +5,13 @@ using UnityEngine.AI;
 
 public class OpponentHealthManager : HealthManager
 {
+    LightingManager lightingManager;
+
+    private void Start()
+    {
+        lightingManager = GameObject.Find("LightingManager").GetComponent<LightingManager>();
+    }
+
     protected override void Die()
     {
         transform.rotation = new Quaternion(90, 0, 0, 0);
@@ -19,9 +26,20 @@ public class OpponentHealthManager : HealthManager
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<StateMachineManager>().enabled = false;
         transform.Find("State").gameObject.SetActive(false);
-        
-        Debug.Log("Dead2");
-        Destroy(gameObject, deadDelay);
+        Invoke("AfterDeath", deadDelay);
+    }
+
+    private void AfterDeath()
+    {
+        if (GameObject.FindObjectsOfType<Opponent>().Length <= 1)
+        {
+            if (lightingManager.TimeOfDay < lightingManager.DayLenght && lightingManager.TimeOfDay > lightingManager.DaylightLenght)
+            {
+                lightingManager.TimeOfDay = lightingManager.DayLenght;
+            }
+        }
+
+        Destroy(gameObject);
     }
 }
 

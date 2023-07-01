@@ -17,7 +17,7 @@ public class LightingManager : MonoBehaviour
     public int DaysCount { get; private set; } = 0;
     public bool IsNight { get; private set; } = false;
 
-    private int DayLenght { get; set; }
+    public int DayLenght { get; set; }
 
     public float TimeOfDay { get; set; }
 

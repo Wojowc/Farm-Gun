@@ -38,8 +38,8 @@ public class TurretBuilding : MonoBehaviour
     private HealthBar turretCompletenessBar; // will be created when the building is placed
     [SerializeField]
     private GradientHealthBarPreset completnessBarGradientPreset;
-    [SerializeField]
-    private Sprite hammerIcon;
+    //[SerializeField]
+    //private Sprite hammerIcon;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -93,12 +93,13 @@ public class TurretBuilding : MonoBehaviour
     {
         buildingBar = GameObject.Instantiate(loadingBar);
         buildingBar.gameObject.transform.parent = this.transform;
-        buildingBar.transform.position = new Vector3(this.transform.position.x + 1f, this.transform.position.y + 3.5f, this.transform.position.z);
+        buildingBar.transform.position = new Vector3(this.transform.position.x - 1f, this.transform.position.y + 2.5f, this.transform.position.z - 1f);
+        buildingBar.transform.rotation = Quaternion.Euler(30, 45, 0);
         turretCompletenessBar = buildingBar.GetComponentInChildren<HealthBar>();
         turretCompletenessBar.enabled = true;
         turretCompletenessBar.SetMaxValue(turretBuildingAmountNeeded);
         turretCompletenessBar.gradient = completnessBarGradientPreset;
-        turretCompletenessBar.barIcon.sprite = hammerIcon;
+        //turretCompletenessBar.barIcon.sprite = hammerIcon;
 
         buildingBar.SetActive(true);
     }
