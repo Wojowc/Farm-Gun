@@ -14,7 +14,7 @@ public class MarketManager : MonoBehaviour
     [SerializeField]
     private BuildingsManager buildingsInventoryManager;
     [SerializeField]
-    private int bulletsCount; // to be implemented into a player, test value for now
+    private PlayerAttack playerAttack; 
 
     private Dictionary<AnimalType, int> animalsAmounts = new();
     private Dictionary<BuildingType, int> buildingsAmounts = new();
@@ -65,7 +65,7 @@ public class MarketManager : MonoBehaviour
         turretsDucksAmountText.text = buildingsAmounts.GetValueOrDefault(BuildingType.Ducks).ToString();
         turretsPigsAmountText.text = buildingsAmounts.GetValueOrDefault(BuildingType.Pig).ToString();
         fencesAmountText.text = buildingsAmounts.GetValueOrDefault(BuildingType.Fence).ToString();
-        ammoAmountText.text = bulletsCount.ToString();
+        ammoAmountText.text = playerAttack.ammo.ToString();
     }
 
     #endregion Current inventory
@@ -230,7 +230,7 @@ public class MarketManager : MonoBehaviour
 
     private void TradeForAmmo()
     {
-        bulletsCount = bulletsCount + ammoAmount;
+        playerAttack.ammo = playerAttack.ammo + ammoAmount;
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[7]);
         UpdateAfterTrade();
     }
@@ -333,6 +333,13 @@ public class MarketManager : MonoBehaviour
         SetupButtonOnClickMethods();
         SetupButtonTradeLists();
         SetTradeValues();
+        UpdateInventoryDisplay();
+        CheckButtonsInteractability();
+    }
+
+    private void OnEnable()
+    {
+        UpdateInventoryDisplay();
         CheckButtonsInteractability();
     }
 

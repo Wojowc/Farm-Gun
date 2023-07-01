@@ -42,6 +42,7 @@ public class MobGenerator : MonoBehaviour
         for (int i = 0; i < alreadySpawned.Length; i++)
         {
             dict.TryAdd((AnimalType)i, alreadySpawned[i]);
+            Debug.Log((AnimalType)i + " " + alreadySpawned[i]);
         }
 
         return dict;
