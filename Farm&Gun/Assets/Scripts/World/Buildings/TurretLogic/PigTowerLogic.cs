@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PigTowerLogic : MonoBehaviour
 {
-    [SerializeField] public float shootingArea = 10f;
+    [SerializeField] public float shootingArea = 5f;
     [SerializeField] public float shootingFrequency = 1f;
     [SerializeField] public float damage = 0.5f;
     [SerializeField] public GameObject Bullet;
@@ -14,8 +14,8 @@ public class PigTowerLogic : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<TurretBuilding>().GetTurretCompleteness() < 1)
-            return;
+        if (GetComponent<TurretBuilding>().GetTurretCompleteness() < 1) return;
+        
         FindAllEnemiesWithinRange();
 
         if (!_coroutineStarted)
@@ -28,8 +28,7 @@ public class PigTowerLogic : MonoBehaviour
     private void FindAllEnemiesWithinRange()
     {
         enemyList = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position,
-            transform.position) < shootingArea).ToArray();
+        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position, transform.position) < shootingArea).ToArray();
     }
 
     private IEnumerator ShootAtOpponent()

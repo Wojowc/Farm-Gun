@@ -5,7 +5,7 @@ public class PooBullet : MonoBehaviour
     private Vector3 shootDir;
     private float shootSpeed = 40f;
     private float lifetime = 10f;
-    private float damage = 0.5f;
+    private float damage = 10f;
 
     private void Update()
     {

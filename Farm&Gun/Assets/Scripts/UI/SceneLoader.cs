@@ -15,7 +15,7 @@ public static class SceneLoader
         SampleScene = 2,
         LoadingScene = 3,
         GameOver = 4,
-        FullScene = 5
+        FinalScene = 5
     } // names of the scenes to be loaded
 
     private static AsyncOperation asyncOperation;
