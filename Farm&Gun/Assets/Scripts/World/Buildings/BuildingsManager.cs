@@ -24,7 +24,6 @@ public class BuildingsManager : MonoBehaviour
         for (int i = 0; i < amountOfBuildings.Length; i++)
         {
             dict.TryAdd((BuildingType)i, amountOfBuildings[i]);
-            Debug.Log((BuildingType)i + " " + amountOfBuildings[i]);
         }
 
         return dict;

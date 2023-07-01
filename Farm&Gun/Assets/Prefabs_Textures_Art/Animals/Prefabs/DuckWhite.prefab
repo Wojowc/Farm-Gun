@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  maxHealth: 5
   deadDelay: 3
 --- !u!114 &-1875961906588873494
 MonoBehaviour:

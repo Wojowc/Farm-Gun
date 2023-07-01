@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  maxHealth: 5
   deadDelay: 3
 --- !u!114 &7746886502820188776
 MonoBehaviour:
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daff3f494aaa0e64b95c697c887ca093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSound: {fileID: 0}
+  defaultSound: {fileID: 8300000, guid: eee95403f96fcab4386004b9c3f07223, type: 3}
 --- !u!1 &3430492064762238579
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,9 @@ public class MarketManager : MonoBehaviour
     [SerializeField]
     private BuildingsManager buildingsInventoryManager;
     [SerializeField]
-    private PlayerAttack playerAttack; 
+    private PlayerAttack playerAttack;
+    [SerializeField]
+    private TextMeshProUGUI bulletsText;
 
     private Dictionary<AnimalType, int> animalsAmounts = new();
     private Dictionary<BuildingType, int> buildingsAmounts = new();
@@ -182,28 +184,36 @@ public class MarketManager : MonoBehaviour
     private void TradeForDuck()
     {
         animalsManager.UpdateAnimalAmount(AnimalType.Duck, animalsAmounts.GetValueOrDefault(AnimalType.Duck) + 1);
+        animalsManager.SpawnAnimal(1);
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[0]);
+        animalsManager.DespawnAnimals(0, tradeValues[0]);
         UpdateAfterTrade();
     }
 
     private void TradeForSheep()
     {
         animalsManager.UpdateAnimalAmount(AnimalType.Sheep, animalsAmounts.GetValueOrDefault(AnimalType.Sheep) + 1);
+        animalsManager.SpawnAnimal(2);
         animalsManager.UpdateAnimalAmount(AnimalType.Duck, animalsAmounts.GetValueOrDefault(AnimalType.Duck) - tradeValues[1]);
+        animalsManager.DespawnAnimals(1, tradeValues[1]);
         UpdateAfterTrade();
     }
 
     private void TradeForPig()
     {
         animalsManager.UpdateAnimalAmount(AnimalType.Pig, animalsAmounts.GetValueOrDefault(AnimalType.Pig) + 1);
+        animalsManager.SpawnAnimal(3);
         animalsManager.UpdateAnimalAmount(AnimalType.Sheep, animalsAmounts.GetValueOrDefault(AnimalType.Sheep) - tradeValues[2]);
+        animalsManager.DespawnAnimals(2, tradeValues[2]);
         UpdateAfterTrade();
     }
 
     private void TradeForCow()
     {
         animalsManager.UpdateAnimalAmount(AnimalType.Cow, animalsAmounts.GetValueOrDefault(AnimalType.Cow) + 1);
+        animalsManager.SpawnAnimal(4);
         animalsManager.UpdateAnimalAmount(AnimalType.Pig, animalsAmounts.GetValueOrDefault(AnimalType.Pig) - tradeValues[3]);
+        animalsManager.DespawnAnimals(3, tradeValues[3]);
         UpdateAfterTrade();
     }
 
@@ -211,6 +221,7 @@ public class MarketManager : MonoBehaviour
     {
         buildingsInventoryManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Ducks) + turretsDucksAmount, BuildingType.Ducks);
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[4]);
+        animalsManager.DespawnAnimals(0, tradeValues[4]);
         UpdateAfterTrade();
     }
 
@@ -218,6 +229,7 @@ public class MarketManager : MonoBehaviour
     {
         buildingsInventoryManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Pig) + turretsPigsAmount, BuildingType.Pig);
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[5]);
+        animalsManager.DespawnAnimals(0, tradeValues[5]);
         UpdateAfterTrade();
     }
 
@@ -225,13 +237,16 @@ public class MarketManager : MonoBehaviour
     {
         buildingsInventoryManager.SetAmountOfTurrets(buildingsAmounts.GetValueOrDefault(BuildingType.Fence) + fencesAmount, BuildingType.Fence);
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[6]);
+        animalsManager.DespawnAnimals(0, tradeValues[6]);
         UpdateAfterTrade();
     }
 
     private void TradeForAmmo()
     {
         playerAttack.ammo = playerAttack.ammo + ammoAmount;
+        bulletsText.text = playerAttack.ammo.ToString();
         animalsManager.UpdateAnimalAmount(AnimalType.Chicken, animalsAmounts.GetValueOrDefault(AnimalType.Chicken) - tradeValues[7]);
+        animalsManager.DespawnAnimals(0, tradeValues[7]);
         UpdateAfterTrade();
     }
 

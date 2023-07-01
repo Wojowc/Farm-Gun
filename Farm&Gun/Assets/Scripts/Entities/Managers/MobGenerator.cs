@@ -15,10 +15,7 @@ public class MobGenerator : MonoBehaviour
     
 
     public Vector3 spawnValues; //values used to constraint? spawning region TODO
-    private int[] firstDice = { 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 3, 4 };//first dice array
-    private int[] secondDice = { 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 4 };//second dice array
     private int[] maxAnimalAmount = { 30, 12, 10, 6, 3 };
-    private int firstAnimal, secondAnimal;
     //public List <GameObject> SpawnedFarmMobs;
 
     private GameObject[] foundSpawnPoints;
@@ -42,7 +39,6 @@ public class MobGenerator : MonoBehaviour
         for (int i = 0; i < alreadySpawned.Length; i++)
         {
             dict.TryAdd((AnimalType)i, alreadySpawned[i]);
-            Debug.Log((AnimalType)i + " " + alreadySpawned[i]);
         }
 
         return dict;
@@ -70,7 +66,7 @@ public class MobGenerator : MonoBehaviour
         }
     }
 
-    void SpawnAnimal(int animalIndexNumber)
+    public void SpawnAnimal(int animalIndexNumber)
     {
         Vector3 SpawnPoint = foundSpawnPoints[animalIndexNumber].transform.position;
         float distance = maxAnimalAmount[animalIndexNumber] % 13 / 2;
@@ -80,7 +76,7 @@ public class MobGenerator : MonoBehaviour
         Instantiate(FarmMobs[animalIndexNumber], randomizedSpawnPosition, Quaternion.identity);
     }
 
-    private void DespawnAnimals(int animalIndexNumber, int amount)
+    public void DespawnAnimals(int animalIndexNumber, int amount)
     {
         while (alreadySpawned[animalIndexNumber]>0 && amount>0)
         {

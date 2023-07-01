@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     bool canAttack = true;
     [SerializeField]
     PlayerMovement playerMovement;
+    [SerializeField]
+    TextMeshProUGUI bulletText;
 
     void Update()
     {
@@ -46,16 +49,20 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 ammo--;
+                bulletText.text = ammo.ToString();
                 animator?.SetBool("Performing Attack", true);
                 animator?.SetBool("Shot Attack", true);
             }
 
-            else if (Input.GetButtonDown("Fire2"))
+            else if (Input.GetButtonDown("Fire2") && ammo >= multishot)
             {
                 ammo -= multishot;
+                bulletText.text = ammo.ToString();
                 animator?.SetBool("Performing Attack", true);
                 animator?.SetBool("Multishot Attack", true);
             }
+
+
         }
 
         //swap weapon on scroll

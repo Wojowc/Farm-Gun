@@ -210,12 +210,10 @@ public class DiceRandomRoll : MonoBehaviour
         {
             Invoke("OkButtonActive", 1);
             yellowFaceName = FindFaceResult(YellowDiceData.faceDetectors);
-            Debug.Log("wylosowana zolta to = " + yellowFaceName);
             YellowDiceTextDisplay.text = yellowFaceName;
             //YellowDiceImageDisplay.Icon;
             //update view to display rolled animal
             redFaceName = FindFaceResult(RedDiceData.faceDetectors);
-            Debug.Log("wylosowana czerwona to = " + redFaceName);
             RedDiceTextDisplay.text = redFaceName;
             generated = false;
             mobGenerator.SpawnAnimalsFromDice(redFaceName, yellowFaceName);
