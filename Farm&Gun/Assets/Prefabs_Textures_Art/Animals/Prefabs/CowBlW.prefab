@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 4008824759984719456}
   - component: {fileID: 6560833370883717771}
   - component: {fileID: 8788200946217330124}
-  - component: {fileID: 2896812940375111861}
   - component: {fileID: -6696652012704705335}
   - component: {fileID: -2680735012987980390}
   - component: {fileID: 8429584104343851471}
   - component: {fileID: 1856877813487533767}
+  - component: {fileID: -1759402138122386640}
   m_Layer: 6
   m_Name: CowBlW
   m_TagString: Cow
@@ -166,21 +166,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2896812940375111861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287295899898638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e1228f19ae4fb4191a7ee4c21dc921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
-  deadDelay: 3
 --- !u!114 &-6696652012704705335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +300,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSound: {fileID: 8300000, guid: eee95403f96fcab4386004b9c3f07223, type: 3}
+--- !u!114 &-1759402138122386640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287295899898638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b6565f00b205e43964e650434c2ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  deadDelay: 1
 --- !u!1 &1511083125719120779
 GameObject:
   m_ObjectHideFlags: 0

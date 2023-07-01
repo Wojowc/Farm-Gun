@@ -19,6 +19,7 @@ public class PlayerHealthManager : HealthManager
     protected override void Die()
     {
         animator.SetBool("Dead", true);
+        isDead = true;
         Debug.Log("Dead2");
     }
 

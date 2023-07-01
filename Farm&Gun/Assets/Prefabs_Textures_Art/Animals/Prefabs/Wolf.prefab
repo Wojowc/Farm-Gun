@@ -284,7 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  deadDelay: 3
+  maxHealth: 3
+  deadDelay: 1
 --- !u!1 &9164181531644071907
 GameObject:
   m_ObjectHideFlags: 0

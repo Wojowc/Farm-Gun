@@ -26,7 +26,7 @@ public class GameStateNight : GameBaseState
     {
         if(playerHealthManager != null)
         {
-            if (playerHealthManager.IsDead())
+            if (playerHealthManager.isDead)
             {
                 game.SwitchState(game.EndState, GameStateManager.LOOSE_STRING);
             }

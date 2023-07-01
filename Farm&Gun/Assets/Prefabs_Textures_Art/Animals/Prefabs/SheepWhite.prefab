@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 885046769336832641}
   - component: {fileID: 1172405600750512492}
   - component: {fileID: 5789237270116048102}
-  - component: {fileID: 5659468704552971041}
   - component: {fileID: 1266210015622260562}
   - component: {fileID: -662710637208179888}
   - component: {fileID: -5689022833016158802}
   - component: {fileID: 4784253017941914016}
+  - component: {fileID: 6880200007900647749}
   m_Layer: 6
   m_Name: SheepWhite
   m_TagString: Sheep
@@ -165,21 +165,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5659468704552971041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965851562501010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e1228f19ae4fb4191a7ee4c21dc921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
-  deadDelay: 3
 --- !u!114 &1266210015622260562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +299,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSound: {fileID: 8300000, guid: eee95403f96fcab4386004b9c3f07223, type: 3}
+--- !u!114 &6880200007900647749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965851562501010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b6565f00b205e43964e650434c2ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  deadDelay: 1
 --- !u!1 &482738271527691611
 GameObject:
   m_ObjectHideFlags: 0

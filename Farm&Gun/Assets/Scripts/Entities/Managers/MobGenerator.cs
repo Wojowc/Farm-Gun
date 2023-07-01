@@ -10,8 +10,8 @@ public class MobGenerator : MonoBehaviour
     //tablica na male i duze zwierzeta dodawanie obiektu po stworzeniu
     public GameObject[] FarmMobs;
     [SerializeField]
-    private int[] alreadySpawned = { 0, 0, 0, 0, 0 };
-    private string[] animalLables = { "Chicken", "Duck", "Sheep", "Pig", "Cow" };
+    public int[] alreadySpawned = { 0, 0, 0, 0, 0 };
+    public string[] animalLables = { "Chicken", "Duck", "Sheep", "Pig", "Cow" };
     
 
     public Vector3 spawnValues; //values used to constraint? spawning region TODO
@@ -81,6 +81,7 @@ public class MobGenerator : MonoBehaviour
         while (alreadySpawned[animalIndexNumber]>0 && amount>0)
         {
             GameObject animalToDelete = GameObject.FindGameObjectWithTag(animalLables[animalIndexNumber]);
+            Debug.Log(animalToDelete.name);
             if (animalToDelete != null) 
             {
                 Destroy(animalToDelete);
@@ -190,7 +191,7 @@ public class MobGenerator : MonoBehaviour
             SpawnRolledAnimals(firstAnimal, secondAnimal);
             
         }
-
+        
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             DespawnAnimals(0, 1);

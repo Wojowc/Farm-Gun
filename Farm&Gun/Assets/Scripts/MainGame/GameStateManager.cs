@@ -10,7 +10,7 @@ public class GameStateManager : MonoBehaviour
     public const string LOOSE_STRING = "LOST";
 
     [SerializeField]
-    GameBaseState currentState;
+    public GameBaseState currentState;
 
     public GameStateIntro IntroState;
     public GameStateDiceroll DicerollState;

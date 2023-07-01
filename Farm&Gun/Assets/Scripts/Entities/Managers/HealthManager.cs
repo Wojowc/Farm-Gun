@@ -9,12 +9,13 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     protected float maxHealth;
     public float deadDelay = 3f;
+    public bool isDead = false;
 
     public void DecreaseHealth(float amount)
     {
         health -= amount;
         HealthEvent();
-        if (health <= 0) Die();
+        if (health <= 0 && !isDead) Die();
     }
 
     public void Heal(float amount)
@@ -26,6 +27,7 @@ public class HealthManager : MonoBehaviour
 
     protected virtual void Die()
     {
+        isDead = true;
         Debug.Log("Dead");
         Destroy(gameObject, deadDelay);
     }
@@ -33,10 +35,5 @@ public class HealthManager : MonoBehaviour
     protected virtual void HealthEvent()
     {
         Debug.Log("Health event");
-    }
-
-    public virtual bool IsDead()
-    {
-        return health < 0;
     }
 }

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2133939276720771529}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &35163979
 MonoBehaviour:
@@ -15399,7 +15399,7 @@ Transform:
   - {fileID: 891624882}
   - {fileID: 934508427}
   m_Father: {fileID: 2133939276720771529}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &579562937
 MonoBehaviour:
@@ -27052,7 +27052,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2133939276720771529}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637169865
 MonoBehaviour:
@@ -27101,7 +27101,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2133939276720771529}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1828226004
 MonoBehaviour:
@@ -27584,7 +27584,7 @@ Transform:
   - {fileID: 2047083555421517704}
   - {fileID: 2133939276019157477}
   m_Father: {fileID: 2133939276720771529}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081649363
 GameObject:
@@ -31392,6 +31392,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   deadDelay: 3
+  isDead: 0
   animator: {fileID: 2133939275684741198}
   healthBar: {fileID: 2133939275773728960}
 --- !u!1 &2133939275623790044
@@ -36656,6 +36657,12 @@ MonoBehaviour:
   - {fileID: 1055064919166404, guid: de6abd774f85e18408346a3233418242, type: 3}
   - {fileID: 1287295899898638, guid: 9ec060093457ad84ca2733cb15c2c41e, type: 3}
   alreadySpawned: 0000000000000000000000000000000000000000
+  animalLables:
+  - Chicken
+  - Duck
+  - Sheep
+  - Pig
+  - Cow
   spawnValues: {x: 0, y: 0, z: 0}
 --- !u!1 &2133939276023953859
 GameObject:
@@ -46768,12 +46775,12 @@ Transform:
   - {fileID: 8517881997195230756}
   - {fileID: 516365827}
   - {fileID: 890211486}
-  - {fileID: 6953198623952554044}
   - {fileID: 1637169864}
   - {fileID: 579562933}
   - {fileID: 1828226005}
   - {fileID: 35163978}
   - {fileID: 2037485891}
+  - {fileID: 6953198623952554044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55573,7 +55580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5761005316749411407, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6953198624214373772, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
       propertyPath: m_Pivot.x
@@ -55585,7 +55592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6953198624214373772, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6953198624214373772, guid: ca0eeaed9e56bb64eab1242d139ec548, type: 3}
       propertyPath: m_AnchorMax.x
