@@ -101,7 +101,7 @@ public class BuildingPlacement : MonoBehaviour
         if (buildingModel != null)
         {
             Debug.Log("Building Model is not null!!");
-            buildingModel.layer = 7;
+            //buildingModel.layer = 7;
             buildingBoxCollider = buildingModel.GetComponent<BoxCollider>();
             buildingBoxCollider.isTrigger = true;
             buildingSphereCollider = buildingModel.GetComponent<SphereCollider>();
