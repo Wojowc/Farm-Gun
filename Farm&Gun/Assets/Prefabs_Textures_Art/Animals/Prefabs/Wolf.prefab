@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b738b153e79754c92d194a0ff45b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownTime: 1.5
   opponentChaseState: {fileID: 7996228022765556616}
   opponentHitState: {fileID: 5340119709718307718}
   coroutineTime: 3
@@ -220,8 +221,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotForce: 3
+  damage: 2
   agent: {fileID: 3326014866753643913}
   animalsToChase: []
+  target: {fileID: 0}
 --- !u!114 &8458865156290209397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +289,7 @@ MonoBehaviour:
   health: 3
   maxHealth: 3
   deadDelay: 1
+  isDead: 0
 --- !u!1 &9164181531644071907
 GameObject:
   m_ObjectHideFlags: 0

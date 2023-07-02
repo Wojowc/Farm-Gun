@@ -37,6 +37,8 @@ public class DiceRandomRoll : MonoBehaviour
     [FormerlySerializedAs("soundCollideDice")]
     public AudioSource soundCollideDice;
 
+    private float rollStartTime;
+
     string yellowFaceName, redFaceName;
     bool generated = false;
 
@@ -177,6 +179,7 @@ public class DiceRandomRoll : MonoBehaviour
         //generate newk
         RedDiceData = GenerateDice(RedDicePrefab);
         YellowDiceData = GenerateDice(YellowDicePrefab);
+        rollStartTime = Time.time;
         generated = true;
         RollButtonObject.SetActive(false);
     }
@@ -206,7 +209,7 @@ public class DiceRandomRoll : MonoBehaviour
 
     private void Update()
     {
-        if (generated == true && RedDiceData.rb.velocity == Vector3.zero && YellowDiceData.rb.velocity == Vector3.zero)
+        if (generated == true && (RedDiceData.rb.velocity == Vector3.zero && YellowDiceData.rb.velocity == Vector3.zero) || Time.time - rollStartTime > 30)
         {
             Invoke("OkButtonActive", 1);
             yellowFaceName = FindFaceResult(YellowDiceData.faceDetectors);

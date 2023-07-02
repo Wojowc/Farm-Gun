@@ -35,7 +35,20 @@ public class GameStateNight : GameBaseState
         if(!lightingManager.IsNight)
         {
             oponentGenerator.DestroyAllOpponents();
-            game.SwitchState(game.MarketState);
+
+            bool winCondition = true;
+            foreach (int a in game.AnimalGenerator.GetComponent<MobGenerator>().alreadySpawned)
+            {
+                if (a < 1) winCondition = false;
+            }
+
+            if (winCondition)
+            {
+                game.currentState = game.EndState;
+                game.SwitchState(game.EndState, GameStateManager.WIN_STRING);
+            }
+
+            else game.SwitchState(game.MarketState);
         }
     }
 }

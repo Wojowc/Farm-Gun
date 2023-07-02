@@ -4,6 +4,11 @@ using UnityEngine;
 public class OpponentEatState : State
 {
     [SerializeField]
+    private float cooldownTime = 1.5f;
+
+    private float nextAttackTime = 0;
+
+    [SerializeField]
     private OpponentChaseState opponentChaseState;
 
     [SerializeField]
@@ -31,15 +36,26 @@ public class OpponentEatState : State
             return opponentHitState;
         }
 
-        DisableMovement();
-        StartCoroutine(Eat());
+        if(Time.time > nextAttackTime && opponent.target != null)
+        {
+            nextAttackTime = Time.time + cooldownTime;
+            opponent.target.GetComponent<HealthManager>().DecreaseHealth(opponent.damage);
+            opponent.target = null;
+        }
+
+
+        opponent.IsEating = false;
         return this;
+
+        //DisableMovement();
+        //StartCoroutine(Eat());
+        //return this;
     }
 
     private IEnumerator Eat()
     {
         yield return new WaitForSeconds(coroutineTime);
-        opponent.IsBuffed = true;
+        //opponent.IsBuffed = true;
         opponent.IsEating = false;
         EnableMovement();
     }

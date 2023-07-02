@@ -60,6 +60,13 @@ public class GameStateManager : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState(this);
+        if (Player.GetComponent<HealthManager>().isDead) LooseGame();
+    }
+
+    public void LooseGame()
+    {
+        currentState = EndState;
+        EndState.EnterState(this, LOOSE_STRING);
     }
 
     public void SwitchState(GameBaseState state, params string[] args)

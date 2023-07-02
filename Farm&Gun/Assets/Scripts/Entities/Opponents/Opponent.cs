@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Opponent : MonoBehaviour
 {
     [SerializeField]
-    private float shotForce;
+    public float shotForce, damage;
 
     [SerializeField]
     private NavMeshAgent agent;
@@ -15,6 +15,9 @@ public class Opponent : MonoBehaviour
 
     [SerializeField]
     private List<string> animalsToChase;
+
+    [SerializeField]
+    public GameObject target;
 
     public bool IsEating { get; set; } = false;
     public bool IsHit { get; set; } = false;
@@ -35,10 +38,12 @@ public class Opponent : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.name == "Player")
         {
             IsEating = true;
-            collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
+            target = collision.gameObject;
+            //collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
         }
 
         foreach (var animal in animalsToChase)
@@ -46,9 +51,30 @@ public class Opponent : MonoBehaviour
             if (collision.gameObject.CompareTag(animal))
             {
                 IsEating = true;
-                collision.gameObject.GetComponent<HealthManager>().DecreaseHealth(1);
+                target = collision.gameObject;
+                //collision.gameObject.GetComponent<HealthManager>().DecreaseHealth(1);
             }
-          
+
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            IsEating = true;
+            target = collision.gameObject;
+            //collision.gameObject.GetComponent<PlayerHealthManager>().DecreaseHealth(1);
+        }
+
+        foreach (var animal in animalsToChase)
+        {
+            if (collision.gameObject.CompareTag(animal))
+            {
+                IsEating = true;
+                target = collision.gameObject;
+                //collision.gameObject.GetComponent<HealthManager>().DecreaseHealth(1);
+            }
+
         }
     }
 
