@@ -14,6 +14,8 @@ public class GenerateOpponent : MonoBehaviour
     [SerializeField]
     private List<string> animalsToChaseForWolf, animalsToChaseForFox;
 
+    private LightingManager lightingManager;
+    private MobGenerator mobGenerator;
     
     private void Awake()
     {
@@ -21,19 +23,14 @@ public class GenerateOpponent : MonoBehaviour
         foxes = new ();
         animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep" };
         animalsToChaseForFox = new() { "Chicken", "Duck" };
+        mobGenerator = GameObject.Find("AnimalGenerator").GetComponent<MobGenerator>();
+        lightingManager = GameObject.Find("LightingManager").GetComponent<LightingManager>();
     }
-
-    //TODO delete if no longer need for test
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.O))
-    //    {
-    //        InstantiateOponentsParametrized();
-    //    }
-    //}
 
     public void InstantiateOponentsParametrized()
     {
+        amountFox = (lightingManager.DaysCount + 4) / 4 + (mobGenerator.alreadySpawned[0] + mobGenerator.alreadySpawned[1]) / 5;
+        amountWolf = (lightingManager.DaysCount + 5) / 6 + (mobGenerator.alreadySpawned[2] + mobGenerator.alreadySpawned[3] + mobGenerator.alreadySpawned[4])/3;
         InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs, animalsToChaseForWolf);
         InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes, animalsToChaseForFox);
     }

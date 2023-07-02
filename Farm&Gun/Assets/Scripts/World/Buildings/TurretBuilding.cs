@@ -9,7 +9,7 @@ public class TurretBuilding : MonoBehaviour
     [SerializeField]
     private string playerTag = "Player";
     [SerializeField]
-    private KeyCode buildingKey = KeyCode.C; // C as in Construct
+    private KeyCode buildingKey = KeyCode.E; // C as in Construct
 
     private SphereCollider buildingRangeTrigger;
 

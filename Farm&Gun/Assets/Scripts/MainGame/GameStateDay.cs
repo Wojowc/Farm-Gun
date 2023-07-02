@@ -12,14 +12,14 @@ public class GameStateDay : GameBaseState
     public override void EnterState(GameStateManager game, params string[] args)
     {
         Debug.Log($"Entered state Day");
-        game.Player.GetComponent<PlayerMovement>().EnableMovement();
-        game.Player.GetComponentInChildren<PlayerAttack>().EnableAttack();
         lightingManagerObject = game.LightingManager;
         lightingManager = lightingManagerObject.GetComponent<LightingManager>();
         buildingPlacementManager = game.BuildingPlacement.transform.GetChild(1).gameObject;
         buildingPlacementManager.SetActive(true);
         game.MinimapCamera.SetActive(true);
         game.Postprocessing.GetComponent<Volume>().profile = game.Day;
+        game.Player.GetComponent<PlayerMovement>().EnableMovement();
+        game.Player.GetComponentInChildren<PlayerAttack>().EnableAttack();
     }
 
     public override void UpdateState(GameStateManager game)

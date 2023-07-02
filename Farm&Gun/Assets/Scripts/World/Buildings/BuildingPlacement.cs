@@ -181,7 +181,8 @@ public class BuildingPlacement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            buildingModel.transform.Rotate(new Vector3(0, 90f, 0));
+            if (buildingModel.GetComponent<PigTowerLogic>() == null && buildingModel.GetComponent<DucksTowerLogic>() == null) 
+                buildingModel.transform.Rotate(new Vector3(0, 45f, 0));
         }
 
         if (Input.GetMouseButtonDown(0))

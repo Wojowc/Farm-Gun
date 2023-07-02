@@ -15,7 +15,7 @@ public class BuildingPlacementPanelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B) && !TurretSelected)
+        if (Input.GetKeyDown(KeyCode.Tab) && !TurretSelected)
         {
             BuildingScreenOpen = !BuildingScreenOpen;
             BuildingPlacementPanel.SetActive(BuildingScreenOpen);
