@@ -78,16 +78,15 @@ public class MobGenerator : MonoBehaviour
 
     public void DespawnAnimals(int animalIndexNumber, int amount)
     {
-        while (alreadySpawned[animalIndexNumber]>0 && amount>0)
+        GameObject [] animalsToDelete = GameObject.FindGameObjectsWithTag(animalLables[animalIndexNumber]);
+
+        for (int i = 0; i < amount; i++)
         {
-            GameObject animalToDelete = GameObject.FindGameObjectWithTag(animalLables[animalIndexNumber]);
-            Debug.Log(animalToDelete.name);
-            if (animalToDelete != null) 
+            if (alreadySpawned[animalIndexNumber] > 0)
             {
-                Destroy(animalToDelete);
+                Destroy(animalsToDelete[i]);
                 alreadySpawned[animalIndexNumber]--;
             }
-            amount--;
         }
     }
 
@@ -175,27 +174,12 @@ public class MobGenerator : MonoBehaviour
         foundSpawnPoints = GameObject.FindGameObjectsWithTag("FarmAnimalsSpawnPoint");
     }
 
-    void Update()
-    {                                                          //game objecty w tablicy, tagi dla zwierzat
-        /*if (Input.GetKeyDown(KeyCode.Space))
+    private void Update()
+    {
+        for(int i = 0; i < alreadySpawned.Length; i++)
         {
-            //first dice roll
-            firstAnimal = firstDice[UnityEngine.Random.Range(0, 12)];      //rolled value as animal index
-            Debug.Log("Pierwsza kostka: " + firstAnimal);
-
-
-            //second dice roll
-            secondAnimal = secondDice[UnityEngine.Random.Range(0, 12)];    //rolled value
-            Debug.Log("Druga kostka: " + secondAnimal);
-
-            SpawnRolledAnimals(firstAnimal, secondAnimal);
-            
+            if (alreadySpawned[i] < 0) alreadySpawned[i] = 0;
         }
-        
-        if (Input.GetKeyDown(KeyCode.Delete))
-        {
-            DespawnAnimals(0, 1);
-        }*/
     }
 
     public enum AnimalType // type is also an index in the 'alreadySpawned' array
