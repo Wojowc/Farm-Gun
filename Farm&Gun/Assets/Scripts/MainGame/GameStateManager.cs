@@ -60,7 +60,7 @@ public class GameStateManager : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState(this);
-        if (Player.GetComponent<HealthManager>().isDead) LooseGame();
+        if (Player.GetComponent<HealthManager>().isDead && currentState != EndState) LooseGame();
     }
 
     public void LooseGame()

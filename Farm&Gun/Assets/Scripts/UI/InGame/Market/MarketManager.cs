@@ -354,6 +354,7 @@ public class MarketManager : MonoBehaviour
 
     private void OnEnable()
     {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(transform.GetChild(0).GetComponent<RectTransform>());
         UpdateInventoryDisplay();
         CheckButtonsInteractability();
     }

@@ -72,6 +72,11 @@ public class GameOverManager : MonoBehaviour
         SceneLoader.Load(SceneLoader.Scene.MainMenu);
     }
 
+    private void OnEnable()
+    {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(transform.GetChild(0).GetComponent<RectTransform>());
+    }
+
     private void Awake()
     {
         continueButton.onClick.AddListener(OnContinueClick);
