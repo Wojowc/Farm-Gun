@@ -31,7 +31,7 @@ public class GenerateOpponent : MonoBehaviour
 
     public void InstantiateOponentsParametrized()
     {
-        amountFox = (lightingManager.DaysCount + 4) / 4 + (mobGenerator.alreadySpawned[0] + mobGenerator.alreadySpawned[1]) / 5;
+        amountFox = (lightingManager.DaysCount + 4) / 3 + (mobGenerator.alreadySpawned[0] + mobGenerator.alreadySpawned[1]) / 5;
         amountWolf = (lightingManager.DaysCount + 5) / 6 + (mobGenerator.alreadySpawned[2] + mobGenerator.alreadySpawned[3] + mobGenerator.alreadySpawned[4])/3;
         InstantiateMultipleOpponentsForCategory(wolf, amountWolf, wolfs, animalsToChaseForWolf);
         InstantiateMultipleOpponentsForCategory(fox, amountFox, foxes, animalsToChaseForFox);
