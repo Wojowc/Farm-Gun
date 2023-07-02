@@ -16530,7 +16530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &890211486
 Transform:
   m_ObjectHideFlags: 0
@@ -28938,7 +28938,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -29360,7 +29360,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.0064697266}
   m_SizeDelta: {x: 0, y: 0.012973785}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -33186,7 +33186,7 @@ RectTransform:
   m_GameObject: {fileID: 2133939275773728973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 15.604996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2133939275807297582}
@@ -33197,7 +33197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.8495, y: -34}
+  m_AnchoredPosition: {x: -0.8495, y: -27}
   m_SizeDelta: {x: 500, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133939275773728960
@@ -35832,8 +35832,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 2133939276090595425}
   Preset: {fileID: 11400000, guid: 0234f7cbcf81a714e8bc6441f7b80e88, type: 2}
-  DaylightLenght: 30
-  NightLenght: 60
+  DaylightLenght: 15
+  NightLenght: 45
 --- !u!1 &2133939275933091573
 GameObject:
   m_ObjectHideFlags: 0
@@ -36976,7 +36976,7 @@ MonoBehaviour:
   - {fileID: 1965851562501010, guid: e82139b3bae6212439ea1e85ad29678b, type: 3}
   - {fileID: 1055064919166404, guid: de6abd774f85e18408346a3233418242, type: 3}
   - {fileID: 1287295899898638, guid: 9ec060093457ad84ca2733cb15c2c41e, type: 3}
-  alreadySpawned: 0000000000000000000000000000000000000000
+  alreadySpawned: 0200000000000000000000000000000000000000
   animalLables:
   - Chicken
   - Duck
@@ -38091,7 +38091,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7264151, g: 0.5476352, b: 0.26383942, a: 1}
+  m_Color: {r: 0.5764706, g: 0.43921572, b: 0.21568629, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -55602,7 +55602,7 @@ RectTransform:
   m_GameObject: {fileID: 2219348561510196796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2133939275784934257}
