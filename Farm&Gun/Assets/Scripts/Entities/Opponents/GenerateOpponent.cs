@@ -14,8 +14,12 @@ public class GenerateOpponent : MonoBehaviour
     [SerializeField]
     private List<string> animalsToChaseForWolf, animalsToChaseForFox;
 
+    [SerializeField]
     private LightingManager lightingManager;
+    [SerializeField]
     private MobGenerator mobGenerator;
+    [SerializeField]
+    private List<Transform> possibleSpawnpoints;
     
     private void Awake()
     {
@@ -23,8 +27,6 @@ public class GenerateOpponent : MonoBehaviour
         foxes = new ();
         animalsToChaseForWolf = new() { "Cow", "Pig", "Sheep" };
         animalsToChaseForFox = new() { "Chicken", "Duck" };
-        mobGenerator = GameObject.Find("AnimalGenerator").GetComponent<MobGenerator>();
-        lightingManager = GameObject.Find("LightingManager").GetComponent<LightingManager>();
     }
 
     public void InstantiateOponentsParametrized()
@@ -39,7 +41,8 @@ public class GenerateOpponent : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject opponentInstance = GameObject.Instantiate(opponent, this.transform.position, Quaternion.identity);
+            Transform spawnpoint = possibleSpawnpoints[Random.Range(0,possibleSpawnpoints.Count)];
+            GameObject opponentInstance = GameObject.Instantiate(opponent, spawnpoint.position, Quaternion.identity);
             opponentInstance.transform.rotation = transform.rotation;
             opponentInstance.GetComponent<Opponent>().InitAnimalsToChase(animalsToChaseForOpponent);
             opponents.Add(opponentInstance);

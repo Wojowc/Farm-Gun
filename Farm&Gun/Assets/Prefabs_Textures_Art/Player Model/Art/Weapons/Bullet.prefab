@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 10
   speed: 2000
-  damage: 1
+  damage: 20
   destroyOnInteract: 1
 --- !u!54 &5972924633316556889
 Rigidbody:
