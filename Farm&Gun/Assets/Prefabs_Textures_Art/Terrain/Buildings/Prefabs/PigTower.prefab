@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingArea: 15
   shootingFrequency: 1
-  damage: 0.5
+  damage: 2
   Bullet: {fileID: 6350384606109617675, guid: 6412905c311a30e4db23a27720907576, type: 3}
 --- !u!1 &6441807237541601909
 GameObject:
