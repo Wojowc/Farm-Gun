@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class AnimatorSupport : MonoBehaviour
 {
@@ -13,10 +14,14 @@ public class AnimatorSupport : MonoBehaviour
     private PlayerCamera playerCamera;
     [SerializeField]
     private float longStepForward, longStepBackwards, longMaxZoom, wideStepForward, wideStepBackwards, wideMaxZoom;
+    [SerializeField]
+    private AudioClip longSwipeS, wideSwipeS, oneShot, multiShot;
+    private AudioSource source;
 
     public void Start()
     {
         playerCamera = GameObject.FindObjectOfType<PlayerCamera>();
+        source = GetComponent<AudioSource>();
     }
 
     public void DisableMovement()
@@ -41,7 +46,9 @@ public class AnimatorSupport : MonoBehaviour
     public void LongAttackSupport()
     {
         StartCoroutine(playerCamera.ZoomCoroutine(longStepForward, longStepBackwards, Camera.main.orthographicSize - longMaxZoom));
-        playerAttack.FireProjectile(playerAttack.longSweep, true, Vector2.zero);       
+        playerAttack.FireProjectile(playerAttack.longSweep, true, Vector2.zero);
+        source.clip = longSwipeS;
+        source.Play();
     }
 
     //animates and runs wide attack 
@@ -49,12 +56,16 @@ public class AnimatorSupport : MonoBehaviour
     {
         StartCoroutine(playerCamera.ZoomCoroutine(wideStepForward, wideStepBackwards, Camera.main.orthographicSize - wideMaxZoom));
         playerAttack.FireProjectile(playerAttack.wideSweep, true, Vector2.zero);
+        source.clip = wideSwipeS;
+        source.Play();
     }
 
     //runs shot attack
     public void ShotSupport()
     {
         playerAttack.FireProjectile(playerAttack.bullet, false, new Vector2(0, 0.7f));
+        source.clip = oneShot;
+        source.Play();
     }
 
     //runs multipleShot attack
@@ -65,5 +76,7 @@ public class AnimatorSupport : MonoBehaviour
             Vector2 shift = new Vector2(Random.Range(-playerAttack.multishotSpread, playerAttack.multishotSpread), Random.Range(-playerAttack.multishotSpread, playerAttack.multishotSpread) + 0.7f);
             playerAttack.FireProjectile(playerAttack.bullet, false, shift);
         }
+        source.clip = multiShot;
+        source.Play();
     }
 }
