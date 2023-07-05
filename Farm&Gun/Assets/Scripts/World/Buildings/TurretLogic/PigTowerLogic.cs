@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PigTowerLogic : MonoBehaviour
 {
-    [SerializeField] public float shootingArea = 5f;
-    [SerializeField] public float shootingFrequency = 1f;
-    [SerializeField] public float damage = 0.5f;
+    public float shootingArea = 15f;
+    public float shootingFrequency = 1f;
+    public float damage = 2f;
     [SerializeField] public GameObject Bullet;
 
     private GameObject[] enemyList;
@@ -28,7 +28,8 @@ public class PigTowerLogic : MonoBehaviour
     private void FindAllEnemiesWithinRange()
     {
         enemyList = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position, transform.position) < shootingArea).ToArray();
+        enemyList = enemyList.Where(e => Vector3.Distance(e.transform.position, 
+            transform.position) < shootingArea).ToArray();
     }
 
     private IEnumerator ShootAtOpponent()
@@ -40,12 +41,12 @@ public class PigTowerLogic : MonoBehaviour
                 int randomOpponent = Random.Range(0, enemyList.Length);
                 Vector3 targetPos = enemyList[randomOpponent].transform.position;
                 GameObject bullet = Instantiate(
-                    Bullet, transform.position + new Vector3(0, 4, 0),
-                    Quaternion.LookRotation(targetPos.normalized));
+                    Bullet, transform.position + new Vector3(0, 5, 0),
+                    Quaternion.LookRotation(targetPos.normalized, Vector3.up));
                 Destroy(bullet, 3);
-                var setup = bullet.GetComponent<PooBullet>();
-                if (setup != null)
-                    setup.Setup((targetPos - transform.position).normalized,
+                var bul = bullet.GetComponent<PooBullet>();
+                if (bul != null)
+                    bul.Setup(/*(targetPos - transform.position).normalized*/targetPos,
                         damage);
             }
             yield return new WaitForSecondsRealtime(shootingFrequency);
